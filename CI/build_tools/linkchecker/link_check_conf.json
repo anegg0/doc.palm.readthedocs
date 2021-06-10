@@ -1,0 +1,21 @@
+{
+    "ignorePatterns": [
+        {
+            "pattern": "^http(s)?://localhost"
+        },
+        {
+            "pattern": "^http(s)?://127.0.0.1"
+        },
+        {
+            "comment": "Consensys.net now has a ddos attack protection",
+            "pattern": "^http(s)?://consensys.net"
+        },
+        {
+            "comment": "Exclude addresses with extra data variable placeholders (not yet replaced when checking for links)",
+            "pattern": "{{[a-zA-Z_\\-\\.\\[\\]\\']+}}"
+        }
+    ],
+    "timeout": "30s",
+    "aliveStatusCodes":[200, 206],
+    "retryOn429":true
+}
