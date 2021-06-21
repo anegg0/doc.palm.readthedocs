@@ -1,10 +1,10 @@
 .feedback{
   padding: 1em;
   text-align: center;
-  background-color: #c8d9ac;
+  background-color: #EBEDE8;
 }
 .feedback a {
-  color: white !important;
+  color: #4C286C !important;
 }
 .md-nav--secondary .md-nav__item .md-nav__item a.md-nav__link {
   font-weight: normal;
@@ -33,7 +33,7 @@
 .latest-warning {
   display: none;
   padding: 1em;
-  background-color: #ffd633;
+  background-color: #E3C20B;
   color: black;
   font-size: 1.5em;
   text-align: center;
@@ -66,7 +66,7 @@
 }
 
 :root {
-  --md-admonition-icon--critical: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z'/></svg>")
+  --md-admonition-icon--critical: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z'/></svg>");
 }
 
 .md-typeset .admonition.critical,
@@ -93,7 +93,26 @@
 }
 
 [data-md-color-scheme="palm"] {
-  --md-primary-fg-color:        #906089;
-  --md-primary-fg-color--light: #c8d9ac;
-  --md-primary-fg-color--dark:  #462c67;
+  --md-primary-fg-color:        #EBEDE8;
+  --md-primary-fg-color--light: #995C8D;
+  --md-primary-fg-color--dark:  #4C286C;
+  --md-accent-fg-color: #4C286C;
+}
+
+@font-face {
+  font-family: 'Atlas Typewriter';
+  src: url('../fonts/AtlasTypewriter-Regular-Web.woff2') format('woff2'),
+  url('../fonts/AtlasTypewriter-Regular-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'ABCWhyte Regular';
+  src: url('../fonts/ABCWhyte-Regular.woff2') format('woff2'),
+  url('../fonts/ABCWhyte-Regular.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
 }

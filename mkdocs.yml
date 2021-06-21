@@ -41,8 +41,8 @@ theme:
   palette:
     scheme: palm
   font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
+    text: 'ABCWhyte Regular'
+    code: 'Atlas Typewriter'
   language: 'en'
   logo: 'Images/logo.svg'
   favicon: 'Images/favicon.svg'
