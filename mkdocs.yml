@@ -10,10 +10,10 @@
 # specific language governing permissions and limitations under the License.
 
 # Project information
-site_name: Palm
-site_url: https://doc.palm.io/
+site_name: Palm Docs
+site_url: https://docs.palm.io/
 site_description: Palm documentation.
-site_author: Palm
+site_author: Palm community
 copyright: Palm and its documentation are licensed under Apache 2.0 license
 
 #extra project info and template customisation
@@ -26,13 +26,12 @@ extra:
     You can switch to stable version using the version box at screen bottom.'
   support:
     tool: Discord
-    channel: https://discord.gg/3Jn7vSHXbZ
+    channel: https://discord.com/invite/3Jn7vSHXbZ
     form: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwbs
-    website: https://palm.io
+    website: https://palm.io/
     company: Palm
     issues: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwbs
   google:
-    site_verification: 'TODO' # Google Search Console verif code
     tag_manager: 'TODO' # Google tag manager code
 
 theme:

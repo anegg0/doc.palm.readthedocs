@@ -15,8 +15,7 @@
     "test:markdown:verify": "! grep -nE 'MD[0-9]+/.+' ./markdownlint.out",
     "test:markdown": "npm run test:markdown:error && npm run test:markdown:verify",
     "fix:markdown": "node ./node_modules/markdownlint-cli/markdownlint.js --fix --config CI/build_tools/markdownlint/lint-base-style.yml '**/*.md'",
-    "test": "npm run test:links && npm run test:markdown",
-    "install": "pip install -r CI/build_tools/requirements.txt"
+    "test": "npm run test:links && npm run test:markdown"
   },
   "repository": {
     "type": "git",
