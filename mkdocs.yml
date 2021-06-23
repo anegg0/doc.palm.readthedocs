@@ -46,9 +46,20 @@ theme:
   logo: 'Images/logo.svg'
   favicon: 'Images/favicon.svg'
 nav:
-    - How to: HowTo/overview.md
-    - Concepts: HowTo/overview.md
-    - Tutorials: HowTo/overview.md
+    - Get started:
+        - Connect to a network:
+            - Development: Get-Started/Connect/Development.md
+            - Mainnet: Get-Started/Connect/Mainnet.md
+    - How to:
+            - Get Palm tokens: HowTo/Tokens.md
+            - Develop for Palm:
+                - Developer workflow: HowTo/Develop/Workflow.md
+                - Onboard end users: HowTo/Develop/Onboard-End-Users.md
+            - Supported tools: HowTo/Supported-Tools.md
+            - Run a read-only node: HowTo/Run-a-RO-Node.md
+    - Concepts:
+        - Architecture overview: Concepts/Architecture.md
+        - Validators: Concepts/Validators.md
     - Reference:
         - API: Reference/api.md
 
