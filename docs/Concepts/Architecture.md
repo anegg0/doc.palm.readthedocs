@@ -6,6 +6,6 @@ Description: Palm network architecture.
 
 The following diagram outlines the Palm high-level architecture.
 
-![Architecture](../images/Architecture.png)
+![Architecture](../Images/Architecture.png)
 
 For more information about the Palm architecture, contact us on [Palm Discord channel](https://discord.com/invite/3Jn7vSHXbZ).
