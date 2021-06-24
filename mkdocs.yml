@@ -55,7 +55,7 @@ nav:
             - Develop for Palm:
                 - Developer workflow: HowTo/Develop/Workflow.md
                 - Onboard end users: HowTo/Develop/Onboard-End-Users.md
-            - Supported tools: HowTo/Supported-Tools.md
+            - Use supported tools: HowTo/Supported-Tools.md
             - Run a read-only node: HowTo/Run-a-RO-Node.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
