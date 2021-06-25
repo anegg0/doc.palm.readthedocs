@@ -92,6 +92,7 @@ Redis
 [sS]erializ(?:e|ing)
 [sS]erialization
 Schnorr
+[sS]idechain[s]?
 Slack
 [sS]lashable
 Splunk
