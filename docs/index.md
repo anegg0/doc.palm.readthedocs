@@ -2,4 +2,39 @@
 description: Palm documentation home page
 ---
 
-# What's Palm?
+# Palm
+
+Palm is an non-fungible token (NFT) ecosystem for culture and creativity, built with Ethereum.
+
+## What's Palm?
+
+Palm network is an Ethereum sidechain dedicated to selling, purchasing, and trading high value
+NFTs that are associated with real-world and digital artwork.
+
+Palm uses IBFT 2.0 proof of authority (PoA) consensus, with network validators being run
+by partners and key stakeholders. IBFT 2.0 is over 99% more energy efficient than proof of work
+(PoW) networks, and Palm has a roadmap to decentralize over time.
+
+A bridge relay service connects payment tokens and NFTs on Ethereum and the Palm network, with
+bridging contracts deployed on both networks to manage the connection.
+
+## Why develop on Palm?
+
+Powered by the $Palm token, the ecosystem empowers creators and artists to mint energy-effecient
+NFTs with low gas fees and fast transaction finality.
+
+Use JSON-RPCs hosted by [Infura] to interact with the Palm network. The network supports
+[standard ERC-721 tokens], and you can use familiar [Ethereum tools] during application development.
+
+## Get started
+
+Connect to the Palm [development network] or [Mainnet] endpoints and view the [developer workflow]
+for more information about getting started.
+
+<!-- links -->
+[Ethereum tools]: HowTo/Supported-Tools.md
+[standard ERC-721 tokens]: https://eips.ethereum.org/EIPS/eip-721
+[Infura]: https://infura.io/
+[development network]: Get-Started/Connect/Development.md
+[Mainnet]: Get-Started/Connect/Mainnet.md
+[developer workflow]: HowTo/Develop/Workflow.md
