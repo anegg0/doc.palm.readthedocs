@@ -21,7 +21,7 @@ bridging contracts deployed on both networks to manage the connection.
 
 ## Why develop on Palm?
 
-Powered by the $Palm token, the ecosystem empowers creators and artists to mint energy-efficient
+Powered by the PALM token, the ecosystem enables creators and artists to mint energy-efficient
 NFTs with low gas fees and fast transaction finality.
 
 Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart
