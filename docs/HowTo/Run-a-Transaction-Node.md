@@ -14,7 +14,7 @@ without performing validator duties.
     (greater than 66%) of validators must first sign the block.
 
 To ensure that your node can successfully join the Palm network, you must specify the
-[correct bootnodes] for the environment you are targeting.  This allows your node to find
+[correct bootnodes] for the environment you are targeting. This allows your node to find
 existing nodes on the network. Connecting to existing nodes is important as it allows your node
 to download the chain history and send transactions to validator nodes.
 
@@ -23,10 +23,9 @@ network environment. Available network environments are:
 
 | Network     | Description                                                         |
 |-------------|---------------------------------------------------------------------|
-| Development | Useful for quick testing during development. There are no guarantees about data on the development network persisting, this network may reset periodically. |
+| Development | Useful for quick testing during development. This network may reset periodically, meaning data may not persist. |
 | Production  | Palm's Mainnet environment. Contracts and accounts hold real value and assets can be bridged across to Ethereum's Mainnet. |
 | Testing     | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. A bridge exists on the Rinkeby testnet for transferring assets to and from this environment. |
-
 
 **Prerequisites**:
 
