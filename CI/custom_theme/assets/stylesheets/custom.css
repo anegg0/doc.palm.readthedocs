@@ -101,6 +101,7 @@
   --md-primary-fg-color--light: #995C8D;
   --md-primary-fg-color--dark:  #4C286C;
   --md-accent-fg-color: #4C286C;
+  --md-text-link-color: var(--md-primary-fg-color--light);
 }
 
 @font-face {
