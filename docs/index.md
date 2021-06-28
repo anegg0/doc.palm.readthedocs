@@ -20,7 +20,7 @@ bridging contracts deployed on both networks to manage the connection.
 
 ## Why develop on Palm?
 
-Powered by the $Palm token, the ecosystem empowers creators and artists to mint energy-effecient
+Powered by the $Palm token, the ecosystem empowers creators and artists to mint energy-efficient
 NFTs with low gas fees and fast transaction finality.
 
 Use JSON-RPCs hosted by [Infura] to interact with the Palm network. The network supports
