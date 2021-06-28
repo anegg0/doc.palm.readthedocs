@@ -4,7 +4,7 @@ description: Palm documentation home page
 
 # Palm
 
-Palm is an non-fungible token (NFT) ecosystem for culture and creativity, built with Ethereum.
+Palm is a non-fungible token (NFT) ecosystem for culture and creativity, built with Ethereum.
 
 ## What's Palm?
 
