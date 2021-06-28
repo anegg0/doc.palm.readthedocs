@@ -23,8 +23,7 @@ bridging contracts deployed on both networks to manage the connection.
 Powered by the $Palm token, the ecosystem empowers creators and artists to mint energy-efficient
 NFTs with low gas fees and fast transaction finality.
 
-Use JSON-RPCs hosted by [Infura] to interact with the Palm network. The network supports
-[standard ERC-721 tokens], and you can use familiar [Ethereum tools] during application development.
+Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart contracts and use standard, familiar [Ethereum tools] during application development. 
 
 ## Get started
 
