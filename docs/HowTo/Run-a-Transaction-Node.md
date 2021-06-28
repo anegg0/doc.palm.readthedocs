@@ -13,11 +13,20 @@ without performing validator duties.
     create the next block. Before inserting the block onto the chain, a super-majority
     (greater than 66%) of validators must first sign the block.
 
-Transactions nodes do not communicate directly with the validators, transactions nodes communicate
-with each other and the [bootnodes]. You must [specify the bootnodes] to connect to the Palm network
+To ensure that your node can successfully join the Palm network, you must specify the
+[correct bootnodes] for the environment you are targeting.  This allows your node to find
+existing nodes on the network. Connecting to existing nodes is important as it allows your node
+to download the chain history and send transactions to validator nodes.
 
-The following instructions allow you to run a Palm transaction node locally for the required
-network environment. Available environments are `development`, `testing`, and `production`(Mainnet).
+The instructions in this section allow you to run a Palm transaction node locally for the target
+network environment. Available network environments are:
+
+| Network     | Description                                                         |
+|-------------|---------------------------------------------------------------------|
+| Development | Useful for quick testing during development. There are no guarantees about data on the development network persisting, this network may reset periodically. |
+| Production  | Palm's Mainnet environment. Contracts and accounts hold real value and assets can be bridged across to Ethereum's Mainnet. |
+| Testing     | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. A bridge exists on the Rinkeby testnet for transferring assets to and from this environment. |
+
 
 **Prerequisites**:
 
@@ -38,6 +47,12 @@ Change into the `palm-node` directory:
 ```bash
 cd palm-node
 ```
+
+!!! note
+
+    If deploying your node on a cloud service like AWS, we recommend you use a second large data
+    volume for the data directory. In the event of host failure, the data volume can be quickly
+    moved to another host to re-establish connectivity with minimal downtime.
 
 ## 2. Download the genesis file
 
@@ -69,7 +84,7 @@ The following curl commands download the genesis file for the required environme
 The [configuration file] is a TOML file used to specify the Besu options. Alternatively,
 [specify the options directly when starting Besu].
 
-The following configuration file examples include the bootnodes addresses for the required
+The following configuration file examples include the [bootnode addresses] for the required
 environments. Create a TOML file named `config.toml` with the following options:
 
 !!! important
@@ -91,7 +106,6 @@ environments. Create a TOML file named `config.toml` with the following options:
 
     #Enable the JSON-RPCs
     rpc-http-enabled=true
-    rpc-http-api=["ETH","NET","IBFT","ADMIN","WEB3"]
     ```
 
 === "Development"
@@ -108,7 +122,6 @@ environments. Create a TOML file named `config.toml` with the following options:
 
     #Enable the JSON-RPCs
     rpc-http-enabled=true
-    rpc-http-api=["ETH","NET","IBFT","ADMIN","WEB3"]
     ```
 
 === "Testing"
@@ -125,7 +138,6 @@ environments. Create a TOML file named `config.toml` with the following options:
 
     #Enable the JSON-RPCs
     rpc-http-enabled=true
-    rpc-http-api=["ETH","NET","IBFT","ADMIN","WEB3"]
     ```
 
 !!! note
@@ -136,7 +148,7 @@ environments. Create a TOML file named `config.toml` with the following options:
 
 ## 4. Start Besu
 
-Start Besu and specify the configuration file
+Start Besu and specify the configuration file:
 
 ```bash
 besu --config-file=/home/myuser/palm_node/config.toml
@@ -148,11 +160,11 @@ synchronization once enough peers are found.
 ## 5. Confirm the network is running
 
 Once the network is synchronized, start another terminal and use curl to call the JSON-RPC API
-[`ibft_getvalidatorsbyblocknumber`](https://besu.hyperledger.org/en/latest/Reference/API-Methods/#ibft_getvalidatorsbyblocknumber)
-method to check for validators on the network:
+[`net_peerCount`](https://besu.hyperledger.org/en/latest/Reference/API-Methods/#net_peerCount)
+method to check for connected peers::
 
 ```bash
-curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' localhost:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[], "id":1}' localhost:8545
 ```
 
 The result displays the validators on the Palm network:
@@ -161,12 +173,12 @@ The result displays the validators on the Palm network:
 {
   "jsonrpc" : "2.0",
   "id" : 1,
-  "result" : [ "0x11781ba3cd85671a6f8481514f84bce660b75919", "0x7f9a67f84a010bda3d83493e4f1476f2651b1dab", "0x88cd6a0d883f9104432d729df772131efe44b820", "0x948b655e3a1e3505c57d15f2c5c813e4abad9cb4", "0xb49ce87bcb7f8a1dde59bde1b4c18fbf00b424ac" ]
+  "result" : [ "0x5" ]
 }
 ```
 
-[bootnodes]: https://besu.hyperledger.org/HowTo/Find-and-Connect/Bootnodes/
+[bootnode addresses]: https://besu.hyperledger.org/HowTo/Find-and-Connect/Bootnodes/
 [Hyperledger Besu installed]: https://besu.hyperledger.org/HowTo/Get-Started/Installation-Options/Install-Binaries/
 [specify the options directly when starting Besu]: https://besu.hyperledger.org/Reference/CLI/CLI-Syntax/
 [configuration file]: https://besu.hyperledger.org/HowTo/Configure/Using-Configuration-File/
-[specify the bootnodes]: #3-create-the-besu-configuration-file
+[correct bootnodes]: #3-create-the-besu-configuration-file
