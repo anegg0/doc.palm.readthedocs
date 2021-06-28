@@ -1,15 +1,11 @@
 {% import "partials/language.html" as lang with context %}
 
 <div class="feedback md-typeset">
-    Questions or feedback? You can discuss <a href="{{config.extra.support.issues}}">issues</a> and obtain free support on <a href="{{config.extra.support.channel}}">{{config.site_name}} {{config.extra.support.tool}} channel</a>.
+    Questions or feedback? You can discuss and obtain community support on <a href="{{config.extra.support.channel}}">{{config.extra.support.company}} {{config.extra.support.tool}}</a>.
     <br/>
-  {% if config.extra.support.email or config.extra.support.form %}
-    For paid professional support by <a href="{{config.extra.support.website}}">{{config.extra.support.company}}</a>, contact us
-    {% if config.extra.support.form %}
-      on <a href="{{config.extra.support.form | url}}">{{config.site_name}} website</a>.
-    {% else %}
-      at <a href="mailto:{{config.extra.support.email}}">{{config.extra.support.email}}</a>.
-    {% endif %}
+  {% if config.extra.support.website and config.extra.support.form %}
+    For additional support, <a href="{{config.extra.support.form | url}}">contact {{config.extra.support.company}}</a>
+      on <a href="{{config.extra.support.website | url}}">{{config.extra.support.company}} website</a>.
   {% endif %}
 </div>
 
