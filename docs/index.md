@@ -13,7 +13,7 @@ NFTs that are associated with real-world and digital assets.
 
 Palm uses IBFT 2.0 proof of authority (PoA) consensus, with network validators being run
 by partners and key stakeholders. IBFT 2.0 is over 99% more energy efficient than proof of work
-(PoW) networks, and Palm has a roadmap to decentralize over time.
+(PoW) networks.  Palm will continue to onboard new validators and progressively increase decentralization over time.
 
 A bridge relay service connects payment tokens and NFTs on Ethereum and the Palm network, with
 bridging contracts deployed on both networks to manage the connection.
