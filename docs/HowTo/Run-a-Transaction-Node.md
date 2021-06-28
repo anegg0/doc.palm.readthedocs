@@ -23,7 +23,7 @@ network environment. Available environments are `development`, `testing`, and `p
 
 * [Hyperledger Besu installed]
 
-* [Curl (or similar webservice client)](https://curl.haxx.se/download.html).
+* [Curl (or similar web service client)](https://curl.haxx.se/download.html).
 
 ## 1. Create the node directory
 
@@ -164,6 +164,7 @@ The result displays the validators on the Palm network:
   "result" : [ "0x11781ba3cd85671a6f8481514f84bce660b75919", "0x7f9a67f84a010bda3d83493e4f1476f2651b1dab", "0x88cd6a0d883f9104432d729df772131efe44b820", "0x948b655e3a1e3505c57d15f2c5c813e4abad9cb4", "0xb49ce87bcb7f8a1dde59bde1b4c18fbf00b424ac" ]
 }
 ```
+
 [bootnodes]: https://besu.hyperledger.org/HowTo/Find-and-Connect/Bootnodes/
 [Hyperledger Besu installed]: https://besu.hyperledger.org/HowTo/Get-Started/Installation-Options/Install-Binaries/
 [specify the options directly when starting Besu]: https://besu.hyperledger.org/Reference/CLI/CLI-Syntax/
