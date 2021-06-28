@@ -9,7 +9,7 @@ Palm is an non-fungible token (NFT) ecosystem for culture and creativity, built 
 ## What's Palm?
 
 Palm network is an Ethereum sidechain dedicated to selling, purchasing, and trading high value
-NFTs that are associated with real-world and digital artwork.
+NFTs that are associated with real-world and digital assets.
 
 Palm uses IBFT 2.0 proof of authority (PoA) consensus, with network validators being run
 by partners and key stakeholders. IBFT 2.0 is over 99% more energy efficient than proof of work
