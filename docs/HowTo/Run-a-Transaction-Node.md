@@ -31,7 +31,7 @@ network environment. Available network environments are:
 
 * [Hyperledger Besu installed]
 
-* [Curl (or similar web service client)](https://curl.haxx.se/download.html).
+* [`curl` (or similar web service client)](https://curl.haxx.se/download.html).
 
 ## 1. Create the node directory
 
