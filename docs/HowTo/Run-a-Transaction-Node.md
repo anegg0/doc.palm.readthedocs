@@ -158,7 +158,7 @@ synchronization once enough peers are found.
 
 ## 5. Confirm the network is running
 
-Once the network is synchronized, start another terminal and use curl to call the JSON-RPC API
+Once the network is synchronized, start another terminal and use `curl` to call the JSON-RPC API
 [`net_peerCount`](https://besu.hyperledger.org/en/latest/Reference/API-Methods/#net_peerCount)
 method to check for connected peers::
 
