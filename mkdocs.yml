@@ -27,10 +27,9 @@ extra:
   support:
     tool: Discord
     channel: https://discord.com/invite/3Jn7vSHXbZ
-    form: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwbs
+    form: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb
     website: https://palm.io/
     company: Palm
-    issues: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwbs
   google:
     tag_manager: 'TODO' # Google tag manager code
 
@@ -57,7 +56,7 @@ nav:
                 - Developer workflow: HowTo/Develop/Workflow.md
                 - Onboard end users: HowTo/Develop/Onboard-End-Users.md
             - Use supported tools: HowTo/Supported-Tools.md
-            - Run a read-only node: HowTo/Run-a-RO-Node.md
+            - Run a transaction node: HowTo/Run-a-Transaction-Node.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
