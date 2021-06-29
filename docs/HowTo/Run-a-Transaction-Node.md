@@ -58,7 +58,7 @@ cd palm-node
 The genesis file specifies the network-wide settings and defines the first block in the chain. Each
 Palm environment uses a different genesis file.
 
-The following curl commands download the genesis file for the required environment.
+The following `curl` commands download the genesis file for the required environment.
 
 === "Production"
 
