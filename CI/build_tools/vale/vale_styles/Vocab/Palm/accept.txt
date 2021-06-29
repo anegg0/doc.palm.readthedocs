@@ -88,6 +88,7 @@ Redis
 [rR]edistributable[s]?
 [rR]eentrancy
 [rR]epurposing
+[rR]inkeby
 [sS]andbox(?:ed|ing)
 [sS]erializ(?:e|ing)
 [sS]erialization
