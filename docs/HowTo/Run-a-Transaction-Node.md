@@ -160,7 +160,7 @@ synchronization once enough peers are found.
 
 Once the network is synchronized, start another terminal and use `curl` to call the JSON-RPC API
 [`net_peerCount`](https://besu.hyperledger.org/en/latest/Reference/API-Methods/#net_peerCount)
-method to check for connected peers::
+method to check for connected peers:
 
 ```bash
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[], "id":1}' localhost:8545
