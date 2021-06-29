@@ -38,4 +38,5 @@ for more information about getting started.
 [Infura]: https://infura.io/
 [development network]: Get-Started/Connect/Development.md
 [Mainnet]: Get-Started/Connect/Mainnet.md
+[testnet]: Get-Started/Connect/Testnet.md
 [developer workflow]: HowTo/Develop/Workflow.md
