@@ -18,7 +18,6 @@ To connect to Palm Mainnet:
         You can follow [this step-by-step guide](https://blog.infura.io/getting-started-with-infura-28e41844cc89/) for
         creating an Infura account and your first Ethereum project.
 
-
 2. Fill out [the Palm Infura registration form](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform),
    entering your Infura account information.
    Include the address of an Ethereum account you control to have some Mainnet PALM airdropped into that account.
