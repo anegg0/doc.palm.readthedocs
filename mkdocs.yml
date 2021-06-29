@@ -50,6 +50,7 @@ nav:
         - Connect to a network:
             - Development: Get-Started/Connect/Development.md
             - Mainnet: Get-Started/Connect/Mainnet.md
+            - Testnet: Get-Started/Connect/Testnet.md
     - How to:
             - Get Palm tokens: HowTo/Tokens.md
             - Develop for Palm:
