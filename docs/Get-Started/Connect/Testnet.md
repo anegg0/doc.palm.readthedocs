@@ -4,14 +4,9 @@ Description: Connect to Palm Testnet.
 
 # Connect to the Palm testnet
 
-Use [Infura](https://infura.io/) to connect to the Palm testnet.
-Infura is a blockchain development suite that provides access to the Ethereum network over HTTPS and WebSockets.
-Although the Palm testnet is a separate network from Ethereum, your Infura account and project information is used to
-authenticate you on the Palm testnet.
-
 To connect to the Palm testnet:
 
-1. Create an Infura account and set up an Ethereum project.
+1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
 
     !!! note
 

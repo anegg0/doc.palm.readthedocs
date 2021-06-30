@@ -4,14 +4,9 @@ Description: Connect to Palm Mainnet.
 
 # Connect to Palm Mainnet
 
-Use [Infura](https://infura.io/) to connect to Palm Mainnet (production network).
-Infura is a blockchain development suite that provides access to the Ethereum network over HTTPS and WebSockets.
-Although Palm Mainnet is a separate network from Ethereum, your Infura account and project information is used to
-authenticate you on Palm Mainnet.
-
 To connect to Palm Mainnet:
 
-1. Create an Infura account and set up an Ethereum project.
+1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
 
     !!! note
 

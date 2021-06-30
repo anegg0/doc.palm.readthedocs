@@ -4,14 +4,9 @@ Description: Connect to the Palm Development network.
 
 # Connect to the Palm development network
 
-Use [Infura](https://infura.io/) to connect to the Palm development network.
-Infura is a blockchain development suite that provides access to the Ethereum network over HTTPS and WebSockets.
-Although the Palm development network is a separate network from Ethereum, your Infura account and project information
-is used to authenticate you on the Palm development network.
-
 To connect to the Palm development network:
 
-1. Create an Infura account and set up an Ethereum project.
+1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
 
     !!! note
 
