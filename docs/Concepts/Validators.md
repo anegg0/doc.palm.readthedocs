@@ -8,12 +8,12 @@ In IBFT 2.0  Proof-of-Authority (PoA) networks such as Palm, validators are node
 transactions and blocks. Validators take turns to create the next block. Before inserting the block
 onto the chain, a super-majority (greater than 66%) of validators must first sign the block.
 
-Validators are incentivized by earning rewards for keeping the network honest. Validator nodes will
-initially be run by key stakeholders and technical partners.
+Validators earn rewards for keeping the network honest. Validator nodes will initially be run by key
+stakeholders and technical partners.
 
 [Contact us] if you need assistance setting up a validator, or reach out on [Discord].
 
-Use a [transaction node] or the [infura endpoints] to read transaction history or send transactions
+Use a [transaction node] or the [Infura endpoints] to read transaction history or send transactions
 on the Palm network without performing validator duties.
 
 <!--links-->
