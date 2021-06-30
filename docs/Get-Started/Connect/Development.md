@@ -25,22 +25,18 @@ To connect to the Palm development network:
     !!! note
 
         You can use [MetaMask](https://metamask.io/) to create an Ethereum account.
-        The address of an Ethereum account is the same on Ethereum Mainnet and any Ethereum testnet.
 
-3. Tell your Palm contact that you've filled out the form, and they'll ensure that your information is received and
-   your access to the Palm development network is approved.
-
-4. Locate your Ethereum project ID on Infura.
+3. Locate your Ethereum project ID on Infura.
    Go to the project you created in Step 1, and click on the "Settings" tab.
    The project ID is located in the "Keys" box on this page.
 
-5. Create your access URL using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
+4. Create your access URL using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
 
     ```url
-    https://palm-devnet.infura.io/v3/<YOUR PROJECT ID>
+    https://palm-devnet.infura.io/v3/<YOUR-PROJECT-ID>
     ```
 
-6. Confirm that the access works using the following command (replacing `<ACCESS-URL>` with the access URL):
+5. Confirm that the access works using the following command (replacing `<ACCESS-URL>` with the access URL):
 
     === "curl HTTP request"
 
@@ -54,5 +50,6 @@ To connect to the Palm development network:
         {"jsonrpc":"2.0","id":1,"result":[]}
         ```
 
-Since this process isn't automated, you may check in with your Palm or ConsenSys contact for help and to make sure you've
+Since this process isn't automated, you may check in with your Palm contact or fill out
+[the Palm contact form](https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb) for help and to make sure you've
 completed these steps successfully.
