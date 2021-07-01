@@ -47,20 +47,22 @@ theme:
 nav:
     - Get started:
         - Connect to a network:
+            - Overview: Get-Started/Connect/Overview.md
             - Development: Get-Started/Connect/Development.md
+            - Testnet: Get-Started/Connect/Testnet.md
             - Mainnet: Get-Started/Connect/Mainnet.md
         - Get Palm tokens: Get-Started/Tokens.md
     - How to:
-            - Develop for Palm:
-                - Developer workflow: HowTo/Develop/Workflow.md
-                - Onboard end users: HowTo/Develop/Onboard-End-Users.md
-            - Use supported tools: HowTo/Supported-Tools.md
-            - Run a read-only node: HowTo/Run-a-RO-Node.md
+#            - Develop for Palm:
+#                - Developer workflow: HowTo/Develop/Workflow.md
+#                - Onboard end users: HowTo/Develop/Onboard-End-Users.md
+#            - Use supported tools: HowTo/Supported-Tools.md
+            - Run a transaction node: HowTo/Run-a-Transaction-Node.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
-    - Reference:
-        - API: Reference/api.md
+#    - Reference:
+#        - API: Reference/api.md
 
 markdown_extensions:
   - toc:

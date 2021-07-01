@@ -1,10 +1,10 @@
 ---
-Description: Connect to Palm Mainnet.
+Description: Connect to Palm Testnet.
 ---
 
-# Connect to Palm Mainnet
+# Connect to the Palm testnet
 
-To connect to Palm Mainnet:
+To connect to the Palm testnet:
 
 1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
 
@@ -15,27 +15,23 @@ To connect to Palm Mainnet:
 
 2. Fill out [the Palm Infura registration form](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform),
    entering your Infura account information.
-   If you've already filled out this form when connecting to [the Palm development network](Development.md) or
-   [testnet](Testnet.md), you don't need to fill it out again.
-
-3. Fill out [the Palm production airdrop form](https://forms.gle/So2HE8Yfhjyr5fEi6), entering the address of an Ethereum
-   account you control to have some Mainnet PALM airdropped into that account.
+   Include the address of an Ethereum account you control to have some testnet PALM airdropped into that account.
 
     !!! note
 
         You can use [MetaMask](https://metamask.io/) to create an Ethereum account.
 
-4. Locate your Ethereum project ID on Infura.
+3. Locate your Ethereum project ID on Infura.
    Go to the project you created in Step 1, and click on the "Settings" tab.
    The project ID is located in the "Keys" box on this page.
 
-5. Create your access URL using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
+4. Create your access URL using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
 
     ```url
-    https://palm-mainnet.infura.io/v3/<YOUR-PROJECT-ID>
+    https://palm-testnet.infura.io/v3/<YOUR-PROJECT-ID>
     ```
 
-6. Confirm that the access works using the following command (replacing `<ACCESS-URL>` with the access URL):
+5. Confirm that the access works using the following command (replacing `<ACCESS-URL>` with the access URL):
 
     === "curl HTTP request"
 
@@ -56,4 +52,4 @@ To connect to Palm Mainnet:
 Since this process isn't automated, you may check in with your Palm contact or fill out
 [the Palm contact form](https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb) for help and to make sure you've
 completed these steps successfully.
-After connecting to and interacting with Palm Mainnet, you can view [the Palm Mainnet block explorer](https://explorer.palm.io/).
+After connecting to and interacting with the Palm testnet, you can view [the Palm testnet block explorer](https://explorer.palm-uat.xyz/).
