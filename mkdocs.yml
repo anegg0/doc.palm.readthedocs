@@ -49,8 +49,8 @@ nav:
         - Connect to a network:
             - Development: Get-Started/Connect/Development.md
             - Mainnet: Get-Started/Connect/Mainnet.md
+        - Get Palm tokens: Get-Started/Tokens.md
     - How to:
-            - Get Palm tokens: HowTo/Tokens.md
             - Develop for Palm:
                 - Developer workflow: HowTo/Develop/Workflow.md
                 - Onboard end users: HowTo/Develop/Onboard-End-Users.md
