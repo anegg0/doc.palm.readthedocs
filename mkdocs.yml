@@ -47,7 +47,9 @@ theme:
 nav:
     - Get started:
         - Connect to a network:
+            - Overview: Get-Started/Connect/Overview.md
             - Development: Get-Started/Connect/Development.md
+            - Testnet: Get-Started/Connect/Testnet.md
             - Mainnet: Get-Started/Connect/Mainnet.md
     - How to:
             - Get Palm tokens: HowTo/Tokens.md
