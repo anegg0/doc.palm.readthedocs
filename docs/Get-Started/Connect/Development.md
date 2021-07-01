@@ -45,6 +45,11 @@ To connect to the Palm development network:
         {"jsonrpc":"2.0","id":1,"result":[]}
         ```
 
+    You can view the [Infura JSON-RPC API](https://infura.io/docs/ethereum#tag/JSON-RPC-Methods) and
+    [how to make requests](https://infura.io/docs/ethereum#section/Make-Requests) in the
+    [Infura documentation](https://infura.io/docs/ethereum).
+
 Since this process isn't automated, you may check in with your Palm contact or fill out
 [the Palm contact form](https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb) for help and to make sure you've
 completed these steps successfully.
+After connecting to and interacting with the Palm development network, you can view [the Palm development network block explorer](https://explorer.palm-dev.xyz/).
