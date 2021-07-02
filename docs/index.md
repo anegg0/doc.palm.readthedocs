@@ -6,21 +6,21 @@ description: Palm documentation home page
 
 ## What's Palm?
 
-Palm network is an Ethereum sidechain dedicated to selling, purchasing, and trading NFTs that are
-associated with real-world and digital assets.
+The Palm network is an Ethereum sidechain dedicated to selling, purchasing, and trading NFTs that
+are associated with real-world and digital assets.
 
-Palm uses IBFT 2.0 proof of authority (PoA) consensus, with network validators being run
-by partners and key stakeholders. IBFT 2.0 is over 99% more energy efficient than proof of work
-(PoW) networks. Palm will continue to onboard new validators and progressively increase
-decentralization over time.
+The Palm network uses IBFT 2.0 proof of authority (PoA) consensus, with network validators being run
+by key stakeholders. IBFT 2.0 is over 99% more energy efficient than proof of work (PoW) networks.
+The initial group of validators for the Palm network will expand over time as additional validators
+are added, further increasing the resilience of the network.
 
-A bridge relay service connects payment tokens and NFTs on Ethereum and the Palm network, with
-bridging contracts deployed on both networks to manage the connection.
+An automated bridge relay service connects payment tokens, like DAI, and NFTs on Ethereum and the
+Palm network, with bridging contracts deployed on both networks to manage the connection.
 
 ## Why develop on Palm?
 
-Powered by the PALM token, the ecosystem enables creators and artists to mint energy-efficient
-NFTs with low gas fees and fast transaction finality.
+Powered by the PALM token, the Palm Network ecosystem enables creators and artists to mint
+energy-efficient NFTs with low gas fees and fast transaction finality.
 
 Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart
 contracts and use standard, familiar [Ethereum tools] during application development.
