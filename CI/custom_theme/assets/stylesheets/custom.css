@@ -18,6 +18,11 @@
   color: black;
 }
 
+/*Disables the RTD version dropdown*/
+.injected{
+  display: none;
+}
+
 .rst-versions {
   border-color: lightseagreen !important;
   border-style: solid !important;
