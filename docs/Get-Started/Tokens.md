@@ -11,17 +11,18 @@ on the network.
 
 Users can request PALM by completing the form for the respective environments:
 
-* [Development and testing](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform)
-* [Production](https://docs.google.com/forms/d/e/1FAIpQLSc5LcKvAvZE0MllXlrdU0Whveq1GLBePEbh6yYaABaVSDfRyw/viewform)
+* [Testing](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform)
+* [Mainnet](https://docs.google.com/forms/d/e/1FAIpQLSc5LcKvAvZE0MllXlrdU0Whveq1GLBePEbh6yYaABaVSDfRyw/viewform)
 
 ## Use the bridge
 
-The Palm bridge can be used to transfer tokens between the Palm network and Ethereum. When assets are transferred from Ethereum to Palm, the bridge will top up the depositer's account with a small amount of PALM.  
+The Palm bridge can be used to transfer tokens between the Palm network and Ethereum. When assets are
+transferred from Ethereum to Palm, the bridge will top up the depositer's account with a small amount of PALM.
 
 Palm provides the following environment-specific bridges:
 
-* [Development environment bridge](https://app.palm-dev.xyz/)
-* [Testing environment bridge](https://app.palm-uat.xyz/).
+* [Testing](https://app.palm-uat.xyz/)
+* [Mainnet](https://app.palm.io/).
 
 ## Use the faucet
 
