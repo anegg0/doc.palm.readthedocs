@@ -17,7 +17,7 @@ Users can request PALM by completing the form for the respective environments:
 ## Use the bridge
 
 The Palm bridge can be used to transfer tokens between the Palm network and Ethereum. When assets are
-transferred from Ethereum to Palm, the bridge will top up the depositer's account with a small amount of PALM.
+transferred from Ethereum to Palm, the bridge will top up the depositor's account with a small amount of PALM.
 
 Palm provides the following environment-specific bridges:
 
