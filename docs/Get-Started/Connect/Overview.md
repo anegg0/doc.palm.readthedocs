@@ -15,7 +15,6 @@ The instructions in this section allow you to connect to the target Palm network
 You can connect to:
 
 - [The Palm testnet](Testnet.md): Palm's testing environment.
-  This is a persistent environment that will not be reset.
   This is useful as a staging environment and for long-term testing.
   A bridge exists on the Ethereum Rinkeby testnet for transferring assets to and from the Palm testnet.
 - [Palm Mainnet](Mainnet.md): Palm's production environment.
