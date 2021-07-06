@@ -22,7 +22,7 @@ transferred from Ethereum to Palm, the bridge will top up the depositer's accoun
 Palm provides the following environment-specific bridges:
 
 * [Palm Testnet bridge](https://app.palm-uat.xyz/bridge)
-* [Mainnet](https://app.palm.io/).
+* [Palm Mainnet bridge](https://app.palm.io/bridge).
 
 ## Use the faucet
 
