@@ -16,12 +16,14 @@ Users can request PALM by completing the form for the respective environments:
 
 ## Use the bridge
 
-The Palm bridge can be used to transfer tokens between the Palm network and Ethereum. When assets are transferred from Ethereum to Palm, the bridge will top up the depositer's account with a small amount of PALM.  
+The Palm bridge can be used to transfer tokens between the Palm network and Ethereum. When assets are transferred from Ethereum to Palm, the bridge will top up the depositor's account with a small amount of PALM.
 
 Palm provides the following environment-specific bridges:
 
-* [Development environment bridge](https://app.palm-dev.xyz/)
-* [Testing environment bridge](https://app.palm-uat.xyz/).
+* [Testnet bridge](https://app.palm-uat.xyz/bridge).
+  See [how to use the testnet bridge](../HowTo/Bridge.md#using-the-testnet-bridge).
+* [Mainnet bridge](https://app.palm.io/bridge).
+  See [how to use the Mainnet bridge](../HowTo/Bridge.md#using-the-mainnet-bridge).
 
 ## Use the faucet
 
