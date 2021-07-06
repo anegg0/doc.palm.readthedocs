@@ -27,8 +27,7 @@ contracts and use standard, familiar [Ethereum tools] during application develop
 
 ## Get started
 
-Connect to the Palm [development network], [testnet], or [Mainnet] endpoints and view the [developer workflow]
-for more information about getting started.
+Connect to the Palm [development network], [testnet], or [Mainnet] endpoints to get started.
 
 <!-- links -->
 [Ethereum tools]: HowTo/Supported-Tools.md
