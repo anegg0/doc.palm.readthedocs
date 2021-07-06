@@ -23,7 +23,6 @@ network environment. Available network environments are:
 
 | Network     | Description                                                         |
 |-------------|---------------------------------------------------------------------|
-| Development | Useful for quick testing during development. This network may reset periodically, meaning data may not persist. |
 | Production  | Palm's Mainnet environment. Contracts and accounts hold real value and assets can be bridged across to Ethereum's Mainnet. |
 | Testing     | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. A bridge exists on the Rinkeby testnet for transferring assets to and from this environment. |
 
@@ -66,12 +65,6 @@ The following `curl` commands download the genesis file for the required environ
     curl -O https://genesis-files.palm.io/prd/genesis.json
     ```
 
-=== "Development"
-
-    ```bash
-    curl -O https://genesis-files.palm.io/dev/genesis.json
-    ```
-
 === "Testing"
 
     ```bash
@@ -99,22 +92,6 @@ environments. Create a TOML file named `config.toml` with the following options:
 
     # Network bootnodes
     bootnodes=["enode://9cccbaae702d477c5fd4d704a2d6f92a90005f62de980b11b0d042877bf759774cf7d68d358c59427622e87538bc46afa1195d6ac12cb153d6771461c1830d1b@54.243.108.56:30303","enode://d6518f4f318a172158cf73c3e615c4eb488efb14c20b4a2f13570bf01092573222cd6935599a80017512457fb7f229cf6562f9d038b5d0dc98db95074d4a98b3@18.235.247.31:30303"]
-
-    # Data directory
-    data-path="<PATH>/palm-node"
-
-    #Enable the JSON-RPCs
-    rpc-http-enabled=true
-    ```
-
-=== "Development"
-
-    ```toml
-    # Development network genesis file
-    genesis-file="genesis.json"
-
-    # Network bootnodes
-    bootnodes=["enode://6a21d1fe0e283412e65a3dd3f4cdc63879eec0a939c4a6dff7dba90cd368ce89dcd732909c2f64d26267f85a56c43627f11742ef88feb712595362e1590ed077@18.205.172.1:30303","enode://7992a25ead5579feb1573aca85d17e49c7cb84d4391a7ac59430eecb9e24bb76a57d749b886e47e19ea8cec7ffbda326d8778434f418edda4ca1950937b3df34@52.2.6.154:30303"]
 
     # Data directory
     data-path="<PATH>/palm-node"
