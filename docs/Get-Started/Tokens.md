@@ -21,10 +21,10 @@ When assets are transferred from Ethereum to Palm, the bridge will top up the de
 
 Palm provides the following environment-specific bridges:
 
-* [Testnet bridge](https://app.palm-uat.xyz/bridge).
-  See [how to use the testnet bridge](../HowTo/Bridge.md#using-the-testnet-bridge).
-* [Mainnet bridge](https://app.palm.io/bridge).
-  See [how to use the Mainnet bridge](../HowTo/Bridge.md#using-the-mainnet-bridge).
+* [Palm Testnet bridge](https://app.palm-uat.xyz/bridge).
+  See [how to use the Palm Testnet bridge](../HowTo/Bridge.md#using-the-testnet-bridge).
+* [Palm Mainnet bridge](https://app.palm.io/bridge).
+  See [how to use the Palm Mainnet bridge](../HowTo/Bridge.md#using-the-mainnet-bridge).
 
 ## Use the faucet
 
