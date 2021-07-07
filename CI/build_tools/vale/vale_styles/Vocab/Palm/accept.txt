@@ -19,7 +19,7 @@ ConsenSys
 [cC]ounterpart(?:y|ies)
 [cC]rafter
 [cC]ryptocurrenc(?:y|ies)
-Dai
+D[aA][iI]
 [dD]eauthoriz(?:e|ing)
 [dD]eserializ(?:e|ing)
 [dD]eserialization
@@ -62,7 +62,7 @@ Logrus
 [mM]arshal(?:ed|ing)
 Medalla
 Merkle
-Metamask
+MetaMask
 MkDocs
 [mM]ultiaddresse[s]?
 [mM]ultikey[s]?
