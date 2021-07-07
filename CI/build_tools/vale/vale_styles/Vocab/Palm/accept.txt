@@ -14,10 +14,12 @@ Bintray
 Cakeshop
 [cC]lasspath[s]?
 Codefi
+Coinbase
 ConsenSys
 [cC]ounterpart(?:y|ies)
 [cC]rafter
 [cC]ryptocurrenc(?:y|ies)
+Dai
 [dD]eauthoriz(?:e|ing)
 [dD]eserializ(?:e|ing)
 [dD]eserialization

@@ -23,7 +23,7 @@ You must be [connected to Palm Testnet](../Get-Started/Connect/Testnet.md).
 
 ### 1. Create a Rinkeby account
 
-Access Rinkeby on your MetaMask wallet by selecting **Rinkeby Test Network** under the **Networks** tab.
+Access Rinkeby on your Metamask wallet by selecting **Rinkeby Test Network** under the **Networks** tab.
 [Create a new account](https://metamask.zendesk.com/hc/en-us/articles/360015289452-How-to-Create-an-Additional-Account-in-your-MetaMask-Wallet).
 
 ### 2. Get tokens on Rinkeby
@@ -37,9 +37,9 @@ Next, get DAI on Rinkeby using [Compound](https://app.compound.finance/) as foll
 1. Select **Dai** under **Supply Markets**.
 2. Select **Withdraw**.
 3. Select **Faucet** at the bottom of the screen.
-   This opens MetaMask and confirms the transaction.
+   This opens Metamask and confirms the transaction.
    After a few seconds, DAI is added to your Rinkeby account.
-4. To view the DAI on your MetaMask wallet, select **Add Token** on your Rinkeby account in MetaMask and enter the contract
+4. To view the DAI on your Metamask wallet, select **Add Token** on your Rinkeby account in Metamask and enter the contract
    `0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea`.
 
 ### 3. Transfer tokens between Rinkeby and Palm Testnet
@@ -57,7 +57,7 @@ You must be [connected to Palm Mainnet](../Get-Started/Connect/Mainnet.md)
 
 ### 1. Create an Ethereum Mainnet account
 
-Access Ethereum Mainnet on your MetaMask wallet by selecting **Ethereum Mainnet** under the **Networks** tab.
+Access Ethereum Mainnet on your Metamask wallet by selecting **Ethereum Mainnet** under the **Networks** tab.
 [Create a new account](https://metamask.zendesk.com/hc/en-us/articles/360015289452-How-to-Create-an-Additional-Account-in-your-MetaMask-Wallet).
 
 ### 2. Get tokens on Ethereum Mainnet
@@ -66,7 +66,7 @@ The bridge allows you to transfer DAI tokens between Ethereum Mainnet and Palm M
 You can get DAI by trading or selling it on exchanges such as [Coinbase](https://www.coinbase.com/), or taking out a
 loan on [MakerDAO](https://makerdao.com/en/).
 
-Transfer DAI onto your Ethereum Mainnet account on your MetaMask wallet.
+Transfer DAI onto your Ethereum Mainnet account on your Metamask wallet.
 
 ### 3. Transfer tokens between Ethereum Mainnet and Palm Mainnet
 
