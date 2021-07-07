@@ -21,6 +21,8 @@ You can use [the Palm Testnet bridge](https://app.palm-uat.xyz/bridge) to transf
 the Ethereum Rinkeby testnet.
 You must be [connected to Palm Testnet](../Get-Started/Connect/Testnet.md).
 
+This guide walks you through transferring DAI from Rinkeby to Palm Testnet.
+
 ### 1. Create a Rinkeby account
 
 Access Rinkeby on your MetaMask wallet by selecting **Rinkeby Test Network** under the **Networks** tab.
@@ -44,16 +46,20 @@ Next, get DAI on Rinkeby using [Compound](https://app.compound.finance/) as foll
 
 ### 3. Transfer tokens between Rinkeby and Palm Testnet
 
-Use [the Palm Testnet bridge](https://app.palm-uat.xyz/bridge) to transfer tokens between Rinkeby and Palm Testnet, entering:
+Use [the Palm Testnet bridge](https://app.palm-uat.xyz/bridge) to transfer tokens from Rinkeby to Palm Testnet, entering:
 
 - The transfer amount.
 - The token (DAI).
 - The destination address.
 
+You can similarly transfer tokens from Palm Testnet to Rinkeby using the bridge.
+
 ## Using the Palm Mainnet bridge
 
 You can use [the Palm Mainnet bridge](https://app.palm.io/bridge) to transfer tokens between Palm Mainnet and Ethereum Mainnet.
-You must be [connected to Palm Mainnet](../Get-Started/Connect/Mainnet.md)
+You must be [connected to Palm Mainnet](../Get-Started/Connect/Mainnet.md).
+
+This guide walks you through transferring DAI from Ethereum Mainnet to Palm Mainnet.
 
 ### 1. Create an Ethereum Mainnet account
 
@@ -66,12 +72,14 @@ The bridge allows you to transfer DAI tokens between Ethereum Mainnet and Palm M
 You can get DAI by trading or selling it on exchanges such as [Coinbase](https://www.coinbase.com/), or taking out a
 loan on [MakerDAO](https://makerdao.com/en/).
 
-Transfer DAI onto your Ethereum Mainnet account on your MetaMask wallet.
+Transfer DAI into your Ethereum Mainnet account on your MetaMask wallet.
 
 ### 3. Transfer tokens between Ethereum Mainnet and Palm Mainnet
 
-Use [the Palm Mainnet bridge](https://app.palm.io/bridge) to transfer tokens between Ethereum Mainnet and Palm Mainnet, entering:
+Use [the Palm Mainnet bridge](https://app.palm.io/bridge) to transfer tokens from Ethereum Mainnet to Palm Mainnet, entering:
 
 - The transfer amount.
 - The token (DAI).
 - The destination address.
+
+You can similarly transfer tokens from Palm Mainnet to Ethereum Mainnet using the bridge.

@@ -23,8 +23,8 @@ network environment. Available network environments are:
 
 | Network     | Description                                                         |
 |-------------|---------------------------------------------------------------------|
-| Production  | Palm's Mainnet environment. Contracts and accounts hold real value and assets can be bridged across to Ethereum's Mainnet. |
-| Testing     | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. A bridge exists on the Rinkeby testnet for transferring assets to and from this environment. |
+| Production  | Palm's Mainnet environment. Contracts and accounts hold real value. You can use [the Palm Mainnet bridge](Bridge.md#using-the-palm-mainnet-bridge) to transfer assets between Palm Mainnet and Ethereum Mainnet. |
+| Testing     | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. You can use [the Palm Testnet bridge](Bridge.md#using-the-palm-testnet-bridge) to transfer assets between Palm Testnet and the Ethereum Rinkeby testnet. |
 
 **Prerequisites**:
 
