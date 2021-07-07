@@ -15,11 +15,11 @@ To connect to Palm Mainnet:
 
 2. Fill out [the Palm Infura registration form](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform),
    entering your Infura account information.
-   If you've already filled out this form when connecting to [the Palm development network](Development.md) or
-   [testnet](Testnet.md), you don't need to fill it out again.
+   If you've already filled out this form when connecting to [the Palm testnet](Testnet.md), you
+   don't need to fill it out again.
 
 3. Fill out [the Palm production airdrop form](https://forms.gle/So2HE8Yfhjyr5fEi6), entering the address of an Ethereum
-   account you control to have some Mainnet PALM airdropped into that account.
+   account you control to have Mainnet PALM airdropped into that account.
 
     !!! note
 

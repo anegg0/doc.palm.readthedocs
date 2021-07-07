@@ -23,17 +23,14 @@ Powered by the PALM token, the Palm Network ecosystem enables creators and artis
 energy-efficient NFTs with low gas fees and fast transaction finality.
 
 Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart
-contracts and use standard, familiar [Ethereum tools] during application development.
+contracts and use standard, familiar Ethereum tools during application development.
 
 ## Get started
 
-Connect to the Palm [development network], [testnet], or [Mainnet] endpoints to get started.
+Connect to the Palm [testnet] or [Mainnet] endpoints to get started.
 
 <!-- links -->
-[Ethereum tools]: HowTo/Supported-Tools.md
 [standard ERC-721 tokens]: https://eips.ethereum.org/EIPS/eip-721
 [Infura]: https://infura.io/
-[development network]: Get-Started/Connect/Development.md
 [Mainnet]: Get-Started/Connect/Mainnet.md
 [testnet]: Get-Started/Connect/Testnet.md
-[developer workflow]: HowTo/Develop/Workflow.md
