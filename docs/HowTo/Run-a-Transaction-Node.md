@@ -21,10 +21,10 @@ to download the chain history and send transactions to validator nodes.
 The instructions in this section allow you to run a Palm transaction node locally for the target
 network environment. Available network environments are:
 
-| Network     | Description                                                         |
-|-------------|---------------------------------------------------------------------|
-| Production  | Palm's Mainnet environment. Contracts and accounts hold real value and assets can be bridged across to Ethereum's Mainnet. |
-| Testing     | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. A bridge exists on the Rinkeby testnet for transferring assets to and from this environment. |
+| Network       | Description                                                         |
+|---------------|---------------------------------------------------------------------|
+| Palm Mainnet  | Palm's production environment. Contracts and accounts hold real value and assets can be bridged across to Ethereum's Mainnet. |
+| Palm Testnet  | A persistent environment that will not be reset. This is useful as a staging environment and for long-term testing. A bridge exists on the Rinkeby testnet for transferring assets to and from this environment. |
 
 **Prerequisites**:
 
@@ -59,13 +59,13 @@ Palm environment uses a different genesis file.
 
 The following `curl` commands download the genesis file for the required environment.
 
-=== "Production"
+=== "Palm Mainnet"
 
     ```bash
     curl -O https://genesis-files.palm.io/prd/genesis.json
     ```
 
-=== "Testing"
+=== "Palm Testnet"
 
     ```bash
     curl -O https://genesis-files.palm.io/uat/genesis.json
@@ -84,10 +84,10 @@ environments. Create a TOML file named `config.toml` with the following options:
     For the `data-path`option, replace `<PATH>` with the location of the node directory created in
     [step 1](#1-create-the-node-directory).
 
-=== "Production"
+=== "Palm Mainnet"
 
     ```toml
-    # Production network genesis file
+    # Palm Mainnet genesis file
     genesis-file="genesis.json"
 
     # Network bootnodes
@@ -100,10 +100,10 @@ environments. Create a TOML file named `config.toml` with the following options:
     rpc-http-enabled=true
     ```
 
-=== "Testing"
+=== "Palm Testnet"
 
     ```toml
-    # Testing network genesis file
+    # Palm Testnet genesis file
     genesis-file="genesis.json"
 
     # Network bootnodes

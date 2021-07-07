@@ -27,10 +27,10 @@ contracts and use standard, familiar Ethereum tools during application developme
 
 ## Get started
 
-Connect to the Palm [testnet] or [Mainnet] endpoints to get started.
+Connect to [Palm Testnet] or [Palm Mainnet] to get started.
 
 <!-- links -->
 [standard ERC-721 tokens]: https://eips.ethereum.org/EIPS/eip-721
 [Infura]: https://infura.io/
-[Mainnet]: Get-Started/Connect/Mainnet.md
-[testnet]: Get-Started/Connect/Testnet.md
+[Palm Mainnet]: Get-Started/Connect/Mainnet.md
+[Palm Testnet]: Get-Started/Connect/Testnet.md
