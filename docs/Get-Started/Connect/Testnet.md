@@ -2,9 +2,9 @@
 Description: Connect to Palm Testnet.
 ---
 
-# Connect to the Palm testnet
+# Connect to Palm Testnet
 
-To connect to the Palm testnet:
+To connect to Palm Testnet:
 
 1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
 
@@ -52,4 +52,4 @@ To connect to the Palm testnet:
 Since this process isn't automated, you may check in with your Palm contact or fill out
 [the Palm contact form](https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb) for help and to make sure you've
 completed these steps successfully.
-After connecting to and interacting with the Palm testnet, you can view [the Palm testnet block explorer](https://explorer.palm-uat.xyz/).
+After connecting to and interacting with Palm Testnet, you can view [the Palm Testnet block explorer](https://explorer.palm-uat.xyz/).

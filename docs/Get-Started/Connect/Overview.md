@@ -14,7 +14,7 @@ You can also [run a transaction node] if you don't want to use the Infura endpoi
 The instructions in this section allow you to connect to the target Palm network environment.
 You can connect to:
 
-- [The Palm testnet](Testnet.md): Palm's testing environment.
+- [Palm Testnet](Testnet.md): Palm's testing environment.
   This is useful as a staging environment and for long-term testing.
   You can use [the Palm Testnet bridge](../../HowTo/Bridge.md#using-the-palm-testnet-bridge) to transfer assets between
   Palm Testnet and the Ethereum Rinkeby testnet.
