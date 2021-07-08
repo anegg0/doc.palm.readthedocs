@@ -16,8 +16,11 @@ You can connect to:
 
 - [Palm Testnet](Testnet.md): Palm's testing environment.
   This is useful as a staging environment and for long-term testing.
-  A bridge exists on the Ethereum Rinkeby testnet for transferring assets to and from Palm Testnet.
+  You can use [the Palm Testnet bridge](../../HowTo/Bridge.md#using-the-palm-testnet-bridge) to transfer assets between
+  Palm Testnet and the Ethereum Rinkeby testnet.
 - [Palm Mainnet](Mainnet.md): Palm's production environment.
-  Contracts and accounts in this network hold real value and assets can be bridged across to Ethereum's Mainnet.
+  Contracts and accounts in this network hold real value.
+  You can use [the Palm Mainnet bridge](../../HowTo/Bridge.md#using-the-palm-mainnet-bridge) to transfer assets between
+  Palm Mainnet and Ethereum Mainnet.
 
 [run a transaction node]: ../../HowTo/Run-a-Transaction-Node.md
