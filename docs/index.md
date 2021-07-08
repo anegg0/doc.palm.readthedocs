@@ -16,6 +16,7 @@ are added, further increasing the resilience of the network.
 
 An automated bridge relay service connects payment tokens, like DAI, and NFTs on Ethereum and the
 Palm network, with bridging contracts deployed on both networks to manage the connection.
+Fees collected from this bridge are partially used to purchase carbon offsets.
 
 ## Why develop on Palm?
 
