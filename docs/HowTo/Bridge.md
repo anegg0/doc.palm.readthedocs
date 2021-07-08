@@ -6,8 +6,9 @@ Description: How to use the bridge.
 
 The Palm bridge can be used to transfer assets between the Palm network and Ethereum.
 
-A small fee is required to move assets across the bridge.
-This fee covers the cost of gas and is used to purchase carbon offsets in order to make these operations carbon neutral.
+A small fee is required to move assets from the Palm network to Ethereum.
+Part of this fee covers the cost of gas, and the other part is used to purchase carbon offsets in order to make these
+operations carbon neutral.
 When assets are transferred onto the Palm network, the bridge will top up the depositor's account with a small amount of PALM.
 
 Palm provides the following environment-specific bridges:
