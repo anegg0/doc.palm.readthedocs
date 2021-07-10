@@ -6,7 +6,7 @@ description: Supported tools
 
 The Palm network supports several tools, including:
 
-- **Fiat onramps.**
+- **Fiat on-ramps.**
   [Wyre](https://www.sendwyre.com/) is integrated into the [Palm Mainnet portal](https://app.palm.io/) and [Palm Testnet portal](https://app.palm-uat.xyz/).
 - **Block explorers.**
   View the [Palm Mainnet block explorer](https://explorer.palm.io/) and [Palm Testnet block explorer](https://explorer.palm-uat.xyz/).

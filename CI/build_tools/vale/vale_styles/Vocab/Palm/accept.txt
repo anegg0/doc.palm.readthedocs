@@ -12,6 +12,7 @@ Bintray
 [bB]ootnode[s]?
 [bB]roadcast(?:ing|ed)
 Cakeshop
+Chainlist
 [cC]lasspath[s]?
 Codefi
 Coinbase
@@ -119,4 +120,5 @@ tmux
 [vV]alidator[s]?
 Web3Signer
 [wW]ithdrawable
+Wyre
 Zinken
