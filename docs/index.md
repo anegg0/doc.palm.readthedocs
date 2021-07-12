@@ -25,6 +25,7 @@ energy-efficient NFTs with low gas fees and fast transaction finality.
 
 Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart
 contracts and use standard, familiar Ethereum tools during application development.
+See [the list of supported tools](Reference/Tools.md).
 
 ## Get started
 
