@@ -14,8 +14,8 @@ Develop your dapp and test using standard Ethereum tools such as:
 - [Solidity](https://docs.soliditylang.org/en/latest).
 - [Truffle](https://www.trufflesuite.com/truffle).
 - [Ganache](https://www.trufflesuite.com/ganache).
-- [web3](https://web3js.readthedocs.io/).
-- [ethers](https://docs.ethers.io/v5/).
+- [web3.js](https://web3js.readthedocs.io/).
+- [ethers.js](https://docs.ethers.io/v5/).
 
 During development, you can connect to your local testing environment with your standard Ethereum tools just as you
 would if developing for Ethereum.

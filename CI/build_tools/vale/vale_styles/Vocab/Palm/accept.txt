@@ -21,6 +21,7 @@ ConsenSys
 [cC]rafter
 [cC]ryptocurrenc(?:y|ies)
 D[aA][iI]
+[dD]app[s]?
 [dD]eauthoriz(?:e|ing)
 [dD]eserializ(?:e|ing)
 [dD]eserialization
@@ -31,6 +32,7 @@ etcd
 EthSigner
 Ethereum
 Filecoin
+Ganache
 geth
 GitHub
 Gitter
