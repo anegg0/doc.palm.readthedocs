@@ -59,7 +59,7 @@ to deploy a dapp to the Palm network.
     }
     ```
 
-5. Deploy to the target Palm network environment:
+4. Deploy to the target Palm network environment:
 
     === "Palm Testnet"
 
