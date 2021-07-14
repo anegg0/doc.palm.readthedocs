@@ -7,10 +7,10 @@ description: Supported tools
 The Palm network is fully compatible with Ethereum and supports any EVM-compatible tools, including:
 
 - **Fiat on-ramps.**
-  [Wyre](https://www.sendwyre.com/) is integrated into the [Palm Mainnet portal](https://app.palm.io/) and [Palm Testnet portal](https://app.palm-uat.xyz/).
+  [Wyre](https://www.sendwyre.com/) is integrated into the [Palm Mainnet app](https://app.palm.io/) and [Palm Testnet app](https://app.palm-uat.xyz/).
 - **Block explorers.**
   A block explorer is available for [Palm Mainnet](https://explorer.palm.io/) and [Palm Testnet](https://explorer.palm-uat.xyz/).
-- **Wallets.** Palm supports any EVM-compatible wallet. The Palm portal only supports [MetaMask](https://metamask.io/).
+- **Wallets.** Palm supports any EVM-compatible wallet. The Palm app only supports [MetaMask](https://metamask.io/).
 - **Asset bridges.**
   The [Palm Mainnet bridge](https://app.palm.io/bridge) can be used to
   [transfer tokens between Palm Mainnet and Ethereum Mainnet](../HowTo/Bridge.md#using-the-palm-mainnet-bridge).
@@ -33,7 +33,7 @@ Some of these tools may require the following chain IDs (which have been registe
 | Palm Mainnet | 11297108109 |
 
 For example, these can be used in web3 code to help users add or switch to the Palm network in their wallets (as
-demonstrated on the Palm portal).
+demonstrated on the Palm app).
 
 Some Ethereum-based tooling may require additional set up to integrate into the Palm network.
 If you require any additional tooling that is not yet available, feel free to [contact us] to request support.
