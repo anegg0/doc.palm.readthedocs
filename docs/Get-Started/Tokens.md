@@ -29,7 +29,7 @@ Palm provides the following environment-specific bridges:
 ## Use the faucet
 
 Palm partners have access to faucet APIs to top up accounts with PALM.  These faucets are available
-across Palm network environments (Production, Development, Testing).  For more information on
+across Palm network environments. For more information on
 getting access to these faucet APIs, please [contact us].
 
 <!-- links -->
