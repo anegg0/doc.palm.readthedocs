@@ -29,28 +29,62 @@ to deploy a dapp to the Palm network.
     npm install @truffle/hdwallet-provider
     ```
 
+4. Set environment variables with [`dotenv`](https://www.npmjs.com/package/dotenv).
+
+    Install `dotenv`:
+
+    ```bash
+    npm install --save dotenv
+    ```
+
+    Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
+
+    ```text
+    // if deploying to Palm Testnet
+    TESTNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Testnet (this can be accessed on MetaMask)
+    TESTNET_PROJECT_ID = // (string) project ID corresponding to your Palm Testnet Infura project
+
+    // if deploying to Palm Mainnet
+    MAINNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Mainnet (this can be accessed on MetaMask)
+    MAINNET_PROJECT_ID = // (string) project ID corresponding to your Palm Mainnet Infura project
+    ```
+
+    !!! warning "Security warning"
+
+        **Keep your private keys secret.**
+
+        Private keys must be kept secret and not committed to any code respositories.
+        Improper handling of private keys can lead to loss of funds and identity fraud.
+
+        For example, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
+
 3. Edit `truffle-config.js` with the following text, filling in the variables `mnemonic` and `project_id`.
-
-    !!! important
-
-        Use the project ID corresponding to the Infura project for the network environment (Palm Testnet or Palm Mainnet)
-        you intend to deploy to.
 
     ```js
     const HDWalletProvider = require("@truffle/hdwallet-provider");
-    const mnemonic = // your MetaMask 12-word see phrase, e.g. "mountains supernatural bird..."
-    const project_id = // your Infura project ID, e.g. "7238211010344719ad14a89db874158c"
+
+    require('dotenv').config()  // store environment variables from '.env' to process.env
 
     module.exports = {
         networks: {
             palm_testnet: {
-                provider: () => new HDWalletProvider(mnemonic, "https://palm-testnet.infura.io/v3/" + project_id),
+                provider: () => new HDWalletProvider({
+                    providerOrUrl: "https://palm-testnet.infura.io/v3/" + process.env.TESTNET_PROJECT_ID,
+                    privateKeys: [
+                        process.env.TESTNET_PRIVATE_KEY
+                    ]
+                }),
                 network_id: 11297108099, // chain ID
                 gas: 3000000, // gas limit
                 gasPrice: 10000000000 // gas price in gwei
             },
             palm_mainnet: {
-                provider: () => new HDWalletProvider(mnemonic, "https://palm-mainnet.infura.io/v3/" + project_id),
+                provider: () => new HDWalletProvider({
+                    providerOrUrl: "https://palm-mainnet.infura.io/v3/" + process.env.MAINNET_PROJECT_ID,
+                    privateKeys: [
+                        process.env.MAINNET_PRIVATE_KEY
+                    ]
+                }),
                 network_id: 11297108109,
                 gas: 3000000,
                 gasPrice: 10000000000
