@@ -29,7 +29,7 @@ to deploy a dapp to the Palm network.
     npm install @truffle/hdwallet-provider
     ```
 
-4. Set environment variables with [`dotenv`](https://www.npmjs.com/package/dotenv).
+3. Set environment variables with [`dotenv`](https://www.npmjs.com/package/dotenv).
 
     Install `dotenv`:
 
@@ -58,7 +58,7 @@ to deploy a dapp to the Palm network.
 
         For example, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
-3. Edit `truffle-config.js` with the following text, filling in the variables `mnemonic` and `project_id`.
+4. Edit `truffle-config.js` with the following text, filling in the variables `mnemonic` and `project_id`.
 
     ```js
     const HDWalletProvider = require("@truffle/hdwallet-provider");
@@ -93,7 +93,7 @@ to deploy a dapp to the Palm network.
     }
     ```
 
-4. Deploy to the target Palm network environment:
+5. Deploy to the target Palm network environment:
 
     === "Palm Testnet"
 
