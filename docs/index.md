@@ -24,7 +24,7 @@ Powered by the PALM token, the Palm Network ecosystem enables creators and artis
 energy-efficient NFTs with low gas fees and fast transaction finality.
 
 Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart
-contracts and use standard, [familiar Ethereum tools](Reference/Tools.md) during application development.
+contracts and use standard, [familiar Ethereum tools](HowTo/Use-Supported-Tools/Tools.md) during application development.
 
 ## Get started
 

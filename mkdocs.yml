@@ -57,7 +57,9 @@ nav:
 #                - Onboard end users: HowTo/Develop/Onboard-End-Users.md
         - Run a transaction node: HowTo/Run-a-Transaction-Node.md
         - Use the bridge: HowTo/Bridge.md
-        - Use the Covalent API: HowTo/Covalent.md
+        - Use supported tools:
+            - Overview: HowTo/Use-Supported-Tools/Tools.md
+            - Covalent API: HowTo/Use-Supported-Tools/Covalent.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
