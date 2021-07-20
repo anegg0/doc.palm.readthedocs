@@ -55,8 +55,9 @@ nav:
 #            - Develop for Palm:
 #                - Developer workflow: HowTo/Develop/Workflow.md
 #                - Onboard end users: HowTo/Develop/Onboard-End-Users.md
-            - Use the bridge: HowTo/Bridge.md
-            - Run a transaction node: HowTo/Run-a-Transaction-Node.md
+        - Run a transaction node: HowTo/Run-a-Transaction-Node.md
+        - Use the bridge: HowTo/Bridge.md
+        - Use the Covalent API: HowTo/Covalent.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
