@@ -63,9 +63,6 @@ nav:
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
-    - Reference:
-        - Supported tools: Reference/Tools.md
-#        - API: Reference/api.md
 
 markdown_extensions:
   - toc:
