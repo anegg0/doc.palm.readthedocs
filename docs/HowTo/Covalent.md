@@ -7,7 +7,7 @@ description: how to use the Covalent API
 [Covalent](https://www.covalenthq.com/) provides an API that allows you to pull historical blockchain data from multiple
 blockchains to create applications such as:
 
-- **Multi-chain wallets** presenting balances, transactions, ROI, portfolio values, and token analytics.
+- **Multi-chain wallets** showing balances, transactions, ROI, portfolio values, and token analytics.
 - **NFT dashboards** showing price trends, liquidity, and ROI of collectibles.
 - **Analytics and transparency dashboards.**
 
