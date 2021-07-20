@@ -49,7 +49,7 @@ to deploy a dapp to the Palm network.
     MAINNET_PROJECT_ID = // (string) project ID corresponding to your Palm Mainnet Infura project
     ```
 
-    !!! warning "Security warning"
+    !!! critical "Security warning"
 
         **Keep your private keys secret.**
 
@@ -58,7 +58,7 @@ to deploy a dapp to the Palm network.
 
         For example, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
-4. Edit `truffle-config.js` with the following text, filling in the variables `mnemonic` and `project_id`.
+4. Edit `truffle-config.js` with the following text:
 
     ```js
     const HDWalletProvider = require("@truffle/hdwallet-provider");
