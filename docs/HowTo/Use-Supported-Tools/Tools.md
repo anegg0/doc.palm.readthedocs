@@ -2,7 +2,7 @@
 description: Supported tools
 ---
 
-# Supported tools
+# Supported tools overview
 
 The Palm network is fully compatible with Ethereum and supports any EVM-compatible tools, including:
 
@@ -13,16 +13,16 @@ The Palm network is fully compatible with Ethereum and supports any EVM-compatib
 - **Wallets.** Palm supports any EVM-compatible wallet. The Palm portal only supports [MetaMask](https://metamask.io/).
 - **Asset bridges.**
   The [Palm Mainnet bridge](https://app.palm.io/bridge) can be used to
-  [transfer tokens between Palm Mainnet and Ethereum Mainnet](../HowTo/Bridge.md#using-the-palm-mainnet-bridge).
+  [transfer tokens between Palm Mainnet and Ethereum Mainnet](../Bridge.md#using-the-palm-mainnet-bridge).
   The [Palm Testnet bridge](https://app.palm-uat.xyz/bridge) can be used to
-  [transfer tokens between Palm Testnet and the Ethereum Rinkeby testnet](../HowTo/Bridge.md#using-the-palm-testnet-bridge).
+  [transfer tokens between Palm Testnet and the Ethereum Rinkeby testnet](../Bridge.md#using-the-palm-testnet-bridge).
 - **Developer tools.**
   Palm supports any EVM-compatible tools and contracts, including [Truffle](https://www.trufflesuite.com/),
   [web3](https://web3js.readthedocs.io/en/v1.3.4/), and [OpenZeppelin](https://openzeppelin.com/).
-- **APIs.** Palm uses [Infura Ethereum APIs](https://infura.io/docs).
-  You must [connect to the Palm Infura endpoints](../Get-Started/Connect/Overview.md) or
-  [run a transaction node](../HowTo/Run-a-Transaction-Node.md) to read transaction history, or send transactions on the
-  Palm network without performing [validator duties](../Concepts/Validators.md).
+- **APIs.** Palm supports [Infura Ethereum APIs](https://infura.io/docs) and [Covalent APIs](https://www.covalenthq.com/docs/api/#overview).
+  You must [connect to the Palm Infura endpoints](../../Get-Started/Connect/Overview.md) or
+  [run a transaction node](../Run-a-Transaction-Node.md) to read transaction history, or send transactions on the
+  Palm network without performing [validator duties](../../Concepts/Validators.md).
 
 Some of these tools may require the following chain IDs (which have been registered at
 [Chainlist](https://chainlist.org/)) to use the Palm network:
