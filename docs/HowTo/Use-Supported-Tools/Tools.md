@@ -19,7 +19,7 @@ The Palm network is fully compatible with Ethereum and supports any EVM-compatib
 - **Developer tools.**
   Palm supports any EVM-compatible tools and contracts, including [Truffle](https://www.trufflesuite.com/),
   [web3](https://web3js.readthedocs.io/en/v1.3.4/), and [OpenZeppelin](https://openzeppelin.com/).
-- **APIs.** Palm supports [Infura Ethereum APIs](https://infura.io/docs) and [the Covalent API](https://www.covalenthq.com/docs/api/#overview).
+- **APIs.** Palm supports [Infura Ethereum APIs](https://infura.io/docs) and [Covalent APIs](https://www.covalenthq.com/docs/api/#overview).
   You must [connect to the Palm Infura endpoints](../../Get-Started/Connect/Overview.md) or
   [run a transaction node](../Run-a-Transaction-Node.md) to read transaction history, or send transactions on the
   Palm network without performing [validator duties](../../Concepts/Validators.md).
