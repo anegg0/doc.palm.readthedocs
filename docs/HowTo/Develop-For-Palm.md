@@ -4,7 +4,7 @@ Description: How to develop for palm
 
 # Develop for Palm
 
-Palm is a fully EVM-compatible Ethereum side chain, which means that any [standard EVM-compatible tools](../Reference/Tools.md)
+Palm is a fully EVM-compatible Ethereum side chain, which means that any [standard EVM-compatible tools](Use-Supported-Tools/Tools.md)
 and workflows should work seamlessly on the Palm network.
 
 ## Local development
