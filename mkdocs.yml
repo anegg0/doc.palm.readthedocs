@@ -54,14 +54,14 @@ nav:
     - How to:
         - Develop for Palm: HowTo/Develop-For-Palm.md
         - Deploy using Truffle: HowTo/Deploy-using-Truffle.md
-        - Use the bridge: HowTo/Bridge.md
         - Run a transaction node: HowTo/Run-a-Transaction-Node.md
+        - Use the bridge: HowTo/Bridge.md
+        - Use supported tools:
+            - Overview: HowTo/Use-Supported-Tools/Tools.md
+            - Covalent API: HowTo/Use-Supported-Tools/Covalent.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
-    - Reference:
-        - Supported tools: Reference/Tools.md
-#        - API: Reference/api.md
 
 markdown_extensions:
   - toc:
