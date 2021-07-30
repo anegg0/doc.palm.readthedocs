@@ -31,7 +31,7 @@ extra:
     website: https://palm.io/
     company: Palm
   google:
-    tag_manager: 'TODO' # Google tag manager code
+    tag_manager: 'GTM-M8BQ9J5' # Google tag manager code
 
 theme:
   name: material
