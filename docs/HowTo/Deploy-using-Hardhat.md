@@ -57,7 +57,7 @@ to deploy a dapp to the Palm network.
     npm install @openzeppelin/contracts
     ```
 
-    Next, add the following smart contract to the "contracts" folder and name it "MyNFT.sol". 
+    Next, add the following smart contract to the "contracts" folder and name it "MyNFT.sol":
 
     ```js
     //Contract based on [https://docs.openzeppelin.com/contracts/4.x/erc721](https://docs.openzeppelin.com/contracts/4.x/erc721)
@@ -129,7 +129,7 @@ to deploy a dapp to the Palm network.
 
         For example, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
-8. Edit `hardhat.config.js` with the following text
+8. Edit `hardhat.config.js` with the following text:
 
     ```js
     /**
