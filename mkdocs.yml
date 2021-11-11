@@ -54,6 +54,7 @@ nav:
     - How to:
         - Develop for Palm: HowTo/Develop-For-Palm.md
         - Deploy using Truffle: HowTo/Deploy-using-Truffle.md
+        - Deploy using Hardhat: HowTo/Deploy-using-Hardhat.md
         - Run a transaction node: HowTo/Run-a-Transaction-Node.md
         - Use the bridge: HowTo/Bridge.md
         - Use supported tools:
