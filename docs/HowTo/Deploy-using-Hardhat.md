@@ -124,8 +124,7 @@ to deploy a dapp to the Palm network.
 
         **Keep your private keys secret.**
 
-        Private keys must be kept secret and not committed to any code respositories.
-        Improper handling of private keys can lead to loss of funds and identity fraud.
+        Private keys must be kept secret and not committed to any code respository. In the example of this tutorial, the `.env` file should be added to your `.gitignore` file and kept local. 
 
         For example, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
@@ -206,3 +205,5 @@ to deploy a dapp to the Palm network.
 12. Look up your deployment on Palm explorer
 
     Go to https://explorer.palm-uat.xyz and paste the address of your contract into the search bar.
+    
+    
