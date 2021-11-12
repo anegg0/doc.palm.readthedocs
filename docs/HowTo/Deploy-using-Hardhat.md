@@ -126,7 +126,7 @@ to deploy a dapp to the Palm network.
 
         Private keys must be kept secret and not committed to any code respository. In the example of this tutorial, the `.env` file should be added to your `.gitignore` file and kept local. 
 
-        For example, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
+        For more information, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
 8. Edit `hardhat.config.js` with the following text:
 
@@ -205,5 +205,8 @@ to deploy a dapp to the Palm network.
 12. Look up your deployment on Palm explorer
 
     Go to https://explorer.palm-uat.xyz and paste the address of your contract into the search bar.
+
+!!! question
+    Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
     
     
