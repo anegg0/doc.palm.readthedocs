@@ -111,11 +111,11 @@ to deploy a dapp to the Palm network.
     ```text
     // if deploying to Palm Testnet
     TESTNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Testnet
-    TESTNET_URL = // (string) https://palm-testnet.infura.io/v3/<YOUR-PROJECT-ID>
+    PALM_TESTNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
 
     // if deploying to Palm Mainnet
     MAINNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Mainnet
-    MAINNNET_URL = // (string) https://palm-mainnet.infura.io/v3/<YOUR-PROJECT-ID>
+    PALM_MAINNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
     ```
     !!! note
     [follow the link to see how your private key can be accessed on MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)
@@ -130,28 +130,40 @@ to deploy a dapp to the Palm network.
 
 8. Edit `hardhat.config.js` with the following text:
 
-    ```js
-    /**
-    * @type import('hardhat/config').HardhatUserConfig
-    */
-    require('dotenv').config();
-    require("@nomiclabs/hardhat-ethers");
-    const { TESTNET_URL, TESTNET_PRIVATE_KEY, MAINNNET_URL, MAINNET_PRIVATE_KEY } = process.env;
-    module.exports = {
-        solidity: "0.8.0",
-        networks: {
-            hardhat: {},
-            palm_testnet: {
-                url: TESTNET_URL,
-                accounts: [`0x${TESTNET_PRIVATE_KEY}`]
-            },
-            palm_mainnet: {
-                url: MAINNNET_URL,
-                accounts: [`0x${MAINNET_PRIVATE_KEY}`]
-            }
-        },
+```js
+/**
+* @type import('hardhat/config').HardhatUserConfig
+*/
+require('dotenv').config();
+require("@nomiclabs/hardhat-ethers");
+module.exports = {
+    solidity: "0.8.6",
+    settings: {
+    optimizer: {
+    enabled: true,
+    runs: 1000000,
+    },
+    },
+    mocha: {
+    timeout: 90000
+    },
+    networks: {
+    hardhat: {
+    blockGasLimit: 18_800_000
+    },
+    palm_testnet:{
+    url:`https://palm-testnet.infura.io/v3/`+process.env.PALM_TESTNET_PROJECT_ID,
+    accounts: [`0x`+process.env.TESTNET_PRIVATE_KEY],
+    gasPrice: 1000
+    },
+    palm_mainnet:{
+    url:`https://palm-mainnet.infura.io/v3/`+process.env.PALM_MAINNET_PROJECT_ID,
+    accounts: [`0x`+process.env.MAINNET_PRIVATE_KEY],
+    gasPrice: 1000
     }
-    ```
+    }
+    };
+```
 
 9. Compile your contract
 
