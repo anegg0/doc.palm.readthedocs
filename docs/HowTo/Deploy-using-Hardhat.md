@@ -111,10 +111,12 @@ to deploy a dapp to the Palm network.
     ```text
     // if deploying to Palm Testnet
     TESTNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Testnet
+    API_URL_TESTNET = // (string) <YOUR-API-ENDPOINT>
     PALM_TESTNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
 
     // if deploying to Palm Mainnet
     MAINNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Mainnet
+    API_URL_MAINNET = // (string) <YOUR-API-ENDPOINT>
     PALM_MAINNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
     ```
     !!! note
@@ -124,7 +126,7 @@ to deploy a dapp to the Palm network.
 
         **Keep your private keys secret.**
 
-        Private keys must be kept secret and not committed to any code respository. In the example of this tutorial, the `.env` file should be added to your `.gitignore` file and kept local. 
+        Private keys must be kept secret and not committed to any code repository. In the example of this tutorial, the `.env` file should be added to your `.gitignore` file and kept local. 
 
         For more information, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
@@ -152,12 +154,12 @@ module.exports = {
     blockGasLimit: 18_800_000
     },
     palm_testnet:{
-    url:`https://palm-testnet.infura.io/v3/`+process.env.PALM_TESTNET_PROJECT_ID,
+    url: process.env.API_URL_TESTNET+process.env.PALM_TESTNET_PROJECT_ID,
     accounts: [`0x`+process.env.TESTNET_PRIVATE_KEY],
     gasPrice: 1000
     },
     palm_mainnet:{
-    url:`https://palm-mainnet.infura.io/v3/`+process.env.PALM_MAINNET_PROJECT_ID,
+    url: process.env.API_URL_MAINNET+process.env.PALM_MAINNET_PROJECT_ID,
     accounts: [`0x`+process.env.MAINNET_PRIVATE_KEY],
     gasPrice: 1000
     }
