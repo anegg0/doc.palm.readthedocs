@@ -44,7 +44,7 @@ to deploy a dapp to the Palm network.
     In the root directory of your project:
 
     ```bash
-    mkdir contracts $$ mkdir scripts
+    mkdir contracts && mkdir scripts
     ```
 
 5. Write your contract
