@@ -215,7 +215,7 @@ module.exports = {
 
 12. Look up your deployment on Palm explorer
 
-    Go to https://explorer.palm-uat.xyz and paste the address of your contract into the search bar.
+    Go to https://explorer.palm-uat.xyz for mainnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
 
 !!! question
     Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
