@@ -120,7 +120,7 @@ to deploy a dapp to the Palm network.
     PALM_MAINNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
     ```
     !!! note
-    [follow the link to see how your private key can be accessed on MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)
+        [follow the link to see how your private key can be accessed on MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)
 
     !!! critical "Security warning"
 
