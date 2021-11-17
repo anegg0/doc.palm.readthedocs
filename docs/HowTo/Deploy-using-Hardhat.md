@@ -75,14 +75,14 @@ to deploy a dapp to the Palm network.
 
         constructor() ERC721("MyNFT", "NFT") {}
 
-        function awardItem(address player, string memory tokenURI)
+        function awardItem(address recipient, string memory tokenURI)
             public
             returns (uint256)
         {
             _tokenIds.increment();
 
             uint256 newItemId = _tokenIds.current();
-            _mint(player, newItemId);
+            _mint(recipient, newItemId);
             _setTokenURI(newItemId, tokenURI);
 
             return newItemId;
