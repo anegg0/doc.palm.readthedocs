@@ -121,7 +121,7 @@ to deploy a dapp to the Palm network.
     ```
 
     !!! note
-    
+
         [Follow the link to see how your private key can be accessed on MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)
 
     !!! critical "Security warning"
@@ -134,37 +134,37 @@ to deploy a dapp to the Palm network.
 
 8. Edit `hardhat.config.js` with the following text:
 
-```js
-/**
-* @type import('hardhat/config').HardhatUserConfig
-*/
-require('dotenv').config();
-require("@nomiclabs/hardhat-ethers");
-module.exports = {
-    solidity: "0.8.6",
-    settings: {
-        optimizer: {
-            enabled: true,
-            runs: 1000000,
+    ```js
+    /**
+    * @type import('hardhat/config').HardhatUserConfig
+    */
+    require('dotenv').config();
+    require("@nomiclabs/hardhat-ethers");
+    module.exports = {
+        solidity: "0.8.6",
+        settings: {
+            optimizer: {
+                enabled: true,
+                runs: 1000000,
+            },
         },
-    },
-    mocha: {
-        timeout: 90000
-    },
-    networks: {
-        palm_testnet: {
-            url: process.env.API_URL_TESTNET + process.env.PALM_TESTNET_PROJECT_ID,
-            accounts: [`0x` + process.env.TESTNET_PRIVATE_KEY],
-            gasPrice: 1000
+        mocha: {
+            timeout: 90000
         },
-        palm_mainnet: {
-            url: process.env.API_URL_MAINNET + process.env.PALM_MAINNET_PROJECT_ID,
-            accounts: [`0x` + process.env.MAINNET_PRIVATE_KEY],
-            gasPrice: 1000
+        networks: {
+            palm_testnet: {
+                url: process.env.API_URL_TESTNET + process.env.PALM_TESTNET_PROJECT_ID,
+                accounts: [`0x` + process.env.TESTNET_PRIVATE_KEY],
+                gasPrice: 1000
+            },
+            palm_mainnet: {
+                url: process.env.API_URL_MAINNET + process.env.PALM_MAINNET_PROJECT_ID,
+                accounts: [`0x` + process.env.MAINNET_PRIVATE_KEY],
+                gasPrice: 1000
+            }
         }
-    }
-};
-```
+    };
+    ```
 
 9. Compile your contract
 
