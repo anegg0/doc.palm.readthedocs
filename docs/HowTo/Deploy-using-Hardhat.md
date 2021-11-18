@@ -108,7 +108,7 @@ to deploy a dapp to the Palm network.
 
     Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
 
-    ```text
+    ```
     // if deploying to Palm Testnet
     TESTNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Testnet
     API_URL_TESTNET = // (string) <YOUR-API-ENDPOINT>
