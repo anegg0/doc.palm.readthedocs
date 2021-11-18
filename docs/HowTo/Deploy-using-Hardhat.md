@@ -188,11 +188,11 @@ to deploy a dapp to the Palm network.
     }
 
     main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error)
-        process.exit(1)
-    })
+        .then(() => process.exit(0))
+        .catch((error) => {
+            console.error(error)
+            process.exit(1)
+        })
     ```
 
 11. Deploy to the target Palm network environment
