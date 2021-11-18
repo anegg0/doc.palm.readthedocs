@@ -1,5 +1,5 @@
 ---
-Description: How to deploy a smart contract to the Palm network.
+Description: How to deploy a smart contract to the Palm network using Hardhat.
 ---
 
 # Deploy using Hardhat
@@ -108,7 +108,7 @@ to deploy a dapp to the Palm network.
 
     Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
 
-    ```
+    ```text
     // if deploying to Palm Testnet
     TESTNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Testnet
     API_URL_TESTNET = // (string) <YOUR-API-ENDPOINT>
@@ -119,7 +119,9 @@ to deploy a dapp to the Palm network.
     API_URL_MAINNET = // (string) <YOUR-API-ENDPOINT>
     PALM_MAINNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
     ```
+
     !!! note
+    
         [Follow the link to see how your private key can be accessed on MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)
 
     !!! critical "Security warning"
