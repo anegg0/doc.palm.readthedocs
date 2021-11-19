@@ -13,7 +13,6 @@ to deploy a dapp to the Palm network.
 - [Access to a Palm Infura endpoint](../Get-Started/Connect/Overview.md)
 - [MetaMask](https://metamask.io/) wallet set up
 - [Node.js](https://nodejs.org/en/download/) installed
-- [Hardhat](https://hardhat.org/getting-started/#installation) installed
 
 ## Steps
 
