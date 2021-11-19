@@ -109,15 +109,8 @@ to deploy a dapp to the Palm network.
     Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
 
     ```text
-    // if deploying to Palm Testnet
-    TESTNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Testnet
-    API_URL_TESTNET = // (string) <YOUR-API-ENDPOINT>
-    PALM_TESTNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
-
-    // if deploying to Palm Mainnet
-    MAINNET_PRIVATE_KEY = // (string) private key of the account you intend to use on Palm Mainnet
-    API_URL_MAINNET = // (string) <YOUR-API-ENDPOINT>
-    PALM_MAINNET_PROJECT_ID = // (string) <YOUR-PROJECT-ID>
+    PRIVATE_KEY = // The private key of the account you intend to use on Palm
+    INFURA_PROJECT_ID = // Your infura project id
     ```
 
     !!! note
@@ -153,13 +146,13 @@ to deploy a dapp to the Palm network.
         },
         networks: {
             palm_testnet: {
-                url: process.env.API_URL_TESTNET + process.env.PALM_TESTNET_PROJECT_ID,
-                accounts: [`0x` + process.env.TESTNET_PRIVATE_KEY],
+                url: `https://palm-testnet.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
+                accounts: [`0x` + process.env.PRIVATE_KEY],
                 gasPrice: 1000
             },
             palm_mainnet: {
-                url: process.env.API_URL_MAINNET + process.env.PALM_MAINNET_PROJECT_ID,
-                accounts: [`0x` + process.env.MAINNET_PRIVATE_KEY],
+                url: `https://palm-mainnet.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
+                accounts: [`0x` + process.env.PRIVATE_KEY],
                 gasPrice: 1000
             }
         }
