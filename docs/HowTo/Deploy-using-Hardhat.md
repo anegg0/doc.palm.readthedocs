@@ -2,10 +2,10 @@
 Description: How to deploy a smart contract to the Palm network using Hardhat.
 ---
 
-# Deploy using Hardhat
+# Deploy an NFT contract using Hardhat
 
 This guide walks you through using [Hardhat](https://hardhat.org/)
-to deploy a dapp to the Palm network.
+to deploy an NFT smart contract to the Palm network.
 
 ## Prerequisites
 
@@ -13,6 +13,10 @@ to deploy a dapp to the Palm network.
 - [Access to a Palm Infura endpoint](../Get-Started/Connect/Overview.md)
 - [MetaMask](https://metamask.io/) wallet set up
 - [Node.js](https://nodejs.org/en/download/) installed
+
+    !!! note
+
+        The complete source code corresponding to this article is [available for download](https://github.com/Palm-Network/training-deploy-nft-hardhat)
 
 ## Steps
 
@@ -81,7 +85,7 @@ to deploy a dapp to the Palm network.
             _tokenIds.increment();
 
             uint256 newItemId = _tokenIds.current();
-            _mint(recipient, newItemId);
+            _safeMint(recipient, newItemId);
             _setTokenURI(newItemId, tokenURI);
 
             return newItemId;
@@ -120,7 +124,7 @@ to deploy a dapp to the Palm network.
 
         **Keep your private keys secret.**
 
-        Private keys must be kept secret and not committed to any code repository. In the example of this tutorial, the `.env` file should be added to your `.gitignore` file and kept local. 
+        Private keys must be kept secret and not committed to any code repository. In the example of this tutorial, the `.env` file should be added to your `.gitignore` file and kept local.
 
         For more information, see [MyCrypto's Protecting Yourself and Your Funds guide](https://support.mycrypto.com/staying-safe/protecting-yourself-and-your-funds).
 
@@ -207,11 +211,15 @@ to deploy a dapp to the Palm network.
         Contract deployed to address: 0xeC1AFf99d2C331B226A5731B9555Af924932d629
         ```
 
+        If
+
 12. Look up your deployment on Palm explorer
 
     Go to https://explorer.palm-uat.xyz for testnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
 
+!!! information
+    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on Palm using Hardhat](./Mint-NFT-using-Hardhat.md)
+
+
 !!! question
     Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
-    
-    
