@@ -55,6 +55,7 @@ nav:
         - Develop for Palm: HowTo/Develop-For-Palm.md
         - Deploy using Truffle: HowTo/Deploy-using-Truffle.md
         - Deploy using Hardhat: HowTo/Deploy-using-Hardhat.md
+        - Mint NFTs using Hardhat: HowTo/Mint-NFT-using-Hardhat.md
         - Run a transaction node: HowTo/Run-a-Transaction-Node.md
         - Use the bridge: HowTo/Bridge.md
         - Use supported tools:
@@ -62,6 +63,7 @@ nav:
             - Covalent API: HowTo/Use-Supported-Tools/Covalent.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
+        - Palm Bridge Overview: HowTo/Bridge-Overview.md
         - Validators: Concepts/Validators.md
 
 markdown_extensions:
