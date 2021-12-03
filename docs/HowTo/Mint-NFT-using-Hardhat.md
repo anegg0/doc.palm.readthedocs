@@ -43,7 +43,7 @@ This guide walks you through minting an NFT on the Palm network using [Hardhat](
   }
   ```
 
-  Our solidity code's `mintNFT` function sends a transaction that does the following:
+  This is what our solidity code's `mintNFT` function does:
 
 * `_tokenIds.increment();`: '_tokenIds' inherits from [Open Zeppelin's counter functions](https://docs.openzeppelin.com/contracts/4.x/api/utils#Counters),'increment()'. It will increase a counter by 1, thus enabling our code to generate a unique Token ID,
 
@@ -53,7 +53,7 @@ This guide walks you through minting an NFT on the Palm network using [Hardhat](
 
 * `_setTokenURI(newItemId, tokenURI);`: sets 'tokenURI' as the URI of our NFT's metadata file, we'll explain what an NFT's metadata file is later in this article.
 
-In short, the above code will send a transaction that will assign a unique NFT instance to a particular Ethereum address.
+In short, the above code will send a transaction that will transfer a unique NFT instance to a particular Ethereum address.
 
   The following explains how to write a script that calls the minting function in the contract we deployed [earlier](./Deploy-using-Hardhat.md):
 
