@@ -116,7 +116,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     ```json
     {
-        description: pfp,
+        description: "pfp",
         image: "URI-of-profile-picture",
         name: "pfp #123",
         attributes: [
