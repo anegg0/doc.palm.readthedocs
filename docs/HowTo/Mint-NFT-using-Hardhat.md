@@ -116,22 +116,27 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     ```json
     {
-        "title": "Asset Metadata",
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string",
-                "description": "Identifies the asset represented by this NFT"
+        description: pfp,
+        image: "https://bafybeid4il57p2egd5jlralfhoeqpmonbdiamf6d6jfprrsar3zlxssksy.ipfs.dweb.link",
+        name: "pfp #123",
+        attributes: [
+            {
+                trait_type: "Background",
+                value: "White"
             },
-            "description": {
-                "type": "string",
-                "description": "Describes the asset represented by this NFT"
+            {
+                trait_type: "Hair Style",
+                value: "Long Straight Bangs"
             },
-            "image": {
-                "type": "string",
-                "description": "The URI pointing to your image, i.e. https://bafybeid4il57p2egd5jlralfhoeqpmonbdiamf6d6jfprrsar3zlxssksy.ipfs.dweb.link."
+            {
+                trait_type: "Hair Color",
+                value: "Black"
+            },
+            {
+                trait_type: "Accessories",
+                value: ""
             }
-        }
+        ]
     }
     ```
 
