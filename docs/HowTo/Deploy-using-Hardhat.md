@@ -211,7 +211,6 @@ to deploy an NFT smart contract to the Palm network.
         Contract deployed to address: 0xeC1AFf99d2C331B226A5731B9555Af924932d629
         ```
 
-        If
 
 12. Look up your deployment on Palm explorer
 
