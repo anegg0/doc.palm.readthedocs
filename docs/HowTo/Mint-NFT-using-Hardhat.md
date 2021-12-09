@@ -276,7 +276,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     `Your transaction is confirmed, its receipt is: `0x10e5062309de0cd0be7edc92e8dbab191aa2791111c44274483fa766039e0e00``
 
-    You can now look up your minted token on Palm explorer by pasting the receipt hash above in the search bar:
+    You can now look up your minted token on Palm NFT explorer by pasting the receipt hash above in the search bar:
 
     === "For NFTs minted on Palm Testnet"
 
