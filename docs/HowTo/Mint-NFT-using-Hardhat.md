@@ -212,7 +212,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     Finally, create the `main` function, which will asynchronously call the `MintNFT` function passing as arguments:
 
-    * Your address (or any other recepient address you chose)
+    * Your address (or any other recipient address you chose)
 
     * The `URI` of your NFT's metadata
 
