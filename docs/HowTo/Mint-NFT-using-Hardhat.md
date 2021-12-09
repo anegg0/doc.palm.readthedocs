@@ -4,13 +4,13 @@ Description: How to mint an NFT on Palm using Hardhat.
 
 # How to mint an NFT on Palm using Hardhat
 
-This guide walks you through minting an NFT on the Palm Network using [Hardhat](https://hardhat.org/)
+This guide walks you through minting an NFT on the Palm network using [Hardhat](https://hardhat.org/)
 
 !!! important
 
     This article is a follow-up to: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md). You'll probably want to [read this first](./Deploy-using-Hardhat.md) before applying the below.
 
-  The previous article in this series: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md), describes how to deploy an `ERC-721` smart contract on the Palm Network. The below goes further and proposes one way to publish an `ERC-721` token on Palm Network, or, in simpler terms, minting an NFT.
+  The previous article in this series: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md), describes how to deploy an `ERC-721` smart contract on the Palm network. The below goes further and proposes one way to publish an `ERC-721` token on Palm network, or, in simpler terms, minting an NFT.
 
 ## Prerequisite
 
@@ -85,7 +85,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
 3. Add a provider:
 
-    In `Ethers.js` parlance, a provider represents a connection to an Ethereum blockchain. We'll add one to enable your app to interact with the Palm Network. In this scenario, because we're using the [Hardhat plugin version of Ethers.js](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html), our `ethers.provider` object retrieves all the connection details from `hardhat.config.js`.
+    In `Ethers.js` parlance, a provider represents a connection to an Ethereum blockchain. We'll add one to enable your app to interact with the Palm network. In this scenario, because we're using the [Hardhat plugin version of Ethers.js](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html), our `ethers.provider` object retrieves all the connection details from `hardhat.config.js`.
 
     Add this line to `mint.js`:
 
