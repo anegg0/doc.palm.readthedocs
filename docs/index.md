@@ -20,7 +20,7 @@ Fees collected from this bridge are partially used to purchase carbon offsets.
 
 ## Why develop on Palm?
 
-Powered by the PALM token, the Palm Network ecosystem enables creators and artists to mint
+Powered by the PALM token, the Palm network ecosystem enables creators and artists to mint
 energy-efficient NFTs with low gas fees and fast transaction finality.
 
 Palm is a fully Ethereum-compatible network, allowing you to deploy any EVM-compatible smart
