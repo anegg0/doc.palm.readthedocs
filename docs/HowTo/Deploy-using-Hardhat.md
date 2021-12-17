@@ -212,7 +212,7 @@ to deploy an NFT smart contract to the Palm network.
         ```
 
 
-12. Look up your deployment on Palm block explorer
+12. Look up your deployment on the Palm network block explorer
 
     Go to https://explorer.palm-uat.xyz for testnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
 
