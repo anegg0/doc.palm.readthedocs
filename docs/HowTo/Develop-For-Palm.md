@@ -17,8 +17,7 @@ Develop your dapp and test using standard Ethereum tools such as:
 - [web3.js](https://web3js.readthedocs.io/).
 - [ethers.js](https://docs.ethers.io/v5/).
 
-During development, you can connect to your local testing environment with your standard Ethereum tools just as you
-would if developing for Ethereum.
+During development, you can connect to your local testing environment with your standard Ethereum tools just as you would if developing for Ethereum.
 
 If you're new to smart contract development, you can follow standard Ethereum tutorials such as
 [Truffle's Pet Shop Tutorial](https://www.trufflesuite.com/tutorial).
@@ -44,7 +43,11 @@ You can link directly to the Palm app to help your users onboard.
 
 ## Deploying a dapp to Palm
 
-Before you can deploy a dapp to Palm, you must get [access to PALM](../Get-Started/Tokens.md) in order to pay the transaction
-fees required for deployment.
+Before you can deploy a dapp to Palm, you must get [access to PALM](../Get-Started/Tokens.md) in order to pay the transaction fees required for deployment.
 
-You can [deploy using Truffle Migrations](Deploy-using-Truffle.md) or other typical Ethereum deployment processes.
+You can [deploy using Truffle Migrations](Deploy-using-Truffle.md), [deploy using Hardhat](Deploy-using-Hardhat.md)  or other typical Ethereum deployment processes.
+
+
+## Mint an NFT on Palm
+
+You can also quickly learn how to deploy NFTs on the Palm network using Truffle or [HardHat](HowTo/Mint-NFT-using-Hardhat.md).
