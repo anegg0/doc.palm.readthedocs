@@ -169,13 +169,13 @@ curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/ei
 
 The Palm network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
 
-| Name & repo | Use         | Mainnet Endpoint/GraphiQL  | Testnet Endpoint/GraphiQL |
-| :---        |    :----:   |     :----:             |   ---:            |
-| wighawag/eip721-subgraph  | Querying EIP721 tokens | https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/wighawag/eip721-subgraph |
-| amxx/eip1155-subgraph  | Querying the https://www.artblocks.io/ marketplace | https://graph.palm.io/subgraphs/name/amxx/eip1155-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/ArtBlocks/artblocks-subgraph-palm-testnet |
-| sushi/exchange-palm  | Querying the https://www.shoyunft.com  marketplace | https://graph.palm.io/subgraphs/name/sushi/exchange-palm |   |
-| nftx-project/nftx-v2-subgraph  | Querying the https://nftx.io/ marketplace | https://graph.palm.io/subgraphs/name/nftx-project/nftx-v2-palm | |
-| ethereum-blocks  | Querying Palm mainnet’s blocks | https://graph.palm.io/subgraphs/name/blocklytics/palm-mainnet-blocks | |
+| Name & repo                   | Use                                                | Mainnet Endpoint/GraphiQL                                            | Testnet Endpoint/GraphiQL                                                           |
+| :---                          | :----:                                             | :----:                                                               | ---:                                                                                |
+| wighawag/eip721-subgraph      | Querying EIP721 tokens                             | https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph        | https://graph.palm-uat.xyz/subgraphs/name/wighawag/eip721-subgraph                  |
+| amxx/eip1155-subgraph         | Querying the https://www.artblocks.io/ marketplace | https://graph.palm.io/subgraphs/name/amxx/eip1155-subgraph           | https://graph.palm-uat.xyz/subgraphs/name/ArtBlocks/artblocks-subgraph-palm-testnet |
+| sushi/exchange-palm           | Querying the https://www.shoyunft.com  marketplace | https://graph.palm.io/subgraphs/name/sushi/exchange-palm             |                                                                                     |
+| nftx-project/nftx-v2-subgraph | Querying the https://nftx.io/ marketplace          | https://graph.palm.io/subgraphs/name/nftx-project/nftx-v2-palm       |                                                                                     |
+| ethereum-blocks               | Querying Palm mainnet’s blocks                     | https://graph.palm.io/subgraphs/name/blocklytics/palm-mainnet-blocks |                                                                                     |
 
 
 ## Using the Graph from a Dapp
