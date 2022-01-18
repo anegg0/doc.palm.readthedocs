@@ -157,27 +157,16 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     Get the address of the [contract you deployed earlier](./Deploy-using-Hardhat.md)  (it is the address returned by Hardhat upon deployment) and create a `.env` variable pointing to that address:
 
-    === "Palm Testnet"
-
         ```bash
-        `TESTNET_CONTRACT_ADDRESS = "testnet-contract-address"`
+        `CONTRACT_ADDRESS = "deployed-contract-address"`
         ```
-
-    === "Palm Mainnet"
-
-        ```bash
-        `MAINNET_CONTRACT_ADDRESS = "mainnet-contract-address"`
-        ```
-
-
     If you followed the instructions in the previous article, your `.env` file should now contain the following variables:
 
     ```
     API_URL = "your-provider-api-url"
     PRIVATE_KEY = "your-private-account-address"
     PUBLIC_KEY = "your-public-account-address"
-    TESTNET_CONTRACT_ADDRESS = "testnet-contract-address"
-    MAINNET_CONTRACT_ADDRESS = "mainnet-contract-address"
+    CONTRACT_ADDRESS = "deployed-contract-address"
     ```
 
 7. Set up `Ethers.js` signer and wallet
