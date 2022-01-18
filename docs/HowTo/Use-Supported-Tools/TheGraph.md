@@ -466,3 +466,6 @@ You will be then able to validate that the test subgraph is working correctly
 Palm will deploy the subgraph to mainnet environments
 You will now validate that the subgraph on Palm mainnet is working correctly
 Palm will document your subgraph’s endpoint on the docs.palm.io page
+
+!!! question
+    Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
