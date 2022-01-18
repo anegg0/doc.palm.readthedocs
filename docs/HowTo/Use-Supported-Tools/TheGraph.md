@@ -457,7 +457,7 @@ export function handleTransfer(event: Transfer): void {
 *There is no particular order to follow when modifying the files required to create a Subgraph.
 Once done editing the three files defining your subgraph you can optionally test your mapping in a [sandbox environment](https://thegraph.com/docs/en/developer/matchstick/), then start the process of adding your subgraph to the Palm network.
 
-## 5.How to add your own subgraph to the Palm network
+## 5. How to add your own subgraph to the Palm network
 
 1. Deploy your smart contracts & obtain their addresses for the subgraph manifest
 2. Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
