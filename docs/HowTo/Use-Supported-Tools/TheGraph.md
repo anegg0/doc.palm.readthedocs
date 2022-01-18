@@ -455,19 +455,19 @@ export function handleTransfer(event: Transfer): void {
 *Copyright (C) <2019-2020> Ronan Sandford - GNU - https://github.com/wighawag/eip721-subgraph
 
 *There is no particular order to follow when modifying the files required to create a Subgraph.
-Once done editing the three files defining your subgraph you can optionally test your mapping in a sandbox environment, then start the process of adding your subgraph to the Palm network.
+Once done editing the three files defining your subgraph you can optionally test your mapping in a [sandbox environment](https://thegraph.com/docs/en/developer/matchstick/), then start the process of adding your subgraph to the Palm network.
 
 ## 5.How to add your own subgraph to the Palm network
 
-Deploy your smart contracts & obtain their addresses for the subgraph manifest
-Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
-Ask the Palm network team to set up & deploy the subgraph by filling out the subgraph registration form
-Grant access to Palm team to the relevant subgraph code repository
-The palm network team will review the subgraph & deploy it into testnet environments
-You will be then able to validate that the test subgraph is working correctly
-Palm will deploy the subgraph to mainnet environments
-You will now validate that the subgraph on Palm mainnet is working correctly
-Palm will document your subgraph’s endpoint on the docs.palm.io page
+1. Deploy your smart contracts & obtain their addresses for the subgraph manifest
+2. Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
+3. Ask the Palm network team to set up & deploy the subgraph by filling out the [subgraph registration form](https://share.hsforms.com/1k4-CkdptQy-TwXtE0Ebn1Qbwmoa)
+4. Grant access to Palm team to the relevant subgraph code repository
+5. The palm network team will review the subgraph & deploy it into testnet environments
+6. You will be then able to validate that the test subgraph is working correctly
+7. Palm will deploy the subgraph to mainnet environments
+8. You will now validate that the subgraph on Palm mainnet is working correctly
+9. Palm will document your subgraph’s endpoint on the docs.palm.io page
 
 !!! question
 Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
