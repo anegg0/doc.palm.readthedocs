@@ -190,7 +190,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
     Add these lines of code to `mint.js`:
 
     ```js
-    const NFT = new ethers.Contract(
+    const nft = new ethers.Contract(
       process.env.CONTRACT_ADDRESS,
       contractInterface,
       signer
@@ -224,7 +224,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
     const signer = wallet.connect(provider);
 
     // https://docs.ethers.io/v5/api/contract/contract
-    const NFT = new ethers.Contract(
+    const nft = new ethers.Contract(
       process.env.CONTRACT_ADDRESS,
       contractInterface,
       signer
@@ -232,7 +232,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     const main = () => {
       console.log("Waiting 5 blocks for confirmation...");
-      NFT
+      nft
         .mintNFT(process.env.PUBLIC_KEY, tokenURI)
         .then((tx) => tx.wait(5))
         .then((receipt) => console.log(`Your transaction is confirmed, its receipt is: ${receipt.transactionHash}`))
