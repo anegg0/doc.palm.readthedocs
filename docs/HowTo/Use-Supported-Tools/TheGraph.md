@@ -2,7 +2,7 @@
 description: how to use the graph API
 ---
 
-# Using The Graph on the Palm network
+# Using The Graph on the Palm Network
 
 Dapps such as NFT markets constantly need to retrieve on-chain data pertaining to token transfers or asset minting.
 One way to obtain that information is to pull it directly from the blockchain, but it’s a complicated process which often requires building an ad-hoc server instance.
@@ -12,7 +12,7 @@ This guide aims at helping you use The Graph by explaining:
 
 1. [How The Graph works](#1-how-does-the-graph-work)
 
-2. [How to query the Palm network’s Subgraphs](#2-querying-the-palm-networks-subgraphs)
+2. [How to query the Palm Network’s Subgraphs](#2-querying-the-palm-networks-subgraphs)
 
 3. [What Subgraphs are available on the Palm Network](#3-deployed-subgraphs-on-the-palm-network)
 
@@ -20,24 +20,27 @@ This guide aims at helping you use The Graph by explaining:
 
 5. [How to build your own Subgraph](#5-how-to-build-a-new-subgraph)
 
-6. [to add your own Subgraph to the Palm network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
+6. [to add your own Subgraph to the Palm Network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
 
 ## 1. How does The Graph work?
-The Graph is a decentralized protocol for querying blockchains like the Palm network. It enables developers to build custom APIs called subgraphs.
+The Graph is a decentralized protocol for querying blockchains like the Palm Network. It enables developers to build custom APIs called subgraphs.
 
 Subgraphs listen to specific smart contract events and act as data stores so that the information can be easily retrieved by a Dapp. Since subgraphs are built around developers’ specific data requirements (i.e. [IEP-721 subgraph schema](https://github.com/wighawag/eip721-subgraph/blob/master/schema.graphql) ) they only need to be called once, unlike general-purpose APIs which sometimes require hundreds of calls to gather relevant information.
 
 You can learn more about The Graph network and protocol [on their site](https://thegraph.com/en/).
 
-## 2. Querying the Palm network’s subgraphs
+## 2. Querying the Palm Network’s subgraphs
 
 The Graph is an implementation of [GraphQL](https://graphql.org/learn/), If you are familiar with graphql, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
 
 If you haven’t used GraphQL before, https://graphql.org and [howtographql.com](https://www.howtographql.com/) can be good places to start.
 
 To start experimenting with subgraphs and graphql, developers can use:
-* A "training toolkit" to deploy a contract and mint some NFTs on Palm right-away
-* GraphiQL to test queries against deployed subgraphs and the NFTs you’ve just minted
+
+* A [training toolkit](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) to deploy a contract and mint some NFTs on Palm right-away
+
+* [GraphiQL](https://github.com/graphql/graphiql) To test queries against deployed subgraphs and the NFTs you’ve just minted
+
 **Note**: These tools are entirely optional.
 
 The training-toolkit enables you to deploy a [simplified EIP-721 NFT smart contract](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) and mint random items right away to test your subgraph queries against items you control:
@@ -185,9 +188,9 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-## 3. Deployed subgraphs on the Palm network
+## 3. Deployed subgraphs on the Palm Network
 
-The Palm network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
+The Palm Network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
 
 | Name & repo | Use         | Mainnet Endpoint/GraphiQL  | Testnet Endpoint/GraphiQL |
 | :---        |    :----:   |     :----:             |   ---:            |
@@ -580,14 +583,14 @@ export function handleTransfer(event: Transfer): void {
 License[^1]
 
 * There is no particular order to follow when modifying the files required to create a Subgraph.
-Once done editing the three files defining your subgraph you can optionally test your mapping in a [sandbox environment](https://thegraph.com/docs/en/developer/matchstick/), then start the process of adding your subgraph to the Palm network.
+Once done editing the three files defining your subgraph you can optionally test your mapping in a [sandbox environment](https://thegraph.com/docs/en/developer/matchstick/), then start the process of adding your subgraph to the Palm Network.
 
 
-## 6. How to add your own subgraph to the Palm network
+## 6. How to add your own subgraph to the Palm Network
 
 1. Deploy your smart contracts & obtain their addresses for the subgraph manifest
 2. Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
-3. Ask the Palm network team to set up & deploy the subgraph by filling out the [subgraph registration form](https://share.hsforms.com/1k4-CkdptQy-TwXtE0Ebn1Qbwmoa)
+3. Ask the Palm Network team to set up & deploy the subgraph by filling out the [subgraph registration form](https://share.hsforms.com/1k4-CkdptQy-TwXtE0Ebn1Qbwmoa)
 4. Grant access to Palm team to the relevant subgraph code repository
 5. The palm network team will review the subgraph & deploy it into testnet environments
 6. You will be then able to validate that the test subgraph is working correctly
