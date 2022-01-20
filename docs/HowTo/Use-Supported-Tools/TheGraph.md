@@ -47,7 +47,7 @@ The training-toolkit enables you to deploy a [simplified EIP-721 NFT smart contr
 
 **Steps:**
 
-If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](Get-Started/Connect/Testnet.md) or [mainnet](Get-Started/Connect/Mainnet.md) article. Once you are granted access to the network:
+If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](../../Get-Started/Connect/Testnet.md) or [mainnet](../../Get-Started/Connect/Mainnet.md) article. Once you are granted access to the network:
 
 1. **Clone the repo**
 ``` bash
