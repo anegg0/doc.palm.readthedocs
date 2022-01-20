@@ -32,6 +32,8 @@ The training-toolkit enables you to deploy a simplified EIP-721 NFT smart contra
 
 **Steps:**
 
+If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](Get-Started/Connect/Testnet.md) or [mainnet](Get-Started/Connect/Mainnet.md) article.
+
 1. Clone the repo
 ``` bash
   git clone git@github.com:Palm-Network/training-toolkit.git
@@ -97,7 +99,7 @@ Try this query with GraphiQl
 
 **Querying all the tokens owned by a specific address and minted by a given contract**
 
-```graphql
+```json
   query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
       id
       tokens(where:{contract:"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0"}){
@@ -122,7 +124,7 @@ Try this query with GraphiQl
 
 **Querying the first two tokens owned by the same address and with similar Metadata URI:**
 
-```graphql
+```json
   query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
     id
     tokens(first: 2 where:{tokenURI:"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/"}){
@@ -146,7 +148,7 @@ Try this query with GraphiQl
 ```
 **Querying the first ten tokens minted with a given contract**
 
-```graphql
+```json
   query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
         id
     owner{id
@@ -184,7 +186,7 @@ The Palm network provides a Graph node and a number of already deployed subgraph
 
 **Querying all the tokens owned by a specific address**
 
-```graphql
+```json
   query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
       id
       tokens {
@@ -207,7 +209,7 @@ Try this query with GraphiQl
 
 **Querying all the tokens owned by a specific address and minted by a given contract**
 
-```graphql
+```json
   query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
       id
       tokens(where:{contract:"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0"}){
@@ -232,7 +234,7 @@ Try this query with GraphiQl
 
 **Querying the first two tokens owned by the same address and with similar Metadata URI:**
 
-```graphql
+```json
   query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
     id
     tokens(first: 2 where:{tokenURI:"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/"}){
@@ -256,7 +258,7 @@ Try this query with GraphiQl
 ```
 **Querying the first ten tokens minted with a given contract**
 
-```graphql
+```json
   query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
         id
     owner{id
@@ -284,7 +286,7 @@ A variety of tools are available to consume subgraphs from Applications based on
 
 You can learn more about querying The Graph from a Dapp on their site.
 
-Sample code for a React Dapp:
+**Sample code for a React Dapp:**
 
 ``` typescript linenums="1" title="Index.tsx"
   import React from 'react';
