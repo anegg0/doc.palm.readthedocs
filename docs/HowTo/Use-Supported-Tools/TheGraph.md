@@ -10,11 +10,17 @@ A more efficient path is to use dedicated protocols like [The Graph](https://the
 
 This guide aims at helping you use The Graph by explaining:
 
-1. How The Graph works
+1. [How The Graph works](#1-how-does-the-graph-work)
 
-2. How to query the Palm network’s subgraphs
+2. [How to query the Palm network’s Subgraphs](#2-querying-the-palm-networks-subgraphs)
 
-3. How to build your own subgraph and add it to the Palm network
+3. [What Subgraphs are available on the Palm Network](#3-deployed-subgraphs-on-the-palm-network)
+
+4. [How to use Subgraphs from a Dapp](#4-using-the-graph-from-a-dapp)
+
+5. [How to build your own Subgraph](#5-how-to-build-a-new-subgraph)
+
+6. [to add your own Subgraph to the Palm network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
 
 ## 1. How does The Graph work?
 The Graph is a decentralized protocol for querying blockchains like the Palm network. It enables developers to build custom APIs called subgraphs.
@@ -179,7 +185,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-## 3. The Graph resources on the Palm network
+## 3. Deployed subgraphs on the Palm network
 
 The Palm network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
 
