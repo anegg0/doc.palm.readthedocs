@@ -9,8 +9,11 @@ One way to obtain that information is to pull it directly from the blockchain, b
 A more efficient path is to use dedicated protocols like [The Graph](https://thegraph.com/en/), which focus on smart contract data indexation and storage.
 
 This guide aims at helping you use The Graph by explaining:
+
 1. How The Graph works
+
 2. How to query the Palm network’s subgraphs
+
 3. How to build your own subgraph and add it to the Palm network
 
 ## 1. How does The Graph work?
