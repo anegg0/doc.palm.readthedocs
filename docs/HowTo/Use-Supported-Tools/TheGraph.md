@@ -91,7 +91,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 ![](../../Images/demo-subgraph-exploration.gif)
 
 ### Example Queries
-**Querying all the tokens owned by a specific address**
+#### Querying all the tokens owned by a specific address
 
 ```json
   query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
@@ -114,7 +114,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens{id contract {name symbol}}numTokens}}"}'
 ```
 
-**Querying all the tokens owned by a specific address and minted by a given contract**
+#### Querying all the tokens owned by a specific address and minted by a given contract
 
 ```json
   query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
@@ -139,7 +139,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens(where:{contract:\"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0\"}){id contract {name symbol}}numTokens}}"}'
 ```
 
-**Querying the first two tokens owned by the same address and with similar Metadata URI:**
+#### Querying the first two tokens owned by the same address and with similar Metadata URI
 
 ```json
   query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
@@ -163,7 +163,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 ``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14\"}){id tokens(first: 2 where:{tokenURI:\"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/\"}){id tokenURI contract {name symbol}}numTokens}}"}'
 ```
-**Querying the first ten tokens minted with a given contract**
+#### Querying the first ten tokens minted with a given contract
 
 ```json
   query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
