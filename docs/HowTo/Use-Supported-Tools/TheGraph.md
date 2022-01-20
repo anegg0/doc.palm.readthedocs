@@ -23,23 +23,23 @@ This guide aims at helping you use The Graph by explaining:
 6. [to add your own Subgraph to the Palm Network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
 
 ## 1. How does The Graph work?
-The Graph is a decentralized protocol for querying blockchains like the Palm Network. It enables developers to build custom APIs called subgraphs.
+The Graph is a decentralized protocol for querying blockchains like the Palm Network. It enables developers to build custom APIs called Subgraphs.
 
-Subgraphs listen to specific smart contract events and act as data stores so that the information can be easily retrieved by a Dapp. Since subgraphs are built around developers’ specific data requirements (i.e. [IEP-721 subgraph schema](https://github.com/wighawag/eip721-subgraph/blob/master/schema.graphql) ) they only need to be called once, unlike general-purpose APIs which sometimes require hundreds of calls to gather relevant information.
+Subgraphs listen to specific smart contract events and act as data stores so that the information can be easily retrieved by a Dapp. Since Subgraphs are built around developers’ specific data requirements (i.e. [IEP-721 subgraph schema](https://github.com/wighawag/eip721-subgraph/blob/master/schema.graphql) ) they only need to be called once, unlike general-purpose APIs which sometimes require hundreds of calls to gather relevant information.
 
 You can learn more about The Graph network and protocol [on their site](https://thegraph.com/en/).
 
-## 2. Querying the Palm Network’s subgraphs
+## 2. Querying the Palm Network’s Subgraphs
 
 The Graph is an implementation of [GraphQL](https://graphql.org/learn/), If you are familiar with graphql, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
 
 If you haven’t used GraphQL before, https://graphql.org and [howtographql.com](https://www.howtographql.com/) can be good places to start.
 
-To start experimenting with subgraphs and graphql, developers can use:
+To start experimenting with Subgraphs and graphql, developers can use:
 
 * A [training toolkit](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) to deploy a contract and mint some NFTs on Palm right-away
 
-* [GraphiQL](https://github.com/graphql/graphiql) To test queries against deployed subgraphs and the NFTs you’ve just minted
+* [GraphiQL](https://github.com/graphql/graphiql) To test queries against deployed Subgraphs and the NFTs you’ve just minted
 
 **Note**: These tools are entirely optional.
 
@@ -47,7 +47,7 @@ The training-toolkit enables you to deploy a [simplified EIP-721 NFT smart contr
 
 **Steps:**
 
-If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](../../Get-Started/Connect/Testnet.md) or [mainnet](../../Get-Started/Connect/Mainnet.md) article. Once you are granted access to the network:
+If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](../../Get-Started/Connect/Testnet.md) or [mainnet](../../Get-Started/Connect/Mainnet.md) articles. Once you are granted access to the network:
 
 1. **Clone the repo**
 ``` bash
@@ -188,9 +188,9 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-## 3. Deployed subgraphs on the Palm Network
+## 3. Deployed Subgraphs on the Palm Network
 
-The Palm Network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
+The Palm Network provides a Graph node and a number of already deployed Subgraphs tailored for NFT contexts. Developers can access those Subgraphs through RESTful or WebSocket APIs calls:
 
 | Name & repo | Use         | Mainnet Endpoint/GraphiQL  | Testnet Endpoint/GraphiQL |
 | :---        |    :----:   |     :----:             |   ---:            |
@@ -203,7 +203,7 @@ The Palm Network provides a Graph node and a number of already deployed subgraph
 
 ## 4. Using the Graph from a Dapp
 
-A variety of tools are available to consume subgraphs from Applications based on React and Vue, as well as mobile clients like iOS, Android, and React Native, you might want to use a fully-featured package such as [Apollo](https://www.apollographql.com) or a leaner implementation such as [GraphQL-Request](https://github.com/prisma-labs/graphql-request).
+A variety of tools are available to consume Subgraphs from Applications based on React and Vue, as well as mobile clients like iOS, Android, and React Native, you might want to use a fully-featured package such as [Apollo](https://www.apollographql.com) or a leaner implementation such as [GraphQL-Request](https://github.com/prisma-labs/graphql-request).
 
 You can learn more about querying The Graph from a Dapp [on their site](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 
