@@ -69,6 +69,8 @@ nav:
         - Validators: Concepts/Validators.md
 
 markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
   - toc:
       permalink: 
       toc_depth: 4

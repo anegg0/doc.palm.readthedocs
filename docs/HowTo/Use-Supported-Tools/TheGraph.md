@@ -14,7 +14,10 @@ This guide aims at helping you use The Graph by explaining:
 3. How to build your own subgraph and add it to the Palm network
 
 ## 1. How does The Graph work?
-The Graph is a decentralized protocol for querying blockchains like the Palm network. It enables developers to build custom APIs called subgraphs. Subgraphs listen to specific smart contract events and act as data stores so that the information can be easily retrieved by a Dapp. Since subgraphs are built around developers’ specific data requirements (i.e. [IEP-721 subgraph schema](https://github.com/wighawag/eip721-subgraph/blob/master/schema.graphql) ) they only need to be called once, unlike general-purpose APIs which sometimes require hundreds of calls to gather relevant information.
+The Graph is a decentralized protocol for querying blockchains like the Palm network. It enables developers to build custom APIs called subgraphs.
+
+Subgraphs listen to specific smart contract events and act as data stores so that the information can be easily retrieved by a Dapp. Since subgraphs are built around developers’ specific data requirements (i.e. [IEP-721 subgraph schema](https://github.com/wighawag/eip721-subgraph/blob/master/schema.graphql) ) they only need to be called once, unlike general-purpose APIs which sometimes require hundreds of calls to gather relevant information.
+
 You can learn more about The Graph network and protocol [on their site](https://thegraph.com/en/).
 
 ## 2. Querying the Palm network’s subgraphs
@@ -28,11 +31,11 @@ To start experimenting with subgraphs and graphql, developers can use:
 * GraphiQL to test queries against deployed subgraphs and the NFTs you’ve just minted
 **Note**: These tools are entirely optional.
 
-The training-toolkit enables you to deploy a simplified EIP-721 NFT smart contract and mint random items right away to test your subgraph queries against items you control:
+The training-toolkit enables you to deploy a [simplified EIP-721 NFT smart contract](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) and mint random items right away to test your subgraph queries against items you control:
 
 **Steps:**
 
-If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](Get-Started/Connect/Testnet.md) or [mainnet](Get-Started/Connect/Mainnet.md) article. Once you are granted access:
+If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](Get-Started/Connect/Testnet.md) or [mainnet](Get-Started/Connect/Mainnet.md) article. Once you are granted access to the network:
 
 1. **Clone the repo**
 ``` bash
@@ -45,20 +48,21 @@ If this is your first time interacting with the Palm Network, please refer to th
 ```
 
 3. **Add a .env file and add values to the following variables:**
-
 ```
 INFURA_PROJECT_ID
 PRIVATE_KEY
 PUBLIC_KEY
-CONTRACT_ADDRESS
 ```
-
 4. **Deploy contract to Palm Testnet:**
 ``` bash
   npx hardhat run scripts/deploy.js --network palm_testnet
 ```
 
-5. **Bulk Mint NFT on Palm testnet, this will mint 15 items to various addresses on Palm testnet:**
+5. **Add the newly deployed contract address to the .env variables:**
+```
+CONTRACT_ADDRESS
+```
+6. **Bulk Mint NFT on Palm testnet, this will mint 15 items to various addresses on Palm testnet:**
 ``` bash
   npx hardhat run scripts/bulk-mint.js --network palm_testnet
 ```
@@ -74,8 +78,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 ![](../../Images/demo-subgraph-exploration.gif)
 
-## 3. Example Queries:
-
+### Example Queries
 **Querying all the tokens owned by a specific address**
 
 ```json
@@ -173,7 +176,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-## 4. The Graph resources on the Palm network
+## 3. The Graph resources on the Palm network
 
 The Palm network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
 
@@ -282,36 +285,13 @@ The Palm network provides a Graph node and a number of already deployed subgraph
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-## 5. Using the Graph from a Dapp
+## 4. Using the Graph from a Dapp
 
 A variety of tools are available to consume subgraphs from Applications based on React and Vue, as well as mobile clients like iOS, Android, and React Native, you might want to use a fully-featured package such as [Apollo](https://www.apollographql.com) or a leaner implementation such as [GraphQL-Request](https://github.com/prisma-labs/graphql-request).
 
 You can learn more about querying The Graph from a Dapp [on their site](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 
 **Sample code for a React Dapp:**
-
-=== "C"
-
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
-=== "C++"
-
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
-
 
 === "Index.tsx"
 
@@ -427,17 +407,23 @@ You can learn more about querying The Graph from a Dapp [on their site](https://
       }
     {% endraw %}
     ```
-## 6. How to build a new subgraph
+## 5. How to build a new subgraph
 Creating a subgraph allows to determine the data that the graph will index from the blockchain and decide how this data will be stored. To do that, we need to:
+
 1. Deploy smart contracts that will be indexed (and their addresses)
+
 2. Create [subgraph.yaml](https://github.com/wighawag/eip721-subgraph/blob/master/subgraph.yaml): a Subgraph's manifest, it holds information about the smart contracts indexed by a Subgraph and is effectively a config file - [More about this](https://thegraph.com/docs/en/developer/create-subgraph-hosted/#the-subgraph-manifest)
+
 3. Create [schema.graphql](https://github.com/wighawag/eip721-subgraph/blob/master/schema.graphql): a [GraphQL schema](https://thegraph.com/docs/en/developer/graphql-api/) file defining a Subgraph’s structure - [More about this](https://thegraph.com/docs/en/developer/create-subgraph-hosted/#the-graph-ql-schema)
+
 4. Create an [AssemblyScript](https://github.com/wighawag/eip721-subgraph/blob/5d0163c5de04fc3deb1c4e5f33c2c33ae6e71adf/src/mapping.ts) mapping — TypeScript code used to translate contracts’ event data into specific objects in the schema, The Graph offers a [code generator](https://thegraph.com/docs/en/developer/create-subgraph-hosted/#code-generation) for that- [More about this](https://thegraph.com/docs/en/developer/create-subgraph-hosted/#writing-mappings)
+
 5. To get an idea of the usual structure of a subgraph repository you can use graphprotocol’s [example subgraph](https://github.com/graphprotocol/example-subgraph) for a start. For more NFT-specific repositories dedicated to [EIP-721](https://github.com/wighawag/eip721-subgraph) or [EIP-1155](https://github.com/Amxx/eip1155-subgraph) NFTs.
+
 
 **Example of manifest/config file:**
 
-``` graphql
+``` yaml linenums="1" title="subgraph.yaml"
   specVersion: 0.0.2
   description: EIP-721
   repository: https://github.com/wighawag/eip721-subgraph
@@ -469,11 +455,12 @@ Creating a subgraph allows to determine the data that the graph will index from 
             handler: handleTransfer
         file: ./src/mapping.ts
 ```
-*Copyright (C) <2019-2020> Ronan Sandford - GNU - https://github.com/wighawag/eip721-subgraph*
+License[^1]
+
 
 **Example of schema.graphql designed around EIP-721 compliant contracts:**
 
-``` graphql
+``` json linenums="1" title="schema.graphql"
   type All @entity {
   id: ID!
   numTokenContracts: BigInt!
@@ -513,11 +500,11 @@ Creating a subgraph allows to determine the data that the graph will index from 
     numTokens: BigInt!
   }
 ```
-*Copyright (C) <2019-2020> Ronan Sandford - GNU - https://github.com/wighawag/eip721-subgraph*
+License[^1]
 
-**Excerpt of mappings file:**
+**Example of mappings file:**
 
-``` typescript
+``` typescript linenums="1" title="mapping.ts "
 import { store, Bytes, BigInt } from '@graphprotocol/graph-ts';
 import { Transfer, EIP721 } from '../generated/EIP721/EIP721';
 import { Token, TokenContract, Owner, All, OwnerPerTokenContract } from '../generated/schema';
@@ -581,13 +568,13 @@ export function handleTransfer(event: Transfer): void {
         let supportsNullIdentifierFalse = supportsInterface(contract, '00000000', false);
         let supportsEIP721 = supportsEIP165Identifier && supportsEIP721Identifier && supportsNullIdentifierFalse;
 ```
-*Copyright (C) <2019-2020> Ronan Sandford - GNU - https://github.com/wighawag/eip721-subgraph
+License[^1]
 
-*There is no particular order to follow when modifying the files required to create a Subgraph.
+* There is no particular order to follow when modifying the files required to create a Subgraph.
 Once done editing the three files defining your subgraph you can optionally test your mapping in a [sandbox environment](https://thegraph.com/docs/en/developer/matchstick/), then start the process of adding your subgraph to the Palm network.
 
 
-## 7. How to add your own subgraph to the Palm network
+## 6. How to add your own subgraph to the Palm network
 
 1. Deploy your smart contracts & obtain their addresses for the subgraph manifest
 2. Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
@@ -601,3 +588,5 @@ Once done editing the three files defining your subgraph you can optionally test
 
 !!! question
 Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
+
+[^1]: Copyright (C) <2019-2020> Ronan Sandford - GNU - https://github.com/wighawag/eip721-subgraph
