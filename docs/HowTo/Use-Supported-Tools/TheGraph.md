@@ -93,80 +93,91 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 ### Example Queries
 #### Querying all the tokens owned by a specific address
 
-```json
-  query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
-      id
-      tokens {
-        id
-        contract
-        {name
-          symbol}
-        tokenURI
-      }
-      numTokens
-    }}
-```
+=== "graphql"
+
+    ``` json linenums="1"
+      query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
+          id
+          tokens {
+            id
+            contract
+            {name
+              symbol}
+            tokenURI
+          }
+          numTokens
+        }}
+    ```
+
+=== "curl"
+
+    ``` bash linenums="1"
+      curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens{id contract {name symbol}}numTokens}}"}'
+    ```
 [Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
-
-**Using curl:**
-
-``` bash
- curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens{id contract {name symbol}}numTokens}}"}'
-```
 
 #### Querying all the tokens owned by a specific address and minted by a given contract
 
-```json
-  query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
-      id
-      tokens(where:{contract:"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0"}){
-        id
-        contract
-        {
-          name
-          symbol
-        }
-      }
-      numTokens
-    }}
-```
 
+=== "graphql"
+
+    ``` json linenums="1"
+      query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
+          id
+          tokens(where:{contract:"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0"}){
+            id
+            contract
+            {
+              name
+              symbol
+            }
+          }
+          numTokens
+        }}
+    ```
+
+=== "curl"
+
+    ``` bash linenums="1"
+      curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens(where:{contract:\"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0\"}){id contract {name symbol}}numTokens}}"}'
+    ```
 [Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens(where%3A%7Bcontract%3A%220xdb28759b793fa2111ac2842f467fad6d3b78c2c0%22%7D)%7B%0A%20%20%20%20id%0A%20%20%20%20contract%20%0A%20%20%20%20%7B%20%0A%20%20%20%20%20%20name%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
-**Using curl:**
 
-``` curl
-  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens(where:{contract:\"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0\"}){id contract {name symbol}}numTokens}}"}'
-```
 
 #### Querying the first two tokens owned by the same address and with similar Metadata URI
 
-```json
-  query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
-    id
-    tokens(first: 2 where:{tokenURI:"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/"}){
-      id
-      tokenURI
-      contract
-      {
-        name
-      symbol}
-    }
-    numTokens
-  }}
-```
+=== "graphql"
 
+    ``` json linenums="1"
+      query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
+        id
+        tokens(first: 2 where:{tokenURI:"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/"}){
+          id
+          tokenURI
+          contract
+          {
+            name
+          symbol}
+        }
+        numTokens
+      }}
+    ```
+
+=== "curl"
+
+    ``` bash linenums="1"
+      curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14\"}){id tokens(first: 2 where:{tokenURI:\"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/\"}){id tokenURI contract {name symbol}}numTokens}}"}'
+    ```
 [Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14%22%7D)%20%7B%0A%20%20id%0A%20%20tokens(first%3A%202%20where%3A%7BtokenURI%3A%22https%3A%2F%2Fbafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link%2F%22%7D)%7B%0A%20%20%20%20id%0A%20%20%20%20tokenURI%0A%20%20%20%20contract%0A%20%20%20%20%7B%20%0A%20%20%20%20%20%20name%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
-**Using curl:**
 
-``` curl
-  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14\"}){id tokens(first: 2 where:{tokenURI:\"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/\"}){id tokenURI contract {name symbol}}numTokens}}"}'
-```
 #### Querying the first ten tokens minted with a given contract
 
-```json
-  query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
+=== "graphql"
+
+    ``` json linenums="1"
+      query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
         id
     owner{id
       numTokens}
@@ -177,14 +188,14 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
         tokenURI
       }
       }
-```
+    ```
+
+=== "curl"
+
+    ``` bash linenums="1"
+      curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{tokens(first: 10 where:{contract:\"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa\"}){id owner{id numTokens} contract {name symbol} tokenURI}}"}'
+    ```
 [Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Btokens(where%3A%7Bcontract%3A%220xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa%22%7D%2C%20first%3A%2010%20)%7B%0A%20%20%20%20%20%20id%0A%20%20owner%7Bid%0A%20%20%20%20numTokens%7D%0A%20%20%20%20%20%20contract%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20symbol%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20tokenURI%0A%20%20%20%20%7D%0A%20%20%20%20%7D%0A)
-
-**Using curl:**
-
-``` curl
-  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{tokens(first: 10 where:{contract:\"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa\"}){id owner{id numTokens} contract {name symbol} tokenURI}}"}'
-```
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
