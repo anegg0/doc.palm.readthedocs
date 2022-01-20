@@ -33,12 +33,12 @@ The training-toolkit enables you to deploy a simplified EIP-721 NFT smart contra
 **Steps:**
 
 1. Clone the repo
-```bash
+``` bash
   git clone git@github.com:Palm-Network/training-toolkit.git
 ```
 
 2. Install
-```bash
+``` bash
   npm install
 ```
 
@@ -52,12 +52,12 @@ CONTRACT_ADDRESS
 ```
 
 4. Deploy contract to Palm Testnet:
-```bash
+``` bash
   npx hardhat run scripts/deploy.js --network palm_testnet
 ```
 
 5. Bulk Mint NFT on Palm testnet, this will mint 15 items to various addresses on Palm testnet:
-```bash
+``` bash
   npx hardhat run scripts/bulk-mint.js --network palm_testnet
 ```
 
@@ -88,7 +88,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-```curl
+``` curl
  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens{id contract {name symbol}}numTokens}}"}'
 ```
 
@@ -113,7 +113,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-```curl
+``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens(where:{contract:\"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0\"}){id contract {name symbol}}numTokens}}"}'
 ```
 
@@ -138,7 +138,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-```curl
+``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14\"}){id tokens(first: 2 where:{tokenURI:\"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/\"}){id tokenURI contract {name symbol}}numTokens}}"}'
 ```
 **Querying the first ten tokens minted with a given contract**
@@ -159,7 +159,7 @@ Try this query with GraphiQl
 
 Using curl:
 
-```curl
+``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{tokens(first: 10 where:{contract:\"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa\"}){id owner{id numTokens} contract {name symbol} tokenURI}}"}'
 ```
 
@@ -198,7 +198,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-```curl
+``` curl
  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens{id contract {name symbol}}numTokens}}"}'
 ```
 
@@ -223,7 +223,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-```curl
+``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens(where:{contract:\"0xdb28759b793fa2111ac2842f467fad6d3b78c2c0\"}){id contract {name symbol}}numTokens}}"}'
 ```
 
@@ -248,7 +248,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-```curl
+``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14\"}){id tokens(first: 2 where:{tokenURI:\"https://bafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link/\"}){id tokenURI contract {name symbol}}numTokens}}"}'
 ```
 **Querying the first ten tokens minted with a given contract**
@@ -269,7 +269,7 @@ Try this query with GraphiQl
 
 Using curl:
 
-```curl
+``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{tokens(first: 10 where:{contract:\"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa\"}){id owner{id numTokens} contract {name symbol} tokenURI}}"}'
 ```
 
@@ -283,8 +283,7 @@ You can learn more about querying The Graph from a Dapp on their site.
 
 Sample code for a React Dapp:
 
-```tsx
-  // index.tsx
+``` typescript linenums="1"
   import React from 'react';
   import ReactDOM from 'react-dom';
   import './index.css';
@@ -298,8 +297,7 @@ Sample code for a React Dapp:
   );
 ```
 
-```tsx
-  //App.tsx
+``` typescript linenums="1"
   import { gql } from "@apollo/client";
   import React, { useState } from "react";
   import {
@@ -403,7 +401,7 @@ Creating a subgraph allows to determine the data that the graph will index from 
 
 **Example of manifest/config file:**
 
-```graphql
+``` graphql
   specVersion: 0.0.2
   description: EIP-721
   repository: https://github.com/wighawag/eip721-subgraph
@@ -439,7 +437,7 @@ Creating a subgraph allows to determine the data that the graph will index from 
 
 **Example of schema.graphql designed around EIP-721 compliant contracts:**
 
-```graphql
+``` graphql
   type All @entity {
   id: ID!
   numTokenContracts: BigInt!
@@ -483,7 +481,7 @@ Creating a subgraph allows to determine the data that the graph will index from 
 
 Excerpt of mappings file:
 
-```ts
+``` typescript
 import { store, Bytes, BigInt } from '@graphprotocol/graph-ts';
 import { Transfer, EIP721 } from '../generated/EIP721/EIP721';
 import { Token, TokenContract, Owner, All, OwnerPerTokenContract } from '../generated/schema';
