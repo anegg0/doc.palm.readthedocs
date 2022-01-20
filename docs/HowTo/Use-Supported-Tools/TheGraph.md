@@ -67,11 +67,14 @@ Now, to query data on your newly deployed ERC-721 contract [you can use GraphiQL
 
 GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
+
+![](../../Images/demo-subgraph-exploration.gif)
+
 ## 3. Example Queries:
 
 **Querying all the tokens owned by a specific address**
 
-```graphql
+```json
   query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
       id
       tokens {
@@ -88,7 +91,7 @@ Try this query with GraphiQl
 
 **Using curl:**
 
-``` curl
+``` bash
  curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{owners(where:{id:\"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59\"}){id tokens{id contract {name symbol}}numTokens}}"}'
 ```
 
@@ -283,7 +286,7 @@ You can learn more about querying The Graph from a Dapp on their site.
 
 Sample code for a React Dapp:
 
-``` typescript linenums="1"
+``` typescript linenums="1" title="Index.tsx"
   import React from 'react';
   import ReactDOM from 'react-dom';
   import './index.css';
@@ -297,7 +300,8 @@ Sample code for a React Dapp:
   );
 ```
 
-``` typescript linenums="1"
+``` typescript linenums="1" title="App.tsx"
+{% raw %}
   import { gql } from "@apollo/client";
   import React, { useState } from "react";
   import {
@@ -390,6 +394,7 @@ Sample code for a React Dapp:
           </TheGraphProvider>
       );
   }
+{% endraw %}
 ```
 ## 5. How to build a new subgraph
 Creating a subgraph allows to determine the data that the graph will index from the blockchain and decide how this data will be stored. To do that, we need to:
