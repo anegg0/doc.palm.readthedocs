@@ -284,122 +284,149 @@ The Palm network provides a Graph node and a number of already deployed subgraph
 
 ## 5. Using the Graph from a Dapp
 
-A variety of tools are available to consume subgraphs from Applications based on React and Vue, as well as mobile clients like iOS, Android, and React Native, you might want to use a fully-featured package such as Apollo or a leaner implementation such as GraphQL-Request.
+A variety of tools are available to consume subgraphs from Applications based on React and Vue, as well as mobile clients like iOS, Android, and React Native, you might want to use a fully-featured package such as [Apollo](https://www.apollographql.com) or a leaner implementation such as [GraphQL-Request](https://github.com/prisma-labs/graphql-request).
 
-You can learn more about querying The Graph from a Dapp on their site.
+You can learn more about querying The Graph from a Dapp [on their site](https://thegraph.com/docs/en/developer/querying-from-your-app/).
 
 **Sample code for a React Dapp:**
 
-``` typescript linenums="1" title="Index.tsx"
-  import React from 'react';
-  import ReactDOM from 'react-dom';
-  import './index.css';
-  import App from './App';
+=== "C"
 
-  ReactDOM.render(
-      <React.StrictMode>
-          <App />
-      </React.StrictMode>,
-      document.getElementById('root')
-  );
-```
+    ``` c
+    #include <stdio.h>
 
-``` typescript linenums="1" title="App.tsx"
-{% raw %}
-  import { gql } from "@apollo/client";
-  import React, { useState } from "react";
-  import {
-      Chains,
-      Subgraph,
-      Subgraphs,
-      TheGraphProvider,
-      useCreateSubgraph,
-      useSubgraph,
-  } from "thegraph-react";
+    int main(void) {
+      printf("Hello world!\n");
+      return 0;
+    }
+    ```
 
-  function PalmNfts({ NFTs }: { readonly NFTs: Subgraph }): JSX.Element {
-      const { useQuery } = useSubgraph(NFTs);
+=== "C++"
 
-      const { error, loading, data } = useQuery(gql`
-        {
-          tokens(
-            where: { contract: "0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa" }
-            first: 10
-          ) {
-            id
-            owner {
-              id
-              numTokens
+    ``` c++
+    #include <iostream>
+
+    int main(void) {
+      std::cout << "Hello world!" << std::endl;
+      return 0;
+    }
+    ```
+
+
+=== "Index.tsx"
+
+    ``` typescript linenums="1" title="Index.tsx"
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import './index.css';
+    import App from './App';
+
+    ReactDOM.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+    ```
+
+=== "App.tsx"
+
+    ``` typescript linenums="1" title="App.tsx"
+    {% raw %}
+      import { gql } from "@apollo/client";
+      import React, { useState } from "react";
+      import {
+          Chains,
+          Subgraph,
+          Subgraphs,
+          TheGraphProvider,
+          useCreateSubgraph,
+          useSubgraph,
+      } from "thegraph-react";
+
+      function PalmNfts({ NFTs }: { readonly NFTs: Subgraph }): JSX.Element {
+          const { useQuery } = useSubgraph(NFTs);
+
+          const { error, loading, data } = useQuery(gql`
+            {
+              tokens(
+                where: { contract: "0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa" }
+                first: 10
+              ) {
+                id
+                owner {
+                  id
+                  numTokens
+                }
+                contract {
+                  name
+                  symbol
+                }
+
+                tokenURI
+              }
             }
-            contract {
-              name
-              symbol
-            }
+          `);
 
-            tokenURI
-          }
-        }
-      `);
+          console.log("data from GQL query:", data);
 
-      console.log("data from GQL query:", data);
-
-      return (
-          <div >
+          return (
               <div >
-                  <div style={{ flex: 1, textAlign: "left" }}>
-                      <h1>Tokens Dashboard</h1>
+                  <div >
+                      <div style={{ flex: 1, textAlign: "left" }}>
+                          <h1>Tokens Dashboard</h1>
+                      </div>
+                      <div style={{ textAlign: "left", flex: 2, alignSelf: "center" }}></div>
                   </div>
-                  <div style={{ textAlign: "left", flex: 2, alignSelf: "center" }}></div>
+                  {error || loading ? (
+                      <blockquote>
+                          <br />
+                          <br />
+      Loading...
+                      </blockquote>
+                  ) : (
+                      (data as any).tokens.map((n: any, i: number) => {
+                          return (
+                              <div>
+                                  <div>Tokens name: {`"${n.contract.name.toString()}"`}</div>
+                                  <br />
+                                  <div>
+                                      Owner wallet public address: {`"${n.owner.id.toString()}"`}
+                                  </div>
+                                  <br />
+                                  <div>
+                                      Number of NFTs owned by this address:{`"${n.owner.numTokens}"`}
+                                  </div>
+                                  <br />
+                                  <div>Token URI: {n.tokenURI.toString()}</div>
+                                  <br />
+                                  <div ></div>
+                                  <br /> <div></div>
+                              </div>
+                          );
+                      })
+                  )}
               </div>
-              {error || loading ? (
-                  <blockquote>
-                      <br />
-                      <br />
-  Loading...
-                  </blockquote>
-              ) : (
-                  (data as any).tokens.map((n: any, i: number) => {
-                      return (
-                          <div>
-                              <div>Tokens name: {`"${n.contract.name.toString()}"`}</div>
-                              <br />
-                              <div>
-                                  Owner wallet public address: {`"${n.owner.id.toString()}"`}
-                              </div>
-                              <br />
-                              <div>
-                                  Number of NFTs owned by this address:{`"${n.owner.numTokens}"`}
-                              </div>
-                              <br />
-                              <div>Token URI: {n.tokenURI.toString()}</div>
-                              <br />
-                              <div ></div>
-                              <br /> <div></div>
-                          </div>
-                      );
-                  })
-              )}
-          </div>
-      );
-  }
+          );
+      }
 
-  export default function App(): JSX.Element {
-      const NFTs = useCreateSubgraph({
-          [Chains.MAINNET]:
-              "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph",
-      });
-      const subgraphs = React.useMemo((): Subgraphs => {
-          return [NFTs];
-      }, [NFTs]);
+      export default function App(): JSX.Element {
+          const NFTs = useCreateSubgraph({
+              [Chains.MAINNET]:
+                  "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph",
+          });
+          const subgraphs = React.useMemo((): Subgraphs => {
+              return [NFTs];
+          }, [NFTs]);
 
-      return (
-          <TheGraphProvider chain={Chains.MAINNET} subgraphs={subgraphs}>
-              <PalmNfts NFTs={NFTs} />
-          </TheGraphProvider>
-      );
-  }
-{% endraw %}
-```
+          return (
+              <TheGraphProvider chain={Chains.MAINNET} subgraphs={subgraphs}>
+                  <PalmNfts NFTs={NFTs} />
+              </TheGraphProvider>
+          );
+      }
+    {% endraw %}
+    ```
 ## 6. How to build a new subgraph
 Creating a subgraph allows to determine the data that the graph will index from the blockchain and decide how this data will be stored. To do that, we need to:
 1. Deploy smart contracts that will be indexed (and their addresses)
@@ -488,7 +515,7 @@ Creating a subgraph allows to determine the data that the graph will index from 
 ```
 *Copyright (C) <2019-2020> Ronan Sandford - GNU - https://github.com/wighawag/eip721-subgraph*
 
-Excerpt of mappings file:
+**Excerpt of mappings file:**
 
 ``` typescript
 import { store, Bytes, BigInt } from '@graphprotocol/graph-ts';
