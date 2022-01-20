@@ -32,19 +32,19 @@ The training-toolkit enables you to deploy a simplified EIP-721 NFT smart contra
 
 **Steps:**
 
-If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](Get-Started/Connect/Testnet.md) or [mainnet](Get-Started/Connect/Mainnet.md) article.
+If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](Get-Started/Connect/Testnet.md) or [mainnet](Get-Started/Connect/Mainnet.md) article. Once you are granted access:
 
-1. Clone the repo
+1. **Clone the repo**
 ``` bash
   git clone git@github.com:Palm-Network/training-toolkit.git
 ```
 
-2. Install
+2. **Install**
 ``` bash
   npm install
 ```
 
-3. Add a .env file and add values to the following variables:
+3. **Add a .env file and add values to the following variables:**
 
 ```
 INFURA_PROJECT_ID
@@ -53,12 +53,12 @@ PUBLIC_KEY
 CONTRACT_ADDRESS
 ```
 
-4. Deploy contract to Palm Testnet:
+4. **Deploy contract to Palm Testnet:**
 ``` bash
   npx hardhat run scripts/deploy.js --network palm_testnet
 ```
 
-5. Bulk Mint NFT on Palm testnet, this will mint 15 items to various addresses on Palm testnet:
+5. **Bulk Mint NFT on Palm testnet, this will mint 15 items to various addresses on Palm testnet:**
 ``` bash
   npx hardhat run scripts/bulk-mint.js --network palm_testnet
 ```
@@ -66,6 +66,8 @@ CONTRACT_ADDRESS
 Now, to query data on your newly deployed ERC-721 contract [you can use GraphiQL](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A):
 
 ![](../../Images/demo-subgraph-building.gif)
+
+[You can try the above on GraphiQL](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
@@ -89,7 +91,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
       numTokens
     }}
 ```
-Try this query with GraphiQl
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 **Using curl:**
 
@@ -114,7 +116,7 @@ Try this query with GraphiQl
     }}
 ```
 
-Try this query with GraphiQl
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens(where%3A%7Bcontract%3A%220xdb28759b793fa2111ac2842f467fad6d3b78c2c0%22%7D)%7B%0A%20%20%20%20id%0A%20%20%20%20contract%20%0A%20%20%20%20%7B%20%0A%20%20%20%20%20%20name%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 **Using curl:**
 
@@ -139,7 +141,7 @@ Try this query with GraphiQl
   }}
 ```
 
-Try this query with GraphiQl
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14%22%7D)%20%7B%0A%20%20id%0A%20%20tokens(first%3A%202%20where%3A%7BtokenURI%3A%22https%3A%2F%2Fbafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link%2F%22%7D)%7B%0A%20%20%20%20id%0A%20%20%20%20tokenURI%0A%20%20%20%20contract%0A%20%20%20%20%7B%20%0A%20%20%20%20%20%20name%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 **Using curl:**
 
@@ -161,8 +163,9 @@ Try this query with GraphiQl
       }
       }
 ```
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Btokens(where%3A%7Bcontract%3A%220xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa%22%7D%2C%20first%3A%2010%20)%7B%0A%20%20%20%20%20%20id%0A%20%20owner%7Bid%0A%20%20%20%20numTokens%7D%0A%20%20%20%20%20%20contract%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20symbol%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20tokenURI%0A%20%20%20%20%7D%0A%20%20%20%20%7D%0A)
 
-Using curl:
+**Using curl:**
 
 ``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{tokens(first: 10 where:{contract:\"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa\"}){id owner{id numTokens} contract {name symbol} tokenURI}}"}'
@@ -170,7 +173,7 @@ Using curl:
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-### The Graph resources on the Palm network
+## 4. The Graph resources on the Palm network
 
 The Palm network provides a Graph node and a number of already deployed subgraphs tailored for NFT context. Developers can access those subgraphs through RESTful or WebSocket APIs calls:
 
@@ -181,8 +184,6 @@ The Palm network provides a Graph node and a number of already deployed subgraph
 | sushi/exchange-palm  | Querying the https://www.shoyunft.com  marketplace | https://graph.palm.io/subgraphs/name/sushi/exchange-palm |   |
 | nftx-project/nftx-v2-subgraph  | Querying the https://nftx.io/ marketplace | https://graph.palm.io/subgraphs/name/nftx-project/nftx-v2-palm | |
 | ethereum-blocks  | Querying Palm mainnet’s blocks | https://graph.palm.io/subgraphs/name/blocklytics/palm-mainnet-blocks | |
-
-
 
 **Querying all the tokens owned by a specific address**
 
@@ -199,7 +200,7 @@ The Palm network provides a Graph node and a number of already deployed subgraph
       numTokens
     }}
 ```
-Try this query with GraphiQl
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 **Using curl:**
 
@@ -224,7 +225,7 @@ Try this query with GraphiQl
     }}
 ```
 
-Try this query with GraphiQl
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens(where%3A%7Bcontract%3A%220xdb28759b793fa2111ac2842f467fad6d3b78c2c0%22%7D)%7B%0A%20%20%20%20id%0A%20%20%20%20contract%20%0A%20%20%20%20%7B%20%0A%20%20%20%20%20%20name%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 **Using curl:**
 
@@ -249,7 +250,7 @@ Try this query with GraphiQl
   }}
 ```
 
-Try this query with GraphiQl
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14%22%7D)%20%7B%0A%20%20id%0A%20%20tokens(first%3A%202%20where%3A%7BtokenURI%3A%22https%3A%2F%2Fbafkreifvtwuiypleu4vv7edh4zclmymp5ixh44xxmd3hb2imiqa7mp2c3a.ipfs.dweb.link%2F%22%7D)%7B%0A%20%20%20%20id%0A%20%20%20%20tokenURI%0A%20%20%20%20contract%0A%20%20%20%20%7B%20%0A%20%20%20%20%20%20name%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 **Using curl:**
 
@@ -271,8 +272,9 @@ Try this query with GraphiQl
       }
       }
 ```
+[Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Btokens(where%3A%7Bcontract%3A%220xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa%22%7D%2C%20first%3A%2010%20)%7B%0A%20%20%20%20%20%20id%0A%20%20owner%7Bid%0A%20%20%20%20numTokens%7D%0A%20%20%20%20%20%20contract%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20symbol%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20tokenURI%0A%20%20%20%20%7D%0A%20%20%20%20%7D%0A)
 
-Using curl:
+**Using curl:**
 
 ``` curl
   curl --location --request POST "https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph" --data-raw '{"query":"{tokens(first: 10 where:{contract:\"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa\"}){id owner{id numTokens} contract {name symbol} tokenURI}}"}'
@@ -280,7 +282,7 @@ Using curl:
 
 **Note**: All address values (e.g. when used for id) must be in a lower case format.
 
-## 4. Using the Graph from a Dapp
+## 5. Using the Graph from a Dapp
 
 A variety of tools are available to consume subgraphs from Applications based on React and Vue, as well as mobile clients like iOS, Android, and React Native, you might want to use a fully-featured package such as Apollo or a leaner implementation such as GraphQL-Request.
 
@@ -398,7 +400,7 @@ You can learn more about querying The Graph from a Dapp on their site.
   }
 {% endraw %}
 ```
-## 5. How to build a new subgraph
+## 6. How to build a new subgraph
 Creating a subgraph allows to determine the data that the graph will index from the blockchain and decide how this data will be stored. To do that, we need to:
 1. Deploy smart contracts that will be indexed (and their addresses)
 2. Create [subgraph.yaml](https://github.com/wighawag/eip721-subgraph/blob/master/subgraph.yaml): a Subgraph's manifest, it holds information about the smart contracts indexed by a Subgraph and is effectively a config file - [More about this](https://thegraph.com/docs/en/developer/create-subgraph-hosted/#the-subgraph-manifest)
@@ -558,7 +560,7 @@ export function handleTransfer(event: Transfer): void {
 Once done editing the three files defining your subgraph you can optionally test your mapping in a [sandbox environment](https://thegraph.com/docs/en/developer/matchstick/), then start the process of adding your subgraph to the Palm network.
 
 
-## 6. How to add your own subgraph to the Palm network
+## 7. How to add your own subgraph to the Palm network
 
 1. Deploy your smart contracts & obtain their addresses for the subgraph manifest
 2. Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
