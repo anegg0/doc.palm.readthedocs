@@ -97,7 +97,6 @@ markdown_extensions:
       server: http://www.plantuml.com/plantuml
 
 plugins:
-  - mkdocs-video
   - search:
       lang: 'en'
       separator: '[\s\-\.\_]+'
