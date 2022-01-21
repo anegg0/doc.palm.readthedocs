@@ -34,7 +34,6 @@ extra:
     tag_manager: 'GTM-M8BQ9J5' # Google tag manager code
 
 theme:
-  features:
   name: material
   custom_dir: CI/custom_theme
   palette:
@@ -62,7 +61,6 @@ nav:
         - Use supported tools:
             - Overview: HowTo/Use-Supported-Tools/Tools.md
             - Covalent API: HowTo/Use-Supported-Tools/Covalent.md
-            - The Graph: HowTo/Use-Supported-Tools/TheGraph.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
@@ -72,6 +70,8 @@ markdown_extensions:
       permalink: 
       toc_depth: 4
   - codehilite
+  - pymdownx.tabbed
+  - pymdownx.superfences
   - markdown_include.include:
       base_path: docs
   - admonition
