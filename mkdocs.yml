@@ -75,8 +75,6 @@ markdown_extensions:
       permalink: 
       toc_depth: 4
   - codehilite
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.superfences:
       preserve_tabs: true
   - markdown_include.include:
