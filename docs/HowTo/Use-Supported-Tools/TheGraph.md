@@ -93,7 +93,7 @@ Now, to query data on your newly deployed ERC-721 contract [you can use GraphiQL
 GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Bowners(where%3A%7Bid%3A%220x4fb30f8cce1f80fc9cc45f7f626069be7549af59%22%7D)%20%7B%0A%20%20id%0A%20%20tokens%20%7B%0A%20%20%20%20id%0A%20%20%20%20contract%0A%20%20%20%20%7Bname%0A%20%20%20%20symbol%7D%0A%20%20%7D%0A%20%20numTokens%0A%7D%7D%0A)
 
 
-![type:video](../../Images/demo-subgraph-building.mp4)
+![](../../Images/demo-subgraph-building.gif)
 
 ### Example Queries
 #### Querying all the tokens owned by a specific address
