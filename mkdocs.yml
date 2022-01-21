@@ -35,7 +35,6 @@ extra:
 
 theme:
   features:
-    - content.tabs.link
   name: material
   custom_dir: CI/custom_theme
   palette:
@@ -69,8 +68,6 @@ nav:
         - Validators: Concepts/Validators.md
 
 markdown_extensions:
-  - pymdownx.highlight:
-      use_pygments: true
   - toc:
       permalink: 
       toc_depth: 4
