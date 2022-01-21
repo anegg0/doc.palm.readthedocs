@@ -35,6 +35,7 @@ extra:
 
 theme:
   features:
+    - content.tabs.link
   name: material
   custom_dir: CI/custom_theme
   palette:
