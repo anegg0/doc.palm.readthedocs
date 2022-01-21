@@ -50,27 +50,32 @@ The training-toolkit enables you to deploy a [simplified EIP-721 NFT smart contr
 If this is your first time interacting with the Palm Network, please refer to the [connect with testnet](../../Get-Started/Connect/Testnet.md) or [mainnet](../../Get-Started/Connect/Mainnet.md) articles. Once you are granted access to the network:
 
 1. **Clone the repo**
+
 ``` bash
   git clone git@github.com:Palm-Network/training-toolkit.git
 ```
 
 2. **Install**
+
 ``` bash
   npm install
 ```
 
 3. **Add a .env file and add values to the following variables:**
+
 ```
 INFURA_PROJECT_ID
 PRIVATE_KEY
 PUBLIC_KEY
 ```
 4. **Deploy contract to Palm Testnet:**
+
 ``` bash
   npx hardhat run scripts/deploy.js --network palm_testnet
 ```
 
 5. **Add the newly deployed contract address to the .env variables:**
+
 ```
 CONTRACT_ADDRESS
 ```
