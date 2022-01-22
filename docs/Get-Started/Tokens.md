@@ -1,5 +1,5 @@
 ---
-Description: How to obtain PALM tokens.
+description: how to obtain palm tokens.
 ---
 
 # Get PALM tokens

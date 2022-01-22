@@ -1,5 +1,5 @@
 ---
-Description: Run a transaction node.
+description: run a transaction node.
 ---
 
 # Run a transaction node

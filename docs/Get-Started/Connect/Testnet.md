@@ -1,5 +1,5 @@
 ---
-Description: Connect to Palm Testnet.
+description: connect to palm testnet.
 ---
 
 # Connect to Palm Testnet

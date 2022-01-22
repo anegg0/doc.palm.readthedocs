@@ -1,5 +1,5 @@
 ---
-Description: How to deploy a smart contract to the Palm network using Truffle.
+description: how to deploy a smart contract to the palm network using truffle.
 ---
 
 # Deploy using Truffle

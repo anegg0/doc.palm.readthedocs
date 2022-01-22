@@ -1,7 +1,7 @@
 ---
-description: Palm API
+description: palm api
 ---
 
-# Palm API
+# Palm network API
 
 API documentation and examples.

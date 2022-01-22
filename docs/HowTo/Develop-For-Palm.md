@@ -1,5 +1,5 @@
 ---
-Description: How to develop for palm
+description: how to develop for palm
 ---
 
 # Develop for Palm

@@ -1,10 +1,10 @@
 ---
-description: Palm documentation home page
+description: palm network documentation home page
 ---
 
-# Palm
+# The Palm network
 
-## What's Palm?
+## What's the Palm network?
 
 The Palm network is an Ethereum sidechain dedicated to selling, purchasing, and trading NFTs that
 are associated with real-world and digital assets.
@@ -18,7 +18,7 @@ An automated bridge relay service connects payment tokens, like DAI, and NFTs on
 Palm network, with bridging contracts deployed on both networks to manage the connection.
 Fees collected from this bridge are partially used to purchase carbon offsets.
 
-## Why develop on Palm?
+## Why develop on the Palm network?
 
 Powered by the PALM token, the Palm network ecosystem enables creators and artists to mint
 energy-efficient NFTs with low gas fees and fast transaction finality.

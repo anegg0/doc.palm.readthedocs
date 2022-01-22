@@ -1,5 +1,5 @@
 ---
-Description: How to deploy a smart contract to the Palm network using Hardhat.
+description: how to deploy a smart contract to the palm network using hardhat.
 ---
 
 # Deploy an NFT contract using Hardhat
