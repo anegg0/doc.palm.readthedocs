@@ -210,7 +210,7 @@ The Palm Network provides a Graph node and a number of already deployed Subgraph
 | Name & repo | Use         | Mainnet Endpoint/GraphiQL  | Testnet Endpoint/GraphiQL |
 | :---        |    :----:   |     :----:             |   ---:            |
 | wighawag/eip721-subgraph  | Querying ERC-721 tokens | https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/wighawag/eip721-subgraph |
-| amxx/eip1155-subgraph  | Querying ERC-1155 tokens | https://graph.palm.io/subgraphs/name/amxx/eip1155-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/ArtBlocks/artblocks-subgraph-palm-testnet |
+| amxx/eip1155-subgraph  | Querying ERC-1155 tokens | https://graph.palm.io/subgraphs/name/amxx/eip1155-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/amxx/eip1155-subgraph |
 | sushi/exchange-palm  | Querying the Palm Sushi exchange | https://graph.palm.io/subgraphs/name/sushi/exchange-palm |   |
 | nftx-project/nftx-v2-subgraph  | Querying the https://nftx.io/ contracts deployed to Palm | https://graph.palm.io/subgraphs/name/nftx-project/nftx-v2-palm | |
 | ethereum-blocks  | Querying Palm mainnet’s blocks | https://graph.palm.io/subgraphs/name/blocklytics/palm-mainnet-blocks | |
