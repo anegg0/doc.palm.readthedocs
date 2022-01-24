@@ -208,7 +208,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 The Palm Network provides a Graph node and a number of already deployed Subgraphs tailored for NFT contexts. Developers can access those Subgraphs through RESTful or WebSocket APIs calls:
 
 | Name & repo | Use         | Mainnet Endpoint/GraphiQL  | Testnet Endpoint/GraphiQL |
-|-------------|-------------|----------------------------|---------------------------|
+|:------------|:------------|:---------------------------|:--------------------------|
 | wighawag/eip721-subgraph  | Querying ERC-721 tokens | https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/wighawag/eip721-subgraph |
 | amxx/eip1155-subgraph  | Querying ERC-1155 tokens | https://graph.palm.io/subgraphs/name/amxx/eip1155-subgraph |  https://graph.palm-uat.xyz/subgraphs/name/amxx/eip1155-subgraph |
 | sushi/exchange-palm  | Querying the Palm Sushi exchange | https://graph.palm.io/subgraphs/name/sushi/exchange-palm |   |
