@@ -201,7 +201,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
     ```
 [Try this query with GraphiQl](https://graph.palm.io/subgraphs/name/wighawag/eip721-subgraph/graphql?query=query%7Btokens(where%3A%7Bcontract%3A%220xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa%22%7D%2C%20first%3A%2010%20)%7B%0A%20%20%20%20%20%20id%0A%20%20owner%7Bid%0A%20%20%20%20numTokens%7D%0A%20%20%20%20%20%20contract%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20symbol%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20tokenURI%0A%20%20%20%20%7D%0A%20%20%20%20%7D%0A)
 
-**Note**: All address values (e.g. when used for id) must be in a lower case format.
+**Note**: When used as a search parameter, all `id` address values must be in lower case.
 
 ## 3. Deployed Subgraphs on the Palm Network
 
