@@ -95,7 +95,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
 4. Upload a media file to IPFS:
 
-    This step consists of adding a media file of your choice to [IPFS](https://ipfs.io/), the decentralized storage system. In order to help ensure this file's availability, you can "pin" the file in IPFS. There are several pinning services available that will maintain your file on IPFS. Here are a few to consider:
+    This step consists of adding a media file of your choice to [IPFS](https://ipfs.io/), the decentralized storage system. In order to help ensure this file's availability, you can "pin" the file in IPFS. There are several pinning services available that will maintain your file on IPFS. Here are a few:
 
     * [INFURA](https://infura.io/)
     * [Ethernum](https://www.eternum.io/)
