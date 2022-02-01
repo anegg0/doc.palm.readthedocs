@@ -2,11 +2,9 @@
 
 The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might prefer to move their assets from the Palm Network to Ethereum in order to reach marketplaces such as [OpenSea](https://opensea.io/).
 
-As a developer, you might want to support those users wishing to transfer tokens from the Palm Network to Ethereum, and so you will want to know how to prepare your ERC-721 smart contracts to ensure that the NFT Bridge supports them.
+As a developer, you might want to support users wishing to transfer tokens from the Palm Network to Ethereum, and so you will want to know how to prepare your ERC-721 smart contracts to ensure that the NFT Bridge supports them.
 
 This article contains two sections:
-
-
 
 1. A high-level description of how the Palm Network bridge operates.
 2. Instructions on how to integrate your ERC-721 contracts with Palm Network bridge.
@@ -319,7 +317,7 @@ We recommend the following for the synthetic contract:
 * The bridge ERC-721 handler will need access to call the contract mint and burn functions. We recommend using [role-based access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) to avoid granting admin functions to the bridge address.
 
 
-# Registering your ERC-721 contracts with the Palm NFT Bridge
+## Registering your ERC-721 contracts with the Palm NFT Bridge
 
 This page contains example steps as a guideline. Steps are valid for the UAT environment. Users need to update configuration parameters correctly when performing the steps in PRD.
 
@@ -416,7 +414,7 @@ WORK_DIR=$(mktemp -d -p $HOME bridge-register-mtt1) && cd $WORK_DIR
 Note: If the contracts have already been deployed and we know the token ID, you will fill in the TOKEN= var, and you can skip steps 4 through 6 \
 The file should contain the following environment variable: \
 * TOKEN= var \
-# This is an arbitrary value except that last byte should be source chain
+This is an arbitrary value except that last byte should be source chain
 5. # However as standard: ERC token address used. 
 6. # 0x000000000000000000000061944015438222AC5340f6C04fcb64b9f59859B501 \
 * RESOURCE_ID  \
@@ -459,11 +457,11 @@ Note: If the contracts have already been deployed and we know the token ID, you 
 
 RESOURCE_ID=0x000000000000000000000061944015438222AC5340f6C04fcb64b9f59859B501
 
-# JSON RPC Endpoint to deploy to. Update with correct project id here
+### JSON RPC Endpoint to deploy to. Update with correct project id here
 
 RPC_URL=https://rinkeby.infura.io/v3/xxxxxxx
 
-# Private key of the bridge address. This is available in 1Password
+### Private key of the bridge address. This is available in 1Password
 
 PRIVATE_KEY=&lt;private key of the bridge address>
 

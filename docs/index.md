@@ -1,5 +1,5 @@
 ---
-description: Palm documentation home page
+description: palm network documentation home page
 ---
 
 # Palm
