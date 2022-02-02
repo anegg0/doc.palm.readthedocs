@@ -1,10 +1,16 @@
-# Integrating With The Palm NFT Bridge
+----
+-Description: integrating with the palm network bridge.
+----
+
+# Integrating With The Palm Network Bridge
 
 The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might prefer to move their assets from the Palm Network to Ethereum in order to reach marketplaces such as [OpenSea](https://opensea.io/).
 
-As a developer, you might want to support users wishing to transfer tokens from the Palm Network to Ethereum, and so you will want to know how to prepare your ERC-721 smart contracts to ensure that the NFT Bridge supports them.
+As a developer, you might want to support those users wishing to transfer tokens from the Palm Network to Ethereum, and so you will want to know how to prepare your ERC-721 smart contracts to ensure that the NFT Bridge supports them.
 
 This article contains two sections:
+
+
 
 1. A high-level description of how the Palm Network bridge operates.
 2. Instructions on how to integrate your ERC-721 contracts with Palm Network bridge.
@@ -18,12 +24,10 @@ The bridge allows transferring assets such as ERC-20 and ERC-721 tokens back and
 
 In the case of NFTs, the bridge works by locking tokens that have already been minted on one side of the bridge and then minting an equivalent token on the other side, using what we call a “synthetic” version of the ERC-721 contract.
 
-
 ![alt_text](images/image1.png "image_tooltip")
 
 
 Users can send their tokens back to the original side: the bridge will burn the synthetic token and release the original token that will be transferred to the destination wallet address.
-
 
 ![alt_text](images/image2.png "image_tooltip")
 
@@ -57,7 +61,14 @@ Here’s the workflow occurring when a user transfers an ERC-721 token from the 
 
 
 
-1. The user calls the _deposit()_ function on Palm network’s bridge contract. The user must provide the target chain, the resource ID, and the _calldata, which represent a token transfer to be executed on Ethereum_. 
+1. The user calls the _deposit()_ function on Palm network’s bridge contract. The user must provide the target chain, the resource ID, and the _calldata, which represent a token transfer to be executed on Ethereum_.  \
+ \
+The user is triggering the deposit on the Bridge UI \
+	* fees \
+	* approval from the user to spend DAI or other currency \
+Include bridge video (blog post) \
+ \
+	*
 2. The ERC-721 handler’s _deposit()_ function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
 3. Proposal -  Palm’s bridge contract then emits a _Deposit_ event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a _proposal_.
 4. Vote - Once a relayer detects the event on Ethereum, it triggers a vote on the proposal.  The vote happens between relayers on Ethereum’s bridge contract.
@@ -67,7 +78,7 @@ Here’s the workflow occurring when a user transfers an ERC-721 token from the 
 
 ## Helpful Information - Palm Mainnet
 
-The following table contains the contracts and addresses of the main bridge components. 
+The following table contains the contracts and addresses of the main bridge components.
 
 
 <table>
@@ -302,22 +313,20 @@ mint()/burn() - The user approves the handler to move the tokens before initiati
 
 [https://github.com/Palm-Network/nft-contracts/blob/43a404fe35956fb009ad51e5017ad7f3b150261b/contracts/NFT.sol#L71](https://github.com/Palm-Network/nft-contracts/blob/43a404fe35956fb009ad51e5017ad7f3b150261b/contracts/NFT.sol#L71)
 
-Bridge contracts require minting, burning, and transfer permission.
+Bridge contracts require minting, burning, and transfer permission. They have to implement the Enumerable (Open Zeppelin).
 
-
+Contact us on discord to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 ![alt_text](images/image3.png "image_tooltip")
 
 
 We recommend the following for the synthetic contract:
-
-
 
 * It should have a `mint` function, and the bridge will expect to be able to set the Token ID when minting.
 * It should have a `burn` function that the bridge will call when sending tokens back to the original side.
 * The bridge ERC-721 handler will need access to call the contract mint and burn functions. We recommend using [role-based access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) to avoid granting admin functions to the bridge address.
 
 
-## Registering your ERC-721 contracts with the Palm NFT Bridge
+# Registering your ERC-721 contracts with the Palm NFT Bridge
 
 This page contains example steps as a guideline. Steps are valid for the UAT environment. Users need to update configuration parameters correctly when performing the steps in PRD.
 
@@ -326,301 +335,3 @@ References
 [Deploying Live (EVM EVM)](https://chainbridge.chainsafe.io/live-evm-bridge/) - ChainBridge Docs
 
 Notes
-
-
-## Registering the token with the bridge
-
-[https://github.com/ChainSafe/chainbridge-deploy/tree/main/cb-sol-cli](https://github.com/ChainSafe/chainbridge-deploy/tree/main/cb-sol-cli) registers your original token contract with the bridge’s contract handler
-
-Two environment files are created to register the tokens, one for Ethereum and one for the Palm network.
-
-The ResourceId's are identical in each environment file
-
-The Bridge Address and ERC20/ERC721 Handler addresses are in the bridge-relayer configuration file for each environment.
-
-When setting a token as burnable ( set-burn ), this only occurs on the network from which the contract did NOT originate on.
-
-For instance, if the contract was created on the Palm network, the burnable token is on Ethereum.
-
-The instructions below cover the scenario for an ERC-721 token initially deployed to Palm Testnet, requiring its equivalent token to be on Ethereum Rinkeby test network.
-
-
-### Register Resource on Palm
-
-
-
-1. **Create a working folder**  \
-We’re using a test token called mtt1 in this example)  \
-WORK_DIR=$(mktemp -d -p $HOME bridge-register-mtt1) && cd $WORK_DIR
-2. Clone the repository which contains the cb-sol-cli scripts (README) \
-`git clone [https://github.com/ChainSafe/chainbridge-deploy.git](https://github.com/ChainSafe/chainbridge-deploy.git)`
-3. **Install ChainBridge’s deploy tools:** \
-`git clone [https://github.com/ChainSafe/chainbridge-deploy](https://github.com/ChainSafe/chainbridge-deploy). \
-&& cd chainbridge-deploy/cb-sol-cli \
-&& npm install \
-&& make install`
-4. **Create an .env file**  \
-The file should contain the following environment variable: \
-* RESOURCE_ID  \
-RESOURCE_ID is the main item that is registered. It represents the token address and its network of origin. \
-Format: [0x] + [ token address] + [source network identifier]: \
-The network identifier generally indicates on which network the real/original token/NFT lives. \
-01 for Ethereum and 02 for Palm.  \
-If we take a DAI token as an example, the original DAI is on Ethereum, so ResourceId will be 01.  \
-For the Damien Hirst Currency NFT, the real NFT is on Palm, so it would normally be 02. \
-Here’s a valid example of a resourceId variable: \
-RESOURCE_ID=”0x000000000000000000000061944015438222AC5340f6C04fcb64b9f59859B501” \
-* JSON RPC \
-It’s the Endpoint to deploy to. Update with correct project id as follows: \
-RPC_URL=[https://palm-testnet.infura.io/v3/xxxxxxxx](https://palm-testnet.infura.io/v3/xxxxxxxx) \
-* PRIVATE_KEY  \
-Private key of the bridge address. This is available in 1Password \
-Format: PRIVATE_KEY=&lt;private key of the bridge address> \
-* BRIDGE_ADDRESS \
-This is the bridge’s contract address on Mainnet/Rinkeby. \
-The bridge contract is already deployed, so simply add the following as-is for both Mainnet and Rinkeby: \
-BRIDGE_ADDRESS=”0xdeD098F762456D4BEA387AcadcB1eAeA63E8e954” \
-* ERC721_HANDLER \
-This is the address of the ERC721 contract handler on Palm testnet: \
-ERC721_HANDLER=”0x0114a4A5604f88076D6CDD5607115CE42812e404” \
-* GAS_PRICE \
-This is where you can set your gas price. For palm testnet it is quite low, 1000 is enough.  \
-GAS_PRICE=1000 \
-* TOKEN=
-5. **Source your .env file \
-`**source .env`
-6. **Register resource. ** \
-Palmnet gas price is fairly low. \
-`cb-sol-cli --url $RPC_URL --privateKey $PRIVATE_KEY --gasPrice $GAS_PRICE bridge register-resource  --bridge $BRIDGE_ADDRESS --handler $ERC721_HANDLER --resourceId $RESOURCE_ID --targetContract $TOKEN`
-
- 
-
-
-### Register Resource on Rinkeby
-
-
-
-1. **Create a working folder**  \
-We’re using a test token called mtt1 in this example)  \
-WORK_DIR=$(mktemp -d -p $HOME bridge-register-mtt1) && cd $WORK_DIR
-2. Clone the repository which contains the cb-sol-cli scripts (README) \
-`git clone [https://github.com/ChainSafe/chainbridge-deploy.git](https://github.com/ChainSafe/chainbridge-deploy.git)`
-3. **Install ChainBridge’s deploy tools:** \
-`git clone [https://github.com/ChainSafe/chainbridge-deploy](https://github.com/ChainSafe/chainbridge-deploy) \
-&& cd chainbridge-deploy/cb-sol-cli \
-&& npm install \
-&& make install`
-4. **Create an .env file**  \
-Note: If the contracts have already been deployed and we know the token ID, you will fill in the TOKEN= var, and you can skip steps 4 through 6 \
-The file should contain the following environment variable: \
-* TOKEN= var \
-This is an arbitrary value except that last byte should be source chain
-5. # However as standard: ERC token address used. 
-6. # 0x000000000000000000000061944015438222AC5340f6C04fcb64b9f59859B501 \
-* RESOURCE_ID  \
-RESOURCE_ID is the main item that is registered. It represents the token address and its network of origin. \
-Format: [0x] + [ token address] + [source network identifier]: \
-The network identifier generally indicates on which network the real/original token/NFT lives. \
-01 for Ethereum and 02 for Palm.  \
-If we take a DAI token as an example, the original DAI is on Ethereum, so ResourceId will be 01.  \
-For the Damien Hirst Currency NFT, the real NFT is on Palm, so it would normally be 02. \
-Here’s a valid example of a resourceId variable: \
-RESOURCE_ID=”0x000000000000000000000061944015438222AC5340f6C04fcb64b9f59859B501” \
-* JSON RPC \
-It’s the Endpoint to deploy to. Update with correct project id as follows: \
-RPC_URL=[https://palm-testnet.infura.io/v3/xxxxxxxx](https://palm-testnet.infura.io/v3/xxxxxxxx) \
-* PRIVATE_KEY  \
-Private key of the bridge address. This is available in 1Password \
-Format: PRIVATE_KEY=&lt;private key of the bridge address> \
-* BRIDGE_ADDRESS \
-This is the bridge’s contract address on Mainnet/Rinkeby. \
-The bridge contract is already deployed, so simply add the following as-is for both Mainnet and Rinkeby: \
-BRIDGE_ADDRESS=”0xdeD098F762456D4BEA387AcadcB1eAeA63E8e954” \
-* ERC721_HANDLER \
-This is the address of the ERC721 contract handler on Palm testnet: \
-ERC721_HANDLER=”0x0114a4A5604f88076D6CDD5607115CE42812e404” \
-* GAS_PRICE \
-This is where you can set your gas price. For palm testnet it is quite low, 1000 is enough.  \
-GAS_PRICE=1000 \
-* TOKEN=
-7. **Source your .env file \
-`**source .env`
-8. **Register resource. ** \
-Palmnet gas price is fairly low. \
-`cb-sol-cli --url $RPC_URL --privateKey $PRIVATE_KEY --gasPrice $GAS_PRICE bridge register-resource  --bridge $BRIDGE_ADDRESS --handler $ERC721_HANDLER --resourceId $RESOURCE_ID --targetContract $TOKEN`
-
-Create an environment variable file, example: touch .env-uat-mtt1-rinkeby
-
-Configure the variables in file, example: .env-uat-mtt1-mainnet
-
-Note: If the contracts have already been deployed and we know the token ID, you will fill in the TOKEN= var, and you can skip steps 4 through 6
-
-RESOURCE_ID=0x000000000000000000000061944015438222AC5340f6C04fcb64b9f59859B501
-
-### JSON RPC Endpoint to deploy to. Update with correct project id here
-
-RPC_URL=https://rinkeby.infura.io/v3/xxxxxxx
-
-### Private key of the bridge address. This is available in 1Password
-
-PRIVATE_KEY=&lt;private key of the bridge address>
-
-# Bridge contract address on Mainnet/Rinkeby.
-
-# Given bridge contract is already created this is available in briege-relayer configuration
-
-BRIDGE_ADDRESS=0x21bE213d63e9F5CE1F93D2758F132817A41874e1
-
-# ERC721 contract handler address on Mainnet/Rinkeby
-
-ERC721_HANDLER=0x3bD23d02a76804E839c4B73E978Ce05a406e964b
-
-# 2 GWEI for Rinkeby
-
-GAS_PRICE=2000000000
-
-# Symbol and Description properties to synthetic token
-
-ERC721_NAME="Token Name"
-
-ERC721_SYMBOL="SYMBOL123"
-
-# Left blank if you require a synthetic contract deployed for you
-
-# Populate with the existing token address if already deployed to target chain
-
-#TOKEN=0x9999999999999999999999999999999999999999
-
-Source the file, example: 
-
-source .env-uat-mtt1-rinkeby
-
-OPTIONAL STEPS 4-6
-
-If a synthetic ERC-721 is required, the CLI scripts can deploy a fairly standard OpenZepellin contract with required functions for bridge compatibility (mint, burn), but no royalties support. 
-
-Add synthetic token:
-
-cb-sol-cli --url $RPC_URL --privateKey $PRIVATE_KEY  --gasPrice $GAS_PRICE deploy --erc721 --erc721Name $ERC721_NAME --erc721Symbol $ERC721_SYMBOL
-
-Output:
-
- 
-
-Deploying contracts...
-
-WARNING: Multiple definitions for safeTransferFrom
-
-✓ ERC721 contract deployed
-
-================================================================
-
-Url:        https://rinkeby.infura.io/v3/xxxxxxx
-
-Deployer:   0x1c30C32dFDdd7C066F55D0096557c89D243e87b5
-
-Gas Limit:   8000000
-
-Gas Price:   1000000000000
-
-Deploy Cost: 3.75775348
-
-Options
-
-=======
-
-Chain Id:    0
-
-Threshold:   2
-
-Relayers:    
-
-0xff93B45308FD417dF303D6515aB04D9e89a750Ca,
-
-0x8e0a907331554AF72563Bd8D43051C2E64Be5d35,
-
-0x24962717f8fA5BA3b931bACaF9ac03924EB475a0,
-
-0x148FfB2074A9e59eD58142822b3eB3fcBffb0cd7,
-
-0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485
-
-Bridge Fee:  0
-
-Expiry:      100
-
-Contract Addresses
-
-================================================================
-
-Bridge:             Not Deployed
-
-----------------------------------------------------------------
-
-Erc20 Handler:      Not Deployed
-
-----------------------------------------------------------------
-
-Erc721 Handler:     Not Deployed
-
-----------------------------------------------------------------
-
-Generic Handler:    Not Deployed
-
-----------------------------------------------------------------
-
-Erc20:              Not Deployed
-
-----------------------------------------------------------------
-
-Erc721:             0xB8150d60BF4Dd6d4CeF305036901B8Ba8a4F747b
-
-----------------------------------------------------------------
-
-Centrifuge Asset:   Not Deployed
-
-----------------------------------------------------------------
-
-WETC:               Not Deployed
-
-================================================================
-
- 
-
-Update the file .env-uat-mtt1-rinkeby with TOKEN=&lt;Erc721 token address from above command>
-
- 
-
-Source the file, example: source .env-uat-mtt1-rinkeby
-
-END OF OPTIONAL STEP
-
-Register resource. GasPrice needs to be adjusted based on the time and network. On Rinkeby it's very low. But on Ethereum it depends on the time.
-
-cb-sol-cli --url $RPC_URL --privateKey $PRIVATE_KEY --gasPrice $GAS_PRICE bridge register-resource  --bridge $BRIDGE_ADDRESS --handler $ERC721_HANDLER --resourceId $RESOURCE_ID --targetContract $TOKEN
-
-Set token as burnable:
-
-cb-sol-cli --url $RPC_URL --privateKey $PRIVATE_KEY --gasPrice $GAS_PRICE bridge set-burn --bridge $BRIDGE_ADDRESS --handler $ERC721_HANDLER --tokenContract $TOKEN
-
-Set token as mintable – provide the resource address from the generated contract:
-
-cb-sol-cli --url $RPC_URL --privateKey $PRIVATE_KEY --gasPrice $GAS_PRICE erc721 add-minter --erc721Address $TOKEN --minter $ERC721_HANDLER
-
-Note: this can only be done by the Owner of the contract, so if we skipped steps 4 through 6 earlier because the token already exists, someone else created it and thus we are not the Owner.  This can safely be run anyway, it will simply error that the bridge account doesn’t have permission to do so
-
- 
-
-Update Bridge UI Configuration
-
-This section is carried out by Palm engineers
-
-Token configuration needs to be updated in the bridge-ui application. Update the configuration in Github repository https://github.com/ConsenSys-Palm/palm-bridge-ui
-
-Update $REPO_HOME/src/config/config.&lt;env code>.json environment specific file by adding new tokens
-
-Commit the changes and create PR.
-
-Upon merging the PR it will automatically deploy to UAT and DEV environments.
-
-Create a tag release to deploy to PROD

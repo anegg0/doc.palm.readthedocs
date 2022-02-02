@@ -58,12 +58,12 @@ nav:
         - Mint NFTs using Hardhat: HowTo/Mint-NFT-using-Hardhat.md
         - Run a transaction node: HowTo/Run-a-Transaction-Node.md
         - Use the bridge: HowTo/Bridge.md
+        - Integrate With The Bridge: HowTo/Integrate-With-Bridge.md
         - Use supported tools:
             - Overview: HowTo/Use-Supported-Tools/Tools.md
             - Covalent API: HowTo/Use-Supported-Tools/Covalent.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
-        - Palm Bridge Overview: HowTo/Bridge-Overview.md
         - Validators: Concepts/Validators.md
 
 markdown_extensions:
