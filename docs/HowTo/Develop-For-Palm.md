@@ -23,7 +23,7 @@ would if developing for Ethereum.
 If you're new to smart contract development, you can follow standard Ethereum tutorials such as
 [Truffle's Pet Shop Tutorial](https://www.trufflesuite.com/tutorial).
 
-## Connecting end users to the Palm Network
+## Connecting end users to the Palm network
 
 When developing for Palm, you may need to get end users set up and connected to the Palm network.
 Because Palm is a relatively new network, it may not be supported out-of-the-box across all wallet providers.

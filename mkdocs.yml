@@ -62,6 +62,7 @@ nav:
         - Use supported tools:
             - Overview: HowTo/Use-Supported-Tools/Tools.md
             - Covalent API: HowTo/Use-Supported-Tools/Covalent.md
+            - The Graph: HowTo/Use-Supported-Tools/TheGraph.md
     - Concepts:
         - Architecture overview: Concepts/Architecture.md
         - Validators: Concepts/Validators.md
