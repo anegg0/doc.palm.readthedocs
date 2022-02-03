@@ -1,5 +1,5 @@
 ---
-Description: How to use the bridge.
+description: how to use the bridge.
 ---
 
 # Use the bridge

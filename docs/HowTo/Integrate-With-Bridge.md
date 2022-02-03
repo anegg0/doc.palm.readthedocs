@@ -1,85 +1,354 @@
-----
--Description: integrating with the palm network bridge.
-----
+---
+description: integrating with the palm network bridge.
+---
 
 # Integrating With The Palm Network Bridge
 
-The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might prefer to move their assets from the Palm Network to Ethereum in order to reach marketplaces such as [OpenSea](https://opensea.io/).
+The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might decide to move their assets from the Palm Network to Ethereum in order to reach specific marketplaces. They can transfer their token(s) using the Palm network bridge.
 
-As a developer, you might want to support those users wishing to transfer tokens from the Palm Network to Ethereum, and so you will want to know how to prepare your ERC-721 smart contracts to ensure that the NFT Bridge supports them.
+As a developer you can support those users by integrating your Dapp/Contracts with the Palm network bridge.
 
-This article contains two sections:
+This article explains:
 
+1. What is the Palm network Bridge.
+2. How to integrate with the bridge.
 
+## What is the Palm network Bridge?
 
-1. A high-level description of how the Palm Network bridge operates.
-2. Instructions on how to integrate your ERC-721 contracts with Palm Network bridge.
+The Palm network bridge connects the Palm network with Ethereum. It allows transferring assets such as ERC-20 and ERC-721 tokens back and forth between the Palm Network and Ethereum.
 
-Note: In this article, the term “Palm” designates the Palm network.
+In the case of NFTs, the bridge works by locking tokens that have already been minted on one side of the bridge and then minting an equivalent token on the other side, using what we call a “synthetic” version of the ERC-721 contract:
 
-
-## What Does The Palm Bridge Do?
-
-The bridge allows transferring assets such as ERC-20 and ERC-721 tokens back and forth between the Palm network and Ethereum.
-
-In the case of NFTs, the bridge works by locking tokens that have already been minted on one side of the bridge and then minting an equivalent token on the other side, using what we call a “synthetic” version of the ERC-721 contract.
-
-![alt_text](images/image1.png "image_tooltip")
+![](/../../Images/token-bridge-flow.png)
 
 
-Users can send their tokens back to the original side: the bridge will burn the synthetic token and release the original token that will be transferred to the destination wallet address.
+Users can send their tokens back to the original side: the bridge will burn the synthetic token and release the original token that will be transferred to the destination wallet address:
 
-![alt_text](images/image2.png "image_tooltip")
-
+![](/../../Images/token-bridge-reverse-flow.png)
 
 A fee is required for transferring assets from Palm to Ethereum (to cover gas costs of minting and a carbon offset). Moving assets back to Palm will top up the depositor's account with a small amount of PALM tokens.
 
-Now let's dive a bit deeper into how the bridge operates:
+!!! abstract "What does an end-user see when she uses the bridge?"
 
+    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users will initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
+    You can find more about the UI flow [_here_.](./Bridge.md ).
 
-## How Does The Palm Bridge Work?
+    For an explanation of what happens programmatically, see below.
+
+Now, let's dive a bit deeper into how the bridge operates:
 
 The Palm bridge runs on [ChainBridge](https://chainbridge.chainsafe.io/), a communication protocol where events on the source chain are used to send messages routed to the destination chain, where they will be submitted as transactions.
 
 A few concepts specific to ChainBridge:
 
-
-
 * **Relayers** — Off-chain servers that listen for particular events on the source chain and submit signed proposals to the destination chain.
 * **Bridge contracts** — Delegate calls to the handler contracts for deposits, start a transaction on the source chain, and execute the proposals on the target chain.
 * **Handler contracts** — Palm's handler contracts send mint/burn transactions depending on the user input.
-* **Target contract**s — On Palm, target contracts are ERC-721 and ERC-1155 on each side of the bridge.
+* **Target contracts** — On Palm, target contracts are ERC-721 and ERC-1155 on each side of the bridge.
 * **Deposit() function** — Here, a deposit is simply the initiation of a transfer of a piece of data, often representing instructions to execute a mint() function.
 * **Resource ID** — Identifier for the ERC-721 smart contract. Resource ID is used to link the contracts on both sides of the bridge.
-* **Chain ID** — Identifier of the chain, for example, Palm network or Ethereum
+* **Chain ID** — Identifier of the chain, for example, Palm Network or Ethereum
 * **Calldata** — Payload contained by an event/proposal. The calldata represents a function to be executed on the targeted chain. On Palm, calldata represent the mint() functions.
 
 
 ### Transfer flow
 
-Here’s the workflow occurring when a user transfers an ERC-721 token from the Palm network to Ethereum :
+!!! abstract "What actually happens when an end-user uses the bridge?"
+
+    Here’s the workflow occurring when a user transfers an ERC-721 token from the Palm Network to Ethereum :
+
+    1. The user calls the _deposit()_ function on Palm Network’s bridge contract. The user must provide the _target chain_, the _resource ID_, and the _calldata_, which represent a token transfer to be executed on Ethereum.
+    2. The ERC-721 handler’s _deposit()_ function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
+    3. Proposal -  Palm’s bridge contract then emits a _Deposit_ event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a _proposal_.
+    4. Once the bridge's first relayer detects the event on Ethereum, it executes the proposal on Ethereum via the bridge. Effectively, the proposal delegates an `executeDeposit `call to the ERC-721 handler contract.
+    6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
 
 
+## How to integrate with the bridge?
 
-1. The user calls the _deposit()_ function on Palm network’s bridge contract. The user must provide the target chain, the resource ID, and the _calldata, which represent a token transfer to be executed on Ethereum_.  \
- \
-The user is triggering the deposit on the Bridge UI \
-	* fees \
-	* approval from the user to spend DAI or other currency \
-Include bridge video (blog post) \
- \
-	*
-2. The ERC-721 handler’s _deposit()_ function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
-3. Proposal -  Palm’s bridge contract then emits a _Deposit_ event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a _proposal_.
-4. Vote - Once a relayer detects the event on Ethereum, it triggers a vote on the proposal.  The vote happens between relayers on Ethereum’s bridge contract.
-5. If a quorum is met, a relayer executes the proposal on Ethereum via the bridge. Effectively, the proposal delegates an `executeDeposit `call to the ERC-721 handler contract.
-6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
+  All you need to do to integrate with the bridge is to prepare your token contracts to ensure that the Bridge supports them.
+
+### Making your token contracts bridge-compatible
+
+There are few things to modify if you would like your contracts to be compatible with the Palm Network's bridge.
+
+### Original contracts vs Synthetic contracts
+
+In the context of the Palm Network's bridge, an original contract sits where tokens are primarily minted.
+A synthetic contract is deployed on the chain where tokens will be transferred via the bridge.
+
+Deploying both original and synthetic contracts ensures that tokens can be transferred back and forth to the original chain and the destination chains.
+
+The below specifications apply to ERC-721, ERC-1155, and ERC-20 contracts.
+
+#### Specifications of original contract
+
+1. Needs to include the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Enumerable).
+
+Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk minting, token ID auto-increment, etc...
+
+#### Specifications of synthetic contract
+
+1. Needs to add the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Enumerable).
+
+2. Needs to have a custom `mint()` function.
+
+    In order to mint a replica of the original token on the targeted chain, the synthetic contract needs to allow the bridge to mint tokens that have the same `IDs` and `URIs` as the original.
+
+    ???+ note "Custom `mint()` function example:"
+
+        ``` js linenums="1"
+        /**
+          * @dev Mints the specified token id to the recipient addresses
+          * @dev The unused string parameter exists to support the API used by ChainBridge.
+          * @dev Mint interface: function mint(address to, uint256 tokenId, string calldata _data) public where _data is the tokenUri
+          * @param tokenId tokenId to be minted
+          * @param recipient Address that will receive the tokens
+          */
+        function mint(address recipient, uint256 tokenId, string calldata tokenUri) external onlyMinters {
+            _mint(recipient, tokenId);
+            _setTokenURI(tokenId, tokenUri);
+        }
+        ```
+
+3. Needs to grant the bridge minting permission.
+
+    The bridge's handler will need access to the synthetic contract's `mint()` function.
+
+    We recommend using [role-based access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) to avoid granting admin functions to the bridge address.
+
+    You can set granular rights that only set controls on the `mint()`function.
+
+    ???+ note "Granular `mint()` rights example:"
+
+        ``` js linenums="1"
+        /**
+          * @dev Throws if called by any account other than minters. Implemented using the underlying AccessControl methods.
+          */
+        modifier onlyMinters() {
+            require(hasRole(MINTER_ROLE, _msgSender()), "Caller does not have the MINTER_ROLE");
+            _;
+        }
+        ```
+
+4. Needs to have a `burn()` function.
+
+    Same as for the `mint()` function described above, the bridge will need to be granted permission to the `burn()` function in order to burn synthetic tokens when transferring them back to the original chain.
+
+5. Needs to give the bridge burning permission.
+
+    Same as point 5. but for the `burn()` function.
 
 
-## Helpful Information - Palm Mainnet
+If you would like to put all those bits into context, here's a contract example that applies for both _original_ and synthetic contracts:
+
+???+ note "ERC-721 contract example:"
+
+    ``` js linenums="1"
+
+    // SPDX-License-Identifier: MIT
+    pragma solidity 0.8.6;
+
+    import "@openzeppelin/contracts/access/AccessControl.sol";
+    import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+    import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
+    import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
+
+    import "./ERC2981.sol";
+
+    contract NFT is AccessControl, ERC2981, ERC721Enumerable, ERC721Burnable, ERC721Pausable {
+        event RoyaltyWalletChanged(address indexed previousWallet, address indexed newWallet);
+        event RoyaltyFeeChanged(uint256 previousFee, uint256 newFee);
+        event BaseURIChanged(string previousURI, string newURI);
+
+        bytes32 public constant OWNER_ROLE = keccak256("OWNER_ROLE");
+        bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+
+        uint256 public constant ROYALTY_FEE_DENOMINATOR = 100000;
+        uint256 public royaltyFee;
+        address public royaltyWallet;
+
+        string private _baseTokenURI;
+
+        /**
+        * @param _name ERC721 token name
+        * @param _symbol ERC721 token symbol
+        * @param _uri Base token uri
+        * @param _royaltyWallet Wallet where royalties should be sent
+        * @param _royaltyFee Fee numerator to be used for fees
+        */
+        constructor(
+            string memory _name,
+            string memory _symbol,
+            string memory _uri,
+            address _royaltyWallet,
+            uint256 _royaltyFee
+        ) ERC721(_name, _symbol) {
+            _setBaseTokenURI(_uri);
+            _setRoyaltyWallet(_royaltyWallet);
+            _setRoyaltyFee(_royaltyFee);
+            _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+            _setupRole(OWNER_ROLE, msg.sender);
+            _setupRole(MINTER_ROLE, msg.sender);
+        }
+
+        /**
+        * @dev Throws if called by any account other than owners. Implemented using the underlying AccessControl methods.
+        */
+        modifier onlyOwners() {
+            require(hasRole(OWNER_ROLE, _msgSender()), "Caller does not have the OWNER_ROLE");
+            _;
+        }
+
+        /**
+        * @dev Throws if called by any account other than minters. Implemented using the underlying AccessControl methods.
+        */
+        modifier onlyMinters() {
+            require(hasRole(MINTER_ROLE, _msgSender()), "Caller does not have the MINTER_ROLE");
+            _;
+        }
+
+        /**
+        * @dev Mints the specified token ids to the recipient addresses
+        * @param recipient Address that will receive the tokens
+        * @param tokenIds Array of tokenIds to be minted
+        */
+        function mint(address recipient, uint256[] calldata tokenIds) external onlyMinters {
+            for (uint256 i = 0; i < tokenIds.length; i++) {
+                _mint(recipient, tokenIds[i]);
+            }
+        }
+
+        /**
+        * @dev Mints the specified token id to the recipient addresses
+        * @dev The unused string parameter exists to support the API used by ChainBridge.
+        * @param recipient Address that will receive the tokens
+        * @param tokenId tokenId to be minted
+        */
+        function mint(address recipient, uint256 tokenId, string calldata) external onlyMinters {
+            _mint(recipient, tokenId);
+        }
+
+        /**
+        * @dev Pauses token transfers
+        */
+        function pause() external onlyOwners {
+            _pause();
+        }
+
+        /**
+        * @dev Unpauses token transfers
+        */
+        function unpause() external onlyOwners {
+            _unpause();
+        }
+
+        /**
+        * @dev Sets the base token URI
+        * @param uri Base token URI
+        */
+        function setBaseTokenURI(string calldata uri) external onlyOwners {
+            _setBaseTokenURI(uri);
+        }
+
+        /**
+        * @dev Sets the wallet to which royalties should be sent
+        * @param _royaltyWallet Address that should receive the royalties
+        */
+        function setRoyaltyWallet(address _royaltyWallet) external onlyOwners {
+            _setRoyaltyWallet(_royaltyWallet);
+        }
+
+        /**
+        * @dev Sets the fee percentage for royalties
+        * @param _royaltyFee Basis points to compute royalty percentage
+        */
+        function setRoyaltyFee(uint256 _royaltyFee) external onlyOwners {
+            _setRoyaltyFee(_royaltyFee);
+        }
+
+        /**
+        * @dev Function defined by ERC2981, which provides information about fees.
+        * @param value Price being paid for the token (in base units)
+        */
+        function royaltyInfo(
+            uint256, // tokenId is not used in this case as all tokens take the same fee
+            uint256 value
+        )
+            external
+            view
+            override
+            returns (
+                address, // receiver
+                uint256 // royaltyAmount
+            )
+        {
+            return (royaltyWallet, (value * royaltyFee) / ROYALTY_FEE_DENOMINATOR);
+        }
+
+        /**
+        * @dev For each existing tokenId, it returns the URI where metadata is stored
+        * @param tokenId Token id
+        */
+        function tokenURI(uint256 tokenId) public view override returns (string memory) {
+            string memory uri = super.tokenURI(tokenId);
+            return bytes(uri).length > 0 ? string(abi.encodePacked(uri, ".json")) : "";
+        }
+
+        function supportsInterface(bytes4 interfaceId)
+            public
+            view
+            override(AccessControl, ERC2981, ERC721, ERC721Enumerable)
+            returns (bool)
+        {
+            return super.supportsInterface(interfaceId);
+        }
+
+        function _beforeTokenTransfer(
+            address from,
+            address to,
+            uint256 tokenId
+        ) internal override(ERC721, ERC721Enumerable, ERC721Pausable) {
+            super._beforeTokenTransfer(from, to, tokenId);
+        }
+
+        function _setBaseTokenURI(string memory newURI) internal {
+            emit BaseURIChanged(_baseTokenURI, newURI);
+            _baseTokenURI = newURI;
+        }
+
+        function _setRoyaltyWallet(address _royaltyWallet) internal {
+            require(_royaltyWallet != address(0), "INVALID_WALLET");
+            emit RoyaltyWalletChanged(royaltyWallet, _royaltyWallet);
+            royaltyWallet = _royaltyWallet;
+        }
+
+        function _setRoyaltyFee(uint256 _royaltyFee) internal {
+            require(_royaltyFee <= ROYALTY_FEE_DENOMINATOR, "INVALID_FEE");
+            emit RoyaltyFeeChanged(royaltyFee, _royaltyFee);
+            royaltyFee = _royaltyFee;
+        }
+
+        function _baseURI() internal view override returns (string memory) {
+            return _baseTokenURI;
+        }
+    }
+    ```
+[Code GitHub repository](https://github.com/ConsenSys-Palm/palm-drop-contracts/blob/master/contracts/NFT.sol)
+
+[Contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
+
+### Testing your contracts
+
+You can use the Palm Testnet bridge to live-test your contracts' integration with the bridge.
+All you need is to deploy them to Palm testnet and Rinkeby (Rinkeby is one of Ethereum's testnets).
+Your _original_ and _synthetic_ can be exactly the same as in production.
+
+Read more about how to use the Palm Testnet bridge [here](../HowTo/Bridge.md).
+
+### Helpful Resources - Address of Bridge Components
 
 The following table contains the contracts and addresses of the main bridge components.
-
 
 <table>
   <tr>
@@ -91,7 +360,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
   </tr>
   <tr>
-   <td>Palm
+   <td>Palm Mainnet
    </td>
    <td><code><a href="https://explorer.palm.io/address/0xB3C62Aed3be8e0577D4724C40a01379dbf895C01/transactions">0xB3C62Aed3be8e0577D4724C40a01379dbf895C01</a></code>
    </td>
@@ -99,31 +368,31 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
   </tr>
   <tr>
-   <td>Palm
+   <td>Palm Mainnet
    </td>
    <td><code><a href="https://explorer.palm.io/address/0x97FAcbF880e47c27cafbA6bE3d677A50d536813e/transactions">0x97FAcbF880e47c27cafbA6bE3d677A50d536813e</a></code>
    </td>
-   <td>ERC-20 Handler - account given permissions to mint/burn ERC-20 tokens on Palm network
+   <td>ERC-20 Handler - account given permissions to mint/burn ERC-20 tokens on Palm Network
    </td>
   </tr>
   <tr>
-   <td>Palm
+   <td>Palm Mainnet
    </td>
    <td><code><a href="https://explorer.palm.io/address/0x317bc33A442AA0f6C8235cb2487f0Bb338eD27E4/transactions">0x317bc33A442AA0f6C8235cb2487f0Bb338eD27E4</a></code>
    </td>
-   <td>ERC-721 Handler - account given permissions to mint/burn ERC-721 tokens on Palm network
+   <td>ERC-721 Handler - account given permissions to mint/burn ERC-721 tokens on Palm Network
    </td>
   </tr>
   <tr>
-   <td>Palm
+   <td>Palm Mainnet
    </td>
    <td><code><a href="https://explorer.palm.io/address/0x22887Af68E57A76692f2686020FF563aC873eA24/transactions">0x22887Af68E57A76692f2686020FF563aC873eA24</a></code>
    </td>
-   <td>Primary relayer - tx for assets minted/burned on Palm network can be found here
+   <td>Primary relayer - transactions for assets minted/burned on Palm Network can be found here
    </td>
   </tr>
   <tr>
-   <td>Palm
+   <td>Palm Mainnet
    </td>
    <td><code><a href="https://explorer.palm.io/address/0x2A84F0c208872184c9dfcd57B6cd7bF63BcF829E/transactions">0x2A84F0c208872184c9dfcd57B6cd7bF63BcF829E</a></code>
    </td>
@@ -131,7 +400,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
   </tr>
   <tr>
-   <td>Palm
+   <td>Palm Mainnet
    </td>
    <td><code><a href="https://explorer.palm.io/address/0x8993D834b036913E25f35ed1Cbb288F26779e16a/transactions">0x8993D834b036913E25f35ed1Cbb288F26779e16a</a></code>
    </td>
@@ -167,7 +436,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><code><a href="https://etherscan.io/address/0x22887af68e57a76692f2686020ff563ac873ea24">0x22887Af68E57A76692f2686020FF563aC873eA24</a></code>
    </td>
-   <td>Primary relayer - tx for assets minted/burned on Ethereum can be found here.
+   <td>Primary relayer - transactions for assets minted/burned on Ethereum can be found here.
    </td>
   </tr>
   <tr>
@@ -188,7 +457,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://explorer.palm-uat.xyz/address/0xdeD098F762456D4BEA387AcadcB1eAeA63E8e954/transactions">0xdeD098F762456D4BEA387AcadcB1eAeA63E8e954</a>
    </td>
-   <td>bridgeAddress
+   <td>Bridge Address
    </td>
   </tr>
   <tr>
@@ -196,7 +465,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://explorer.palm-uat.xyz/address/0x0113A208409505470d3F9b4a7c43488e57564bD7/transactions">0x0113A208409505470d3F9b4a7c43488e57564bD7</a>
    </td>
-   <td>erc20HandlerAddress
+   <td>ERC-20 Handler Address
    </td>
   </tr>
   <tr>
@@ -204,7 +473,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://explorer.palm-uat.xyz/address/0x0114a4A5604f88076D6CDD5607115CE42812e404/transactions">0x0114a4A5604f88076D6CDD5607115CE42812e404</a>
    </td>
-   <td>erc721HandlerAddress
+   <td>ERC-721 Handler Address
    </td>
   </tr>
   <tr>
@@ -212,12 +481,10 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://explorer.palm-uat.xyz/address/0x5105F2e61A5139589c02e557bd4A61A5a22B2676/transactions">0x5105F2e61A5139589c02e557bd4A61A5a22B2676</a>
    </td>
-   <td>erc1155HandlerAddress
+   <td>ERC-1155 Handler Address
    </td>
   </tr>
 </table>
-
-
 
 <table>
   <tr>
@@ -225,7 +492,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://rinkeby.etherscan.io/address/0x21bE213d63e9F5CE1F93D2758F132817A41874e1">0x21bE213d63e9F5CE1F93D2758F132817A41874e1</a>
    </td>
-   <td>bridgeAddress
+   <td>Bridge Address
    </td>
   </tr>
   <tr>
@@ -233,7 +500,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://rinkeby.etherscan.io/address/0x515C78a5737093Dd8a2638800b93445C77e5bE1D">0x515C78a5737093Dd8a2638800b93445C77e5bE1D</a>
    </td>
-   <td>erc20HandlerAddress
+   <td>ERC-20 Handler Address
    </td>
   </tr>
   <tr>
@@ -241,7 +508,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://rinkeby.etherscan.io/address/0x3bd23d02a76804e839c4b73e978ce05a406e964b">0x3bD23d02a76804E839c4B73E978Ce05a406e964b</a>
    </td>
-   <td>erc721HandlerAddress
+   <td>ERC-721 Handler Address
    </td>
   </tr>
   <tr>
@@ -249,13 +516,10 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://rinkeby.etherscan.io/address/0x91429e6686348645cc9b17c382f991d900966d7d">0x91429E6686348645cc9B17C382F991d900966D7D</a>
    </td>
-   <td>erc1155HandlerAddress
+   <td>ERC-1155 HandlerAddress
    </td>
   </tr>
 </table>
-
-
-TODO: relayer addresses
 
 
 <table>
@@ -264,7 +528,7 @@ TODO: relayer addresses
    </td>
    <td>0xff93B45308FD417dF303D6515aB04D9e89a750Ca
    </td>
-   <td>relayer
+   <td>Relayer
    </td>
   </tr>
   <tr>
@@ -272,7 +536,7 @@ TODO: relayer addresses
    </td>
    <td>0x8e0a907331554AF72563Bd8D43051C2E64Be5d35
    </td>
-   <td>relayer
+   <td>Relayer
    </td>
   </tr>
   <tr>
@@ -288,7 +552,7 @@ TODO: relayer addresses
    </td>
    <td>0x148FfB2074A9e59eD58142822b3eB3fcBffb0cd7
    </td>
-   <td>relayer
+   <td>Relayer
    </td>
   </tr>
   <tr>
@@ -296,42 +560,11 @@ TODO: relayer addresses
    </td>
    <td>0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485
    </td>
-   <td>relayer
+   <td>Relayer
    </td>
   </tr>
 </table>
 
 
-
-## Making your token contracts bridge compatible
-
-TODO: explain how to make your contract bridge-compatible: how to [approve](https://github.com/ChainSafe/chainbridge-deploy/blob/a8ced79fec2b4b1bf9250ad392a6a50df9f80479/cb-sol-cli/docs/erc721.md#approve) the handler to cal lock/mint on your contract?
-
-transferFrom() - The user approves the handler to move the tokens before initiating the transfer. The handler will call transferFrom() as part of the transfer initiation. For the inverse, the handler will call transfer() to release tokens from the handler’s ownership.
-
-mint()/burn() - The user approves the handler to move the tokens before initiating the transfer. The handler will call burnFrom() as part of the transfer initiation. For the inverse, the handler will call mint() to release tokens to the recipient (and must have privileges to do so).
-
-[https://github.com/Palm-Network/nft-contracts/blob/43a404fe35956fb009ad51e5017ad7f3b150261b/contracts/NFT.sol#L71](https://github.com/Palm-Network/nft-contracts/blob/43a404fe35956fb009ad51e5017ad7f3b150261b/contracts/NFT.sol#L71)
-
-Bridge contracts require minting, burning, and transfer permission. They have to implement the Enumerable (Open Zeppelin).
-
-Contact us on discord to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
-![alt_text](images/image3.png "image_tooltip")
-
-
-We recommend the following for the synthetic contract:
-
-* It should have a `mint` function, and the bridge will expect to be able to set the Token ID when minting.
-* It should have a `burn` function that the bridge will call when sending tokens back to the original side.
-* The bridge ERC-721 handler will need access to call the contract mint and burn functions. We recommend using [role-based access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) to avoid granting admin functions to the bridge address.
-
-
-# Registering your ERC-721 contracts with the Palm NFT Bridge
-
-This page contains example steps as a guideline. Steps are valid for the UAT environment. Users need to update configuration parameters correctly when performing the steps in PRD.
-
-References
-
-[Deploying Live (EVM EVM)](https://chainbridge.chainsafe.io/live-evm-bridge/) - ChainBridge Docs
-
-Notes
+!!! question
+Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
