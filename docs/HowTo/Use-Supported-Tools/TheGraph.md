@@ -518,12 +518,12 @@ Once done editing the three files defining your subgraph you can optionally test
 1. Deploy your smart contracts & obtain their addresses for the subgraph manifest
 2. Create a config file for Palm testnet & mainnet with required info “network”: “palm-mainnet” or “palm-testnet”
 3. Ask the Palm Network team to set up & deploy the subgraph by filling out the [subgraph registration form](https://share.hsforms.com/1k4-CkdptQy-TwXtE0Ebn1Qbwmoa)
-4. Grant access to Palm team to the relevant subgraph code repository
+4. Grant access to the Palm network team to the relevant subgraph code repository
 5. The palm network team will review the subgraph & deploy it into testnet environments
 6. You will be then able to validate that the test subgraph is working correctly
-7. Palm will deploy the subgraph to mainnet environments
+7. The Palm network team will deploy the subgraph to mainnet environments
 8. You will now validate that the subgraph on Palm mainnet is working correctly
-9. Palm will document your subgraph’s endpoint on the docs.palm.io page
+9. The Palm network team will document your subgraph’s endpoint on the docs.palm.io page
 
 !!! question
 Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
