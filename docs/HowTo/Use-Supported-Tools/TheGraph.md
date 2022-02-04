@@ -37,7 +37,7 @@ If you haven’t used GraphQL before, https://graphql.org and [howtographql.com]
 
 To start experimenting with Subgraphs and graphql, developers can use:
 
-* A [training toolkit](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) to deploy a contract and mint some NFTs on Palm right-away
+* A [training toolkit](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) to deploy a contract and mint some NFTs on the Palm Network right-away
 
 * [GraphiQL](https://github.com/graphql/graphiql) To test queries against deployed Subgraphs and the NFTs you’ve just minted
 
