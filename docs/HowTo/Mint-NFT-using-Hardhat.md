@@ -1,5 +1,5 @@
 ---
-description: how to mint an nft on palm using hardhat.
+description: how to mint an nft on the palm network using hardhat.
 ---
 
 # How to mint an NFT on the Palm network using Hardhat

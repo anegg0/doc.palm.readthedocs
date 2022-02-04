@@ -1,5 +1,5 @@
 ---
-description: how to develop for palm
+description: how to develop for the palm network
 ---
 
 # Develop for Palm

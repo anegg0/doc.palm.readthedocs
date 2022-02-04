@@ -1,5 +1,5 @@
 ---
-description: palm api
+description: palm network api
 ---
 
 # Palm network API
