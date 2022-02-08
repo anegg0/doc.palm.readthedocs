@@ -31,7 +31,7 @@ You can learn more about The Graph network and protocol [on their site](https://
 
 ## 2. Querying the Palm network’s Subgraphs
 
-The Graph is an implementation of [GraphQL](https://graphql.org/learn/), If you are familiar with graphql, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
+The Graph provides a GraphQL API [GraphQL](https://graphql.org/learn/). If you are familiar with graphql, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
 
 If you haven’t used GraphQL before, https://graphql.org and [howtographql.com](https://www.howtographql.com/) can be good places to start.
 
