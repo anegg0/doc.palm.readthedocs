@@ -12,7 +12,6 @@ This guide aims at helping you use The Graph by explaining:
 
 1. [How The Graph works](#1-how-does-the-graph-work)
 
-
 2. [How to query the Palm network’s Subgraphs](#2-querying-the-palm-networks-subgraphs)
 
 3. [What Subgraphs are available on the Palm network](#3-deployed-subgraphs-on-the-palm-network)
@@ -21,8 +20,7 @@ This guide aims at helping you use The Graph by explaining:
 
 5. [How to build your own Subgraph](#5-how-to-build-a-new-subgraph)
 
-
-6. [to add your own Subgraph to the Palm network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
+6. [How to add your own Subgraph to the Palm network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
 
 ## 1. How does The Graph work?
 The Graph is a decentralized protocol for querying blockchains like the Palm network. It enables developers to build custom APIs called Subgraphs.
