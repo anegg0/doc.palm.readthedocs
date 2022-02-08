@@ -6,7 +6,7 @@ description: how to use the graph API
 
 Dapps such as NFT markets constantly need to retrieve on-chain data pertaining to token transfers or asset minting.
 One way to obtain that information is to pull it directly from the blockchain, but it’s a complicated process which often requires building an ad-hoc server instance.
-A more efficient path is to use dedicated protocols like [The Graph](https://thegraph.com/en/), which focus on smart contract data indexation and storage.
+A more efficient path is to use dedicated protocols like [The Graph](https://thegraph.com/en/), which focus on smart contract data indexing and storage.
 
 This guide aims at helping you use The Graph by explaining:
 
