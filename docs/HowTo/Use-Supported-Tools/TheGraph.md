@@ -31,11 +31,11 @@ You can learn more about The Graph network and protocol [on their site](https://
 
 ## 2. Querying the Palm network’s Subgraphs
 
-The Graph provides a GraphQL API [GraphQL](https://graphql.org/learn/). If you are familiar with graphql, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
+The Graph provides a GraphQL API [GraphQL](https://graphql.org/learn/). If you are familiar with GraphQL, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
 
 If you haven’t used GraphQL before, https://graphql.org and [howtographql.com](https://www.howtographql.com/) can be good places to start.
 
-To start experimenting with Subgraphs and graphql, developers can use:
+To start experimenting with Subgraphs and GraphQL, developers can use:
 
 * A [training toolkit](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) to deploy a contract and mint some NFTs on the Palm Network right-away
 
@@ -100,7 +100,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 ### Example Queries
 #### Querying all the tokens owned by a specific address
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
@@ -126,7 +126,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 #### Querying all the tokens owned by a specific address and minted by a given contract
 
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
@@ -154,7 +154,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 #### Querying the first two tokens owned by the same address and with similar Metadata URI
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
@@ -181,7 +181,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 #### Querying the first ten tokens minted with a given contract
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
