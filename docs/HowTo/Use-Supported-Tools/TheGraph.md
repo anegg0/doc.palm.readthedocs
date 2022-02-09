@@ -206,7 +206,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 **Note**: When used as a search parameter, all `id` address values must be in lower case.
 
-## 3. Deployed Subgraphs on the Palm network
+## 3. Available Subgraphs on the Palm network
 
 The Palm network provides a Graph node and a number of already deployed Subgraphs tailored for NFT contexts. Developers can access those Subgraphs through RESTful or WebSocket APIs calls:
 
