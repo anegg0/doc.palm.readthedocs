@@ -1,22 +1,22 @@
-----
--Description: integrating with the palm network bridge.
-----
+---
+description: integrating with the palm network bridge.
+---
 
 # Integrating With The Palm Network Bridge
 
-  The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might prefer to move their assets from the Palm Network to Ethereum in order to reach specific marketplaces.
+The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might decide to move their assets from the Palm Network to Ethereum in order to reach specific marketplaces. They typically transfer their token(s) by using the Palm network bridge.
 
-As a developer, you might want to support those users wishing to transfer tokens from the Palm Network to Ethereum, and so you will want to know how to prepare your contracts to ensure that the NFT Bridge supports them.
+As a developer you can support those users by making your contracts bridge-compatible.
 
-This article contains two sections:
+This article explains:
 
-1. A high-level description of how the Palm Network's Network bridge operates.
-2. Instructions on how to integrate your ERC-721 contracts with Palm Network's Network bridge.
+1. What is the Palm network Bridge
+2. How to integrate with the bridge.
 
 Note: In this article, the term “Palm” designates the Palm Network.
 
-
-## What Does The Palm Bridge Do?
+## What is the Palm network Bridge?
+### What Does The Palm Bridge Do?
 
 The bridge allows transferring assets such as ERC-20 and ERC-721 tokens back and forth between the Palm Network and Ethereum.
 
@@ -35,7 +35,7 @@ A fee is required for transferring assets from Palm to Ethereum (to cover gas co
 Now let's dive a bit deeper into how the bridge operates:
 
 
-## How Does The Palm Bridge Work?
+### How Does The Palm Bridge Work?
 
 The Palm bridge runs on [ChainBridge](https://chainbridge.chainsafe.io/), a communication protocol where events on the source chain are used to send messages routed to the destination chain, where they will be submitted as transactions.
 
@@ -74,10 +74,9 @@ Include bridge video (blog post) \
 6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
 
 
-## Helpful Information - Palm Mainnet
+### Helpful Information - Palm Mainnet Bridge Components
 
 The following table contains the contracts and addresses of the main bridge components.
-
 
 <table>
   <tr>
@@ -294,7 +293,11 @@ The following table contains the contracts and addresses of the main bridge comp
   </tr>
 </table>
 
-## Making your token contracts bridge-compatible
+## How to integrate with the bridge?
+
+  All you need to do to integrate with the bridge is to prepare your token contracts to ensure that the Bridge supports them.
+
+### Making your token contracts bridge-compatible
 
 There are few things to implement if you would like your contracts to be compatible with the Palm Network's bridge.
 
@@ -564,15 +567,7 @@ Finally a contract example that applies for both original and synthetic contract
 
 [Contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 
-## Registering your ERC-721 contracts with the Palm NFT Bridge
-
-This page contains example steps as a guideline. Steps are valid for the UAT environment. Users need to update configuration parameters correctly when performing the steps in PRD.
-
-References
-
-[Deploying Live (EVM EVM)](https://chainbridge.chainsafe.io/live-evm-bridge/) - ChainBridge Docs
-
-## Paying for token transfer via the Palm Network's bridge
+#### Paying for token transfer via the Palm Network's bridge
 
 !!! question
 Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
