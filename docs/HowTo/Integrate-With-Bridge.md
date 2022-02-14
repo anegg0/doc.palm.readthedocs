@@ -29,10 +29,8 @@ A fee is required for transferring assets from Palm to Ethereum (to cover gas co
 
 !!! abstract "What does an end-user see when she uses the bridge?"
 
-    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users will initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
-    You can find more about the UI flow [_here_.](./Bridge.md ).
-
-    For an explanation of what happens programmatically, see below.
+    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users can initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
+    You can find more about the UI flow [_here_](./Bridge.md ).
 
 Now, let's dive a bit deeper into how the bridge operates:
 
@@ -55,9 +53,9 @@ A few concepts specific to ChainBridge:
 
     Here’s the workflow occurring when a user transfers an ERC-721 token from the Palm Network to Ethereum :
 
-    1. The user calls the _deposit()_ function on Palm Network’s bridge contract. The user must provide the _target chain_, the _resource ID_, and the _calldata_, which represent a token transfer to be executed on Ethereum.
-    2. The ERC-721 handler’s _deposit()_ function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
-    3. Proposal -  Palm’s bridge contract then emits a _Deposit_ event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a _proposal_.
+    1. The user calls the `deposit()` function on Palm Network’s bridge contract. The user must provide the `target chain`, the `resource ID`, and the `calldata`, which represent a token transfer to be executed on Ethereum.
+    2. The ERC-721 handler’s `deposit()` function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
+    3. Proposal -  Palm’s bridge contract then emits a `Deposit` event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a `proposal`.
     4. Once the bridge's first relayer detects the event on Ethereum, it executes the proposal on Ethereum via the bridge. Effectively, the proposal delegates an `executeDeposit `call to the ERC-721 handler contract.
     6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
 
@@ -67,24 +65,23 @@ A few concepts specific to ChainBridge:
 
 ### Making your token contracts bridge-compatible
 
-There are few things to modify if you would like your contracts to be compatible with the Palm Network's bridge.
-
-### Original contracts vs Synthetic contracts
+#### Original contracts vs Synthetic contracts
 
 In the context of the Palm Network's bridge, an original contract sits where tokens are primarily minted.
 A synthetic contract is deployed on the chain where tokens will be transferred via the bridge.
 
 Deploying both original and synthetic contracts ensures that tokens can be transferred back and forth to the original chain and the destination chains.
 
+Here are the changes you will need to make to your contracts for them to be bridge-compatible:
 The below specifications apply to ERC-721, ERC-1155, and ERC-20 contracts.
 
-#### Specifications of original contract
+##### Original contract
 
 1. Needs to include the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Enumerable).
 
 Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk minting, token ID auto-increment, etc...
 
-#### Specifications of synthetic contract
+##### Synthetic contract
 
 1. Needs to add the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Enumerable).
 
