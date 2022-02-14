@@ -561,3 +561,6 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
   </tr>
 </table>
+
+ !!! question
+ Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
