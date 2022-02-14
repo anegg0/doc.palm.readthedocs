@@ -21,7 +21,6 @@ In the case of NFTs, the bridge works by locking tokens that have already been m
 
 ![](/../../Images/token-bridge-flow.png)
 
-
 Users can send their tokens back to the original side: the bridge will burn the synthetic token and release the original token that will be transferred to the destination wallet address:
 
 ![](/../../Images/token-bridge-reverse-flow.png)
@@ -50,7 +49,6 @@ A few concepts specific to ChainBridge:
 * **Chain ID** — Identifier of the chain, for example, Palm Network or Ethereum
 * **Calldata** — Payload contained by an event/proposal. The calldata represents a function to be executed on the targeted chain. On Palm, calldata represent the mint() functions.
 
-
 ### Transfer flow
 
 !!! abstract "What actually happens when an end-user uses the bridge?"
@@ -62,7 +60,6 @@ A few concepts specific to ChainBridge:
     3. Proposal -  Palm’s bridge contract then emits a _Deposit_ event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a _proposal_.
     4. Once the bridge's first relayer detects the event on Ethereum, it executes the proposal on Ethereum via the bridge. Effectively, the proposal delegates an `executeDeposit `call to the ERC-721 handler contract.
     6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
-
 
 ## How to integrate with the bridge?
 
@@ -564,7 +561,6 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
   </tr>
 </table>
-
 
 !!! question
 Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
