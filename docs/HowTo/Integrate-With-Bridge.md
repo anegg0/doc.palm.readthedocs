@@ -30,7 +30,6 @@ A fee is required for transferring assets from Palm to Ethereum (to cover gas co
 !!! abstract "What does an end-user see when she uses the bridge?"
 
     The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users can initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
-    You can find more about the UI flow [_here_](./Bridge.md ).
 
 Now, let's dive a bit deeper into how the bridge operates:
 
@@ -61,7 +60,7 @@ A few concepts specific to ChainBridge:
 
 ## How to integrate with the bridge?
 
-  All you need to do to integrate with the bridge is to prepare your token contracts to ensure that the Bridge supports them.
+  All you need to do to integrate with the bridge is to prepare your token contracts so that the Bridge supports them.
 
 ### Making your token contracts bridge-compatible
 
@@ -87,7 +86,7 @@ Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk m
 
 2. Needs to have a custom `mint()` function.
 
-    In order to mint a replica of the original token on the targeted chain, the synthetic contract needs to allow the bridge to mint tokens that have the same `IDs` and `URIs` as the original.
+    In order to mint a replica of the original token on the targeted chain, the synthetic contract must be able to mint tokens that have the same `IDs` and `URIs` as the original.
 
     ???+ note "Custom `mint()` function example:"
 
@@ -330,7 +329,6 @@ If you would like to put all those bits into context, here's a contract example 
     ```
 [Code GitHub repository](https://github.com/ConsenSys-Palm/palm-drop-contracts/blob/master/contracts/NFT.sol)
 
-[Contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 
 ### Testing your contracts
 
@@ -339,6 +337,8 @@ All you need is to deploy them to Palm testnet and Rinkeby (Rinkeby is one of Et
 Your _original_ and _synthetic_ can be exactly the same as in production.
 
 Read more about how to use the Palm Testnet bridge [here](../HowTo/Bridge.md).
+
+Once you have prepared your contracts for the bridge, feel free to [contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 
 ### Helpful Resources - Address of Bridge Components
 
@@ -559,5 +559,5 @@ The following table contains the contracts and addresses of the main bridge comp
   </tr>
 </table>
 
- !!! question
- Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
+!!! question
+    Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
