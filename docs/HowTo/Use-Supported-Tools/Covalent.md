@@ -1,5 +1,5 @@
 ---
-description: how to use the Covalent API
+description: how to use the Covalent api
 ---
 
 # Covalent API

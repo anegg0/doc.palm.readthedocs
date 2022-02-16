@@ -1,5 +1,5 @@
 ---
-Description: Connect to Palm Mainnet.
+description: connect to palm mainnet.
 ---
 
 # Connect to Palm Mainnet

@@ -1,5 +1,5 @@
 ---
-Description: How to obtain PALM tokens.
+description: how to obtain palm tokens.
 ---
 
 # Get PALM tokens
@@ -17,7 +17,7 @@ Users can request PALM by completing the form for the respective environments:
 ## Use the bridge
 
 The Palm bridge can be used to transfer tokens between the Palm network and Ethereum.
-When assets are transferred from Ethereum to Palm, the bridge will top up the depositor's account with a small amount of PALM.
+When assets are transferred from Ethereum to the Palm network, the bridge will top up the depositor's account with a small amount of PALM.
 
 Palm provides the following environment-specific bridges:
 
