@@ -6,16 +6,16 @@ Description: Connect to Palm Mainnet.
 
 To connect to Palm Mainnet:
 
-1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
+1. Create an [Infura](https://infura.io/) account and set up an Ethereum project
 
-  If you don't already have an Ethereum account, you can use [MetaMask](https://metamask.io/) to create one.
+    If you don't already have an Ethereum account, you can use [MetaMask](https://metamask.io/) to create one.
 
     !!! note
 
         You can follow [this step-by-step guide](https://blog.infura.io/getting-started-with-infura-28e41844cc89/) for creating an infura account and your first ethereum project.
 
 
-2. Locate your Ethereum project ID on Infura.
+2. Locate your Ethereum `project ID` on Infura
    Go to the project you created in Step 1, and click on the "Settings" tab.
    The project ID is located in the "Keys" box on this page.
 

@@ -6,18 +6,19 @@ Description: Connect to Palm Testnet.
 
 To connect to Palm Testnet:
 
-1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
+1. Create an [Infura](https://infura.io/) account and set up an Ethereum project
 
-  If you don't already have an Ethereum account, you can use [MetaMask](https://metamask.io/) to create one.
+    If you don't already have an Ethereum account, you can use [MetaMask](https://metamask.io/) to create one.
 
     !!! note
 
         You can follow [this step-by-step guide](https://blog.infura.io/getting-started-with-infura-28e41844cc89/) for
         creating an Infura account and your first Ethereum project.
 
-3. Locate your Ethereum project ID on Infura.
-   Go to the project you created in Step 1, and click on the "Settings" tab.
-   The project ID is located in the "Keys" box on this page.
+3. Locate your Ethereum `project ID` on Infura
+
+    Go to the project you created in Step 1, and click on the "Settings" tab.
+  The project ID is located in the "Keys" box on this page.
 
     ![](./../../Images/infura-select-project-id.png)
 
@@ -31,7 +32,7 @@ To connect to Palm Testnet:
 
     ```url
     https://palm-testnet.infura.io/v3/<YOUR-PROJECT-ID>
-    ```
+      ```
 
 5. Confirm that the access works using the following command (replacing `<ACCESS-URL>` with the access URL):
 
