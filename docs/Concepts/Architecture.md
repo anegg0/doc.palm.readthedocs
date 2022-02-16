@@ -4,7 +4,7 @@ Description: palm network architecture.
 
 # Architecture overview
 
-The following diagram outlines the Palm high-level architecture.
+The following diagram outlines the Palm network's high-level architecture.
 
 ![Architecture](../Images/Architecture.png)
 
