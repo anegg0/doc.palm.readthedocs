@@ -8,24 +8,26 @@ To connect to Palm Testnet:
 
 1. Create an [Infura](https://infura.io/) account and set up an Ethereum project.
 
+  If you don't already have an Ethereum account, you can use [MetaMask](https://metamask.io/) to create one.
+
     !!! note
 
         You can follow [this step-by-step guide](https://blog.infura.io/getting-started-with-infura-28e41844cc89/) for
         creating an Infura account and your first Ethereum project.
 
-2. Fill out [the Palm Infura registration form](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform),
-   entering your Infura account information.
-   Include the address of an Ethereum account you control to have some testnet PALM airdropped into that account.
-
-    !!! note
-
-        You can use [MetaMask](https://metamask.io/) to create an Ethereum account.
-
 3. Locate your Ethereum project ID on Infura.
    Go to the project you created in Step 1, and click on the "Settings" tab.
    The project ID is located in the "Keys" box on this page.
 
-4. Create your access URL using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
+    ![](./../../Images/infura-select-project-id.png)
+
+4. Create your access URL
+
+    * First method: using INFURA's endpoints list:
+
+    ![](./../../Images/infura-select-endpoint.png)
+
+    * Second method: Using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
 
     ```url
     https://palm-testnet.infura.io/v3/<YOUR-PROJECT-ID>
@@ -49,7 +51,15 @@ To connect to Palm Testnet:
     [how to make requests](https://infura.io/docs/ethereum#section/Make-Requests) in the
     [Infura documentation](https://infura.io/docs/ethereum).
 
-Since this process isn't automated, you may check in with your Palm contact or fill out
-[the Palm contact form](https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb) for help and to make sure you've
-completed these steps successfully.
-After connecting to and interacting with Palm Testnet, you can view [the Palm Testnet block explorer](https://explorer.palm-uat.xyz/).
+    Since this process isn't automated, you may check in with the INFURA team by filling out
+    [the INFURA support request](https://infura.io/support/ticket) for help and to make sure you've
+    completed these steps successfully.
+    After connecting to and interacting with Palm Testnet, you can view [the Palm Testnet block explorer](https://explorer.palm-uat.xyz/).
+
+6. Now, you will need PALM to send transactions on Palm Network
+
+[Top up your account with PALM](../Tokens.md)
+
+
+!!! question
+    Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)

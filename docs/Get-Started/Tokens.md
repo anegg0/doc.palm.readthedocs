@@ -34,3 +34,11 @@ getting access to these faucet APIs, please [contact us].
 
 <!-- links -->
 [contact us]: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb
+
+## Request a PALM airdrop for production
+
+Fill out [the Palm production airdrop form](https://forms.gle/So2HE8Yfhjyr5fEi6), entering the address of an Ethereum
+   account you control to have Mainnet PALM airdropped into that account.
+
+!!! question
+    Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
