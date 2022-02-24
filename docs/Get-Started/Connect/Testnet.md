@@ -52,7 +52,7 @@ To connect to Palm Testnet:
     [how to make requests](https://infura.io/docs/ethereum#section/Make-Requests) in the
     [Infura documentation](https://infura.io/docs/ethereum).
 
-    Since this process isn't automated, you may check in with the INFURA team by filling out
+    If you need further assistance with this, you can obtain support from the INFURA team by filling out 
     [the INFURA support request](https://infura.io/support/ticket) for help and to make sure you've
     completed these steps successfully.
     After connecting to and interacting with Palm Testnet, you can view [the Palm Testnet block explorer](https://explorer.palm-uat.xyz/).
