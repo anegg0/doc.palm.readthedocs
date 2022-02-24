@@ -19,13 +19,13 @@ To connect to Palm Mainnet:
    Go to the project you created in Step 1, and click on the "Settings" tab.
    The project ID is located in the "Keys" box on this page.
 
-    ![](./../../Images/infura-select-project-id.png)
+    ![](./../../Images/infura-select-project-id-mainnet.png)
 
 3. Create your access URL
 
     * First method: using INFURA's endpoints list:
 
-    ![](./../../Images/infura-select-endpoint.png)
+    ![](./../../Images/infura-select-endpoint-mainnet.png)
 
     * Second method: Using the following template (replacing `<YOUR-PROJECT-ID>` with the project ID):
 

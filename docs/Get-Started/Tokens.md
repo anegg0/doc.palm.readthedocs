@@ -11,8 +11,7 @@ on the network.
 
 Users can request PALM by completing the form for the respective environments:
 
-* [Palm Testnet](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform)
-* [Palm Mainnet](https://docs.google.com/forms/d/e/1FAIpQLSc5LcKvAvZE0MllXlrdU0Whveq1GLBePEbh6yYaABaVSDfRyw/viewform)
+* [PALM Request Form](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform)
 
 ## Use the bridge
 
