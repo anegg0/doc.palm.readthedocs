@@ -11,8 +11,7 @@ on the network.
 
 Users can request PALM by completing the form for the respective environments:
 
-* [Palm Testnet](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform)
-* [Palm Mainnet](https://docs.google.com/forms/d/e/1FAIpQLSc5LcKvAvZE0MllXlrdU0Whveq1GLBePEbh6yYaABaVSDfRyw/viewform)
+* [PALM Request Form](https://docs.google.com/forms/d/e/1FAIpQLSetkTsotYiiGdMjNkJEUgUyRlWliIQ7O8YGHbrzJyfnCYnBfA/viewform)
 
 ## Use the bridge
 
@@ -34,3 +33,11 @@ getting access to these faucet APIs, please [contact us].
 
 <!-- links -->
 [contact us]: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb
+
+## Request a PALM airdrop for production
+
+Fill out [the Palm production airdrop form](https://forms.gle/So2HE8Yfhjyr5fEi6), entering the address of an Ethereum
+   account you control to have Mainnet PALM airdropped into that account.
+
+!!! question
+    Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
