@@ -6,12 +6,11 @@ description: how to use the graph API
 
 Dapps such as NFT markets constantly need to retrieve on-chain data pertaining to token transfers or asset minting.
 One way to obtain that information is to pull it directly from the blockchain, but it’s a complicated process which often requires building an ad-hoc server instance.
-A more efficient path is to use dedicated protocols like [The Graph](https://thegraph.com/en/), which focus on smart contract data indexation and storage.
+A more efficient path is to use dedicated protocols like [The Graph](https://thegraph.com/en/), which focus on smart contract data indexing and storage.
 
 This guide aims at helping you use The Graph by explaining:
 
 1. [How The Graph works](#1-how-does-the-graph-work)
-
 
 2. [How to query the Palm network’s Subgraphs](#2-querying-the-palm-networks-subgraphs)
 
@@ -21,8 +20,7 @@ This guide aims at helping you use The Graph by explaining:
 
 5. [How to build your own Subgraph](#5-how-to-build-a-new-subgraph)
 
-
-6. [to add your own Subgraph to the Palm network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
+6. [How to add your own Subgraph to the Palm network](#6-how-to-add-your-own-subgraph-to-the-palm-network)
 
 ## 1. How does The Graph work?
 The Graph is a decentralized protocol for querying blockchains like the Palm network. It enables developers to build custom APIs called Subgraphs.
@@ -33,11 +31,11 @@ You can learn more about The Graph network and protocol [on their site](https://
 
 ## 2. Querying the Palm network’s Subgraphs
 
-The Graph is an implementation of [GraphQL](https://graphql.org/learn/), If you are familiar with graphql, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
+The Graph provides a GraphQL API [GraphQL](https://graphql.org/learn/). If you are familiar with GraphQL, you should be comfortable querying The Graph, just make sure to learn the specifics of [The Graph’s API](https://thegraph.com/docs/en/developer/graphql-api/).
 
 If you haven’t used GraphQL before, https://graphql.org and [howtographql.com](https://www.howtographql.com/) can be good places to start.
 
-To start experimenting with Subgraphs and graphql, developers can use:
+To start experimenting with Subgraphs and GraphQL, developers can use:
 
 * A [training toolkit](https://github.com/Palm-Network/training-toolkit/blob/main/contracts/NFT.sol) to deploy a contract and mint some NFTs on the Palm Network right-away
 
@@ -102,7 +100,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 ### Example Queries
 #### Querying all the tokens owned by a specific address
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
@@ -128,7 +126,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 #### Querying all the tokens owned by a specific address and minted by a given contract
 
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{owners(where:{id:"0x4fb30f8cce1f80fc9cc45f7f626069be7549af59"}) {
@@ -156,7 +154,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 #### Querying the first two tokens owned by the same address and with similar Metadata URI
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{owners(where:{id:"0x7a7b2502ff8d0fb68f40baba7ded01ca7fa7aa14"}) {
@@ -183,7 +181,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 #### Querying the first ten tokens minted with a given contract
 
-=== "graphql"
+=== "GraphQL"
 
     ``` json linenums="1"
       query{tokens(where:{contract:"0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa"}, first: 10 ){
@@ -208,7 +206,7 @@ GraphiQL also enables you to [explore a subgraph’s schema](https://graph.palm.
 
 **Note**: When used as a search parameter, all `id` address values must be in lower case.
 
-## 3. Deployed Subgraphs on the Palm network
+## 3. Available Subgraphs on the Palm network
 
 The Palm network provides a Graph node and a number of already deployed Subgraphs tailored for NFT contexts. Developers can access those Subgraphs through RESTful or WebSocket APIs calls:
 
