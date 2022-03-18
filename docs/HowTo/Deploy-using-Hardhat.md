@@ -217,7 +217,7 @@ to deploy an NFT smart contract to the Palm network.
     Go to https://explorer.palm-uat.xyz for testnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
 
 !!! information
-    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on the Palm Network using Hardhat](./Mint-NFT-using-Hardhat.md)
+    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on the Palm network using Hardhat](./Mint-NFT-using-Hardhat.md)
 
 
 !!! question
