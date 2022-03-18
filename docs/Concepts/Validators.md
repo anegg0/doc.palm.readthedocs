@@ -1,5 +1,5 @@
 ---
-Description: Information about validators on the Palm network.
+description: information about validators on the palm network.
 ---
 
 # Validators

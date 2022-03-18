@@ -1,5 +1,5 @@
 ---
-Description: How to deploy a smart contract to the Palm network using Hardhat.
+description: how to deploy a smart contract to the palm network using hardhat.
 ---
 
 # Deploy an NFT contract using Hardhat
@@ -116,7 +116,7 @@ to deploy an NFT smart contract to the Palm network.
     Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
 
     ```text
-    PRIVATE_KEY = // The private key of the account you intend to use on Palm
+    PRIVATE_KEY = // The private key of the account you intend to use on the Palm Network
     INFURA_PROJECT_ID = // Your infura project id
     ```
 
@@ -227,7 +227,7 @@ to deploy an NFT smart contract to the Palm network.
     Go to https://explorer.palm-uat.xyz for testnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
 
 !!! information
-    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on Palm using Hardhat](./Mint-NFT-using-Hardhat.md)
+    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on the Palm network using Hardhat](./Mint-NFT-using-Hardhat.md)
 
 
 !!! question

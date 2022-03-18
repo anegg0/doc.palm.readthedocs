@@ -1,5 +1,5 @@
 ---
-Description: How to deploy a smart contract to the Palm network using Truffle.
+description: how to deploy a smart contract to the palm network using truffle.
 ---
 
 # Deploy using Truffle
@@ -94,7 +94,7 @@ to deploy an NFT smart contract to the Palm network.
     Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
 
     ```text
-    PRIVATE_KEY = // The private key of the account you intend to use on Palm
+    PRIVATE_KEY = // The private key of the account you intend to use on the Palm network
     INFURA_PROJECT_ID = // Your infura project id
     ```
 
