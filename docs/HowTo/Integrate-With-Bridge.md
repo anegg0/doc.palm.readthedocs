@@ -17,7 +17,7 @@ This article explains:
 
 The Palm network bridge connects the Palm network with Ethereum. It allows transferring assets such as ERC-20 and ERC-721 tokens back and forth between the Palm Network and Ethereum.
 
-In the case of NFTs, the bridge works by locking tokens that have already been minted on one side of the bridge and then minting an equivalent token on the other side, using what we call a “synthetic” version of the ERC-721 contract:
+The bridge works by locking tokens that have already been minted on one side of the bridge and then minting an equivalent token on the other side, using what we call a “synthetic” version of the ERC-721 contract:
 
 ![](/../../Images/token-bridge-flow.png)
 
