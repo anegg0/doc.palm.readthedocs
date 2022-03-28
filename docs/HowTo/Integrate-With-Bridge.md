@@ -76,7 +76,7 @@ The below specifications apply to ERC-721 contracts. Further specifications will
 
 ##### Original contract
 
-1. Needs to include the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Enumerable).
+1. Needs to include the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#ERC721Enumerable). This is to support enumerability of all the token ids in the contract as well as all token ids owned by each account, so that the bridge UI can help the user to select the correct token from their account.
 
 Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk minting, token ID auto-increment, etc...
 
