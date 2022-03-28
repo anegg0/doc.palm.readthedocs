@@ -29,7 +29,8 @@ A fee is required for transferring assets from Palm to Ethereum (to cover gas co
 
 !!! abstract "What does an end-user see when she uses the bridge?"
 
-    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users can initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
+    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where end-users can initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
+    [A test version of the bridge's UI is also available](https://app.palm-uat.xyz/bridge).
 
 Now, let's dive a bit deeper into how the bridge operates:
 
@@ -511,50 +512,6 @@ The following table contains the contracts and addresses of the main bridge comp
    <td><a href="https://rinkeby.etherscan.io/address/0x91429e6686348645cc9b17c382f991d900966d7d">0x91429E6686348645cc9B17C382F991d900966D7D</a>
    </td>
    <td>ERC-1155 HandlerAddress
-   </td>
-  </tr>
-</table>
-
-
-<table>
-  <tr>
-   <td>
-   </td>
-   <td>0xff93B45308FD417dF303D6515aB04D9e89a750Ca
-   </td>
-   <td>Relayer
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>0x8e0a907331554AF72563Bd8D43051C2E64Be5d35
-   </td>
-   <td>Relayer
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>0x24962717f8fA5BA3b931bACaF9ac03924EB475a0
-   </td>
-   <td>relayer
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>0x148FfB2074A9e59eD58142822b3eB3fcBffb0cd7
-   </td>
-   <td>Relayer
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485
-   </td>
-   <td>Relayer
    </td>
   </tr>
 </table>
