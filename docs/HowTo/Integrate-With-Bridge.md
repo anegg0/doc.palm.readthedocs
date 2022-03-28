@@ -58,7 +58,7 @@ A few concepts specific to ChainBridge:
     4. Once the bridge's first relayer detects the event on Ethereum, it executes the proposal on Ethereum via the bridge. Effectively, the proposal delegates an `executeDeposit `call to the ERC-721 handler contract.
     6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
 
-## How to integrate with the bridge?
+## How to ensure your token contract works with the bridge?
 
   All you need to do to integrate with the bridge is to prepare your token contracts so that the Bridge supports them.
 
