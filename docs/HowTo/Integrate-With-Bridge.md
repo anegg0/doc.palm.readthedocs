@@ -56,7 +56,7 @@ A few concepts specific to ChainBridge:
     2. The ERC-721 handler’s `deposit()` function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
     3. Proposal -  Palm’s bridge contract then emits a `Deposit` event containing the data that will be executed on Ethereum. On ChainBridge, this type of event is called a `proposal`.
     4. Once the bridge's first relayer detects the event on Ethereum, it executes the proposal on Ethereum via the bridge. Effectively, the proposal delegates an `executeDeposit `call to the ERC-721 handler contract.
-    6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID and transfers it to its owner’s account on Ethereum.
+    6. The ERC-721 handler’s `executeDeposit` function validates the parameters provided by the user and makes a call to the target ERC-721 contract to mint the token with the original ID (a custom `mint` function on the target contract is passed the token ID as part of the calldata to ensure this). The token is transferred to the recipient's account on Ethereum.
 
 ## How to ensure your token contract works with the bridge?
 
