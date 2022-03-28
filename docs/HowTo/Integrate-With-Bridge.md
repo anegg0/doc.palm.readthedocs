@@ -50,7 +50,7 @@ A few concepts specific to ChainBridge:
 
 !!! abstract "What actually happens when an end-user uses the bridge?"
 
-    Here’s the workflow occurring when a user transfers an ERC-721 token from the Palm Network to Ethereum :
+    Here’s the workflow occurring when a user transfers an ERC-721 token from the Palm Network to Ethereum:
 
     1. The user calls the `deposit()` function on Palm Network’s bridge contract. The user must provide the `target chain`, the `resource ID`, and the `calldata`, which represent a token transfer to be executed on Ethereum.
     2. The ERC-721 handler’s `deposit()` function is called, which verifies the data provided by the user. The bridge then locks the token on the ERC-721 contract.
