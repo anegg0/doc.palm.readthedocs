@@ -510,7 +510,7 @@ The following table contains the contracts and addresses of the main bridge comp
    </td>
    <td><a href="https://rinkeby.etherscan.io/address/0x91429e6686348645cc9b17c382f991d900966d7d">0x91429E6686348645cc9B17C382F991d900966D7D</a>
    </td>
-   <td>ERC-1155 HandlerAddress
+   <td>ERC-1155 Handler Address
    </td>
   </tr>
 </table>
