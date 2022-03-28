@@ -82,7 +82,7 @@ Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk m
 
 ##### Synthetic contract
 
-1. Needs to add the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Enumerable).
+1. Also needs to add the [Enumerable extension from Open Zeppelin libraries](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#ERC721Enumerable).
 
 2. Needs to have a custom `mint()` function.
 
