@@ -66,7 +66,7 @@ A few concepts specific to ChainBridge:
 
 #### Original contracts vs Synthetic contracts
 
-In the context of the Palm Network's bridge, an original contract sits where tokens are primarily minted.
+In the context of the Palm network's bridge, an original contract sits where tokens are primarily minted.
 A synthetic contract is deployed on the chain where tokens will be transferred via the bridge.
 
 Deploying both original and synthetic contracts ensures that tokens can be transferred back and forth to the original chain and the destination chains.
