@@ -108,7 +108,7 @@ Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk m
 
     The bridge's handler will need access to the synthetic contract's `mint()` function.
 
-    We recommend using [role-based access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) to avoid granting admin functions to the bridge address.
+    We recommend using [role-based access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) to do this, and it also helps to avoid granting full admin functions to the bridge address.
 
     You can set granular rights that only set controls on the `mint()`function.
 
