@@ -6,7 +6,7 @@ description: integrating with the palm network bridge.
 
 The Palm Network enables NFT trading in a fast, cost-efficient, and eco-friendly manner. However, some users might decide to move their assets from the Palm Network to Ethereum in order to reach specific marketplaces. They can transfer their token(s) using the Palm network bridge.
 
-As a developer you can support those users by integrating your Dapp/Contracts with the Palm network bridge.
+As a developer you can support those users by ensuring your smart contracts are compatible with the Palm network bridge.
 
 This article explains:
 
