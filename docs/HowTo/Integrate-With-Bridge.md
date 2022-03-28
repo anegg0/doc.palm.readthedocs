@@ -72,7 +72,7 @@ A synthetic contract is deployed on the chain where tokens will be transferred v
 Deploying both original and synthetic contracts ensures that tokens can be transferred back and forth between the original and destination chains.
 
 Here are the changes you will need to make to your contracts for them to be bridge-compatible:
-The below specifications apply to ERC-721, ERC-1155, and ERC-20 contracts.
+The below specifications apply to ERC-721 contracts. Further specifications will be provided for ERC-1155 or ERC-20 contracts in future.
 
 ##### Original contract
 
