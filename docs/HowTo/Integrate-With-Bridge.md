@@ -29,7 +29,7 @@ A fee is required for transferring assets from Palm to Ethereum (to cover gas co
 
 !!! abstract "What does an end-user see when she uses the bridge?"
 
-    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users can initiate the transfer and give their approval to pay transfer fees in DAI or other currency.
+    The Palm network [provides a user-friendly Dapp](https://app.palm.io/nftbridge) where users can initiate the transfer and give their approval to pay transfer fees (in DAI).
 
 Now, let's dive a bit deeper into how the bridge operates:
 
