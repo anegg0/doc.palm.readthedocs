@@ -40,7 +40,7 @@ A few concepts specific to ChainBridge:
 * **Relayers** — Off-chain servers that listen for particular events on the source chain and submit signed proposals to the destination chain.
 * **Bridge contracts** — Delegate calls to the handler contracts for deposits, start a transaction on the source chain, and execute the proposals on the target chain.
 * **Handler contracts** — Palm's handler contracts send mint/burn transactions depending on the user input.
-* **Target contracts** — On Palm, target contracts are ERC-721 and ERC-1155 on each side of the bridge.
+* **Target contracts** — On Palm, target contracts are ERC-20, ERC-721 and ERC-1155 on each side of the bridge.
 * **Deposit() function** — Here, a deposit is simply the initiation of a transfer of a piece of data, often representing instructions to execute a mint() function.
 * **Resource ID** — Identifier for the ERC-721 smart contract. Resource ID is used to link the contracts on both sides of the bridge.
 * **Chain ID** — Identifier of the chain, for example, Palm Network or Ethereum
