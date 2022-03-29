@@ -7,6 +7,6 @@ node_modules/
 .DS_Store
 **/.DS_Store
 *.iml
-emacs temp files
+# emacs temp files
 *~undo-tree~
 *#
