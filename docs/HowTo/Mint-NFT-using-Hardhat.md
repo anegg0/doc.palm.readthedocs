@@ -10,7 +10,9 @@ This guide walks you through minting an NFT on the Palm network using [Hardhat](
 
     This article is a follow-up to: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md). You'll probably want to [read this first](./Deploy-using-Hardhat.md) before applying the below.
 
+
   The previous article in this series: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md), describes how to deploy an `ERC-721` smart contract on the Palm network. The below goes further and proposes one way to publish an `ERC-721` token on the Palm network, or, in simpler terms, minting an NFT.
+
 
 ## Prerequisite
 
@@ -22,7 +24,9 @@ This guide walks you through minting an NFT on the Palm network using [Hardhat](
 
 !!! note
 
+
     The complete source code explained in this article is [available for download.](https://github.com/Palm-Network/training-deploy-mint-nft-hardhat)
+
 
   We are about to write the code logic that triggers a 'minting' transaction. Let's take a quick look at what minting means in the context of the [contract](./Deploy-using-Hardhat.md#5.-Write-your-contract) we deployed:
 
@@ -80,6 +84,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     ```js
     const contract = require("../artifacts/contracts/NFT.sol/NFT.json");
+
     const contractInterface = contract.abi;
     ```
 
@@ -95,7 +100,9 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
 4. Upload a media file to IPFS:
 
+
     This step consists of adding a media file of your choice to [IPFS](https://ipfs.io/), the decentralized storage system. In order to help ensure this file's availability, you can "pin" the file in IPFS. There are several pinning services available that will maintain your file on IPFS. Here are a few:
+
 
     * [INFURA](https://infura.io/)
     * [Ethernum](https://www.eternum.io/)
@@ -157,15 +164,18 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     Get the address of the [contract you deployed earlier](./Deploy-using-Hardhat.md)  (it is the address returned by Hardhat upon deployment) and create a `.env` variable pointing to that address:
 
+
         ```bash
         `CONTRACT_ADDRESS = "deployed-contract-address"`
         ```
+
     If you followed the instructions in the previous article, your `.env` file should now contain the following variables:
 
     ```
     API_URL = "your-provider-api-url"
     PRIVATE_KEY = "your-private-account-address"
     PUBLIC_KEY = "your-public-account-address"
+
     CONTRACT_ADDRESS = "deployed-contract-address"
     ```
 
@@ -200,6 +210,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 9. Build the `main` function
 
     Finally, create the `main` function, which will asynchronously call the `MintNFT` function passing as arguments:
+
 
     * Your address (or any other recipient address you chose)
 
@@ -264,6 +275,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
     We required the confirmation to be 5 blocks, as you can see in your code in the `main` function: `tx.wait(5))`, it'll therefore take a few seconds before seeing the following response in your terminal:
 
     `Your transaction is confirmed, its receipt is: `0x10e5062309de0cd0be7edc92e8dbab191aa2791111c44274483fa766039e0e00``
+
 
     You can now look up your minted token on the Palm network block explorer by pasting the receipt hash above in the search bar:
 

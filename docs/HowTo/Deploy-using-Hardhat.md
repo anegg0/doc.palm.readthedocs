@@ -211,7 +211,6 @@ to deploy an NFT smart contract to the Palm network.
         Contract deployed to address: 0xeC1AFf99d2C331B226A5731B9555Af924932d629
         ```
 
-
 12. Look up your deployment on the Palm network block explorer
 
     Go to https://explorer.palm-uat.xyz for testnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
