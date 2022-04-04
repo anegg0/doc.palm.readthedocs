@@ -279,11 +279,11 @@ You can use the Palm Testnet bridge to live-test your contracts' integration wit
 All you need is to deploy them to Palm testnet and Rinkeby (Rinkeby is one of Ethereum's testnets). For ERC-721 contracts, you will need to initialise it using the constructor, and grant the bridge's ERC-721 handler contract `MINTER_ROLE` (see table below for relevant contract addresses).
 Your _original_ and _synthetic_ can be exactly the same as in production.
 
-Read more about how to use the Palm Testnet bridge ***[here](../HowTo/Bridge.md)***.
+Read more about how to use the Palm Testnet bridge [***here***](../HowTo/Bridge.md).
 
 Once you have prepared your contracts for the bridge, feel free to [contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 
-You can find a useful list of all the bridge components ***[in this post](./bridge-components-addresses.md)***.
+You can find a useful list of all the bridge components [***in this post***](./bridge-components-addresses.md).
 
 !!! question
     Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
