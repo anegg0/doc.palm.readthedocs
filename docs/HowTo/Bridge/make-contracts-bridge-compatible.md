@@ -2,13 +2,11 @@
 description: ensuring your token contract works with the bridge
 ---
 
-## Make your contracts bridge-compatible
-
 In our previous post we went through how the bridge operates, this article will explain what you need to do to integrate your token contracts with the bridge.
 
 Let's go through these simple steps together:
 
-### Making your token contracts bridge-compatible
+### Integrating token contracts with the bridge
 
 #### Original contracts vs Synthetic contracts
 
@@ -286,7 +284,7 @@ Read more about how to use the Palm Testnet bridge [here](../HowTo/Bridge.md).
 
 Once you have prepared your contracts for the bridge, feel free to [contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 
-You can find a useful list of all the bridge components [in this post](./bridge-components-addresses.md)
+You can find a useful list of all the bridge components [**in this post](./bridge-components-addresses.md)**.
 
 !!! question
     Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
