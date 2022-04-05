@@ -79,7 +79,7 @@ Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk m
 
 If you would like to put all those bits into context, here's a contract example that applies for both _original_ and synthetic contracts:
 
-???+ note "ERC-721 contract example:"
+??? note "ERC-721 contract example:"
 
     ``` js linenums="1"
 
@@ -283,7 +283,7 @@ Read more about how to use the Palm Testnet bridge [***here***](../HowTo/Bridge.
 
 Once you have prepared your contracts for the bridge, feel free to [contact us on discord](https://discord.gg/grcpwNRxVj) to validate your contracts compatibility, they will be tested by our team on the testnet and then set for production.
 
-You can find a useful list of all the bridge components [***in this post***](./bridge-components-addresses.md).
+If you are looking for bridge contracts addresses, you can find a useful list of all the bridge components [***in this post***](./bridge-components-addresses.md).
 
 !!! question
     Any question? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)

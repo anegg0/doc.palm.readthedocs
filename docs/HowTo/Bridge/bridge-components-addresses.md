@@ -5,6 +5,7 @@ description: integrating with the bridge series: Part 3
 # Helpful Resources - Addresses of Bridge Components
 
 The following table contains the contracts and addresses of the main bridge components.
+If you would like to understand what these addresses are used for, you can read: [***What is the Palm network bridge?***](./what-is-the-bridge.md) and [***How to make your smart contracts bridge-compatible?***](./make-contracts-bridge-compatible.md)
 
 <table>
   <tr>
