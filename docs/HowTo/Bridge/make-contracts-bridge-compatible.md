@@ -79,7 +79,7 @@ Aside from `Enumerable`, any custom implementation of ERC-721 is allowed: bulk m
 
 If you would like to put all those bits into context, here's a contract example that applies for both _original_ and synthetic contracts:
 
-??? note "ERC-721 contract example:"
+???+ note "ERC-721 contract example:"
 
     ``` js linenums="1"
 
