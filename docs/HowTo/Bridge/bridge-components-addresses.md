@@ -8,9 +8,9 @@ The following table contains the contracts and addresses of the main bridge comp
 
 If you would like to understand what these addresses are used for, these two articles may help:
 
-    - [***What is the Palm network bridge?***](./what-is-the-bridge.md)
+- [***What is the Palm network bridge?***](./what-is-the-bridge.md)
 
-    - [***How to make your smart contracts bridge-compatible?***](./make-contracts-bridge-compatible.md)
+- [***How to make your smart contracts bridge-compatible?***](./make-contracts-bridge-compatible.md)
 
 <table>
   <tr>
