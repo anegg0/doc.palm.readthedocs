@@ -1,5 +1,5 @@
 ---
-description: integrating with the bridge series: Part 3
+description: addresses of bridge components
 ---
 
 # Helpful Resources - Addresses of Bridge Components

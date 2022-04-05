@@ -2,7 +2,7 @@
 description: ensuring your token contract works with the bridge
 ---
 
-In our previous post we went through how the bridge operates, this article explains what you need to do to integrate your token contracts with the bridge.
+In our [***previous post***](./what-is-the-bridge.md) we went through how the bridge operates, this article explains what you need to do to integrate your token contracts with the bridge.
 
 Let's go through these simple steps together:
 
