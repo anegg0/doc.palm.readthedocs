@@ -7,8 +7,10 @@ description: addresses of bridge components
 The following table contains the contracts and addresses of the main bridge components.
 
 If you would like to understand what these addresses are used for, these two articles may help:
-* [***What is the Palm network bridge?***](./what-is-the-bridge.md)
-* [***How to make your smart contracts bridge-compatible?***](./make-contracts-bridge-compatible.md)
+
+    - [***What is the Palm network bridge?***](./what-is-the-bridge.md)
+
+    - [***How to make your smart contracts bridge-compatible?***](./make-contracts-bridge-compatible.md)
 
 <table>
   <tr>
