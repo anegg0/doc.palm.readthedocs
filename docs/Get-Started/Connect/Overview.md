@@ -1,5 +1,5 @@
 ---
-Description: Connecting to networks overview.
+description: connecting to networks overview.
 ---
 
 # Connect to the Palm network

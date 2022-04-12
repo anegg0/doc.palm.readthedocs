@@ -1,5 +1,5 @@
 ---
-description: Supported tools
+description: supported tools
 ---
 
 # Supported tools overview

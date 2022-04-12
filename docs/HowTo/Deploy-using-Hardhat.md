@@ -1,5 +1,5 @@
 ---
-Description: How to deploy a smart contract to the Palm network using Hardhat.
+description: how to deploy a smart contract to the palm network using hardhat.
 ---
 
 # Deploy an NFT contract using Hardhat
@@ -16,7 +16,7 @@ to deploy an NFT smart contract to the Palm network.
 
     !!! note
 
-        The complete source code corresponding to this article is [available for download](https://github.com/Palm-Network/training-deploy-nft-hardhat)
+        The complete source code corresponding to this article is [available for download](https://github.com/Palm-Network/training-deploy-mint-nft-hardhat)
 
 ## Steps
 
@@ -60,7 +60,7 @@ to deploy an NFT smart contract to the Palm network.
     npm install @openzeppelin/contracts
     ```
 
-    Next, add the following smart contract to the "contracts" folder and name it "MyNFT.sol":
+    Next, add the following smart contract to the "contracts" folder and name it "NFT.sol":
 
     ```js
     //Contract based on [https://docs.openzeppelin.com/contracts/4.x/erc721](https://docs.openzeppelin.com/contracts/4.x/erc721)
@@ -72,11 +72,11 @@ to deploy an NFT smart contract to the Palm network.
     import "@openzeppelin/contracts/utils/Counters.sol";
     import "@openzeppelin/contracts/access/Ownable.sol";
 
-    contract MyNFT is ERC721URIStorage, Ownable {
+    contract NFT is ERC721URIStorage, Ownable {
         using Counters for Counters.Counter;
         Counters.Counter private _tokenIds;
 
-        constructor() ERC721("MyNFT", "NFT") {}
+        constructor() ERC721("NFT", "NFT") {}
 
         function mintNFT(address recipient, string memory tokenURI)
             public
@@ -112,7 +112,7 @@ to deploy an NFT smart contract to the Palm network.
     Create a `.env` file in your project's root folder, and set environment variables in the file as follows:
 
     ```text
-    PRIVATE_KEY = // The private key of the account you intend to use on Palm
+    PRIVATE_KEY = // The private key of the account you intend to use on the Palm Network
     INFURA_PROJECT_ID = // Your infura project id
     ```
 
@@ -176,19 +176,19 @@ to deploy an NFT smart contract to the Palm network.
 
     ```js
     async function main() {
-        const MyNFT = await ethers.getContractFactory("MyNFT")
+        const NFT = await ethers.getContractFactory("NFT");
 
         // Start deployment, returning a promise that resolves to a contract object
-        const myNFT = await MyNFT.deploy()
-        console.log("Contract deployed to address:", myNFT.address)
-    }
+        const Nft = await NFT.deploy();
+        console.log("Contract deployed to address:", Nft.address);
+        }
 
-    main()
+        main()
         .then(() => process.exit(0))
         .catch((error) => {
-            console.error(error)
-            process.exit(1)
-        })
+            console.error(error);
+            process.exit(1);
+        });
     ```
 
 11. Deploy to the target Palm network environment
@@ -211,13 +211,12 @@ to deploy an NFT smart contract to the Palm network.
         Contract deployed to address: 0xeC1AFf99d2C331B226A5731B9555Af924932d629
         ```
 
-
-12. Look up your deployment on Palm explorer
+12. Look up your deployment on the Palm network block explorer
 
     Go to https://explorer.palm-uat.xyz for testnet deployments and to https://explorer.palm.io for mainnet deployments and paste the address of your contract into the search bar.
 
 !!! information
-    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on Palm using Hardhat](./Mint-NFT-using-Hardhat.md)
+    The next logical step would be to mint an NFT with the contract you just deployed, you can learn how to do this in [How to mint an NFT on the Palm network using Hardhat](./Mint-NFT-using-Hardhat.md)
 
 
 !!! question

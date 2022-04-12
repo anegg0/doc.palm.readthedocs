@@ -1,8 +1,8 @@
 ---
-Description: How to mint an NFT on Palm using Hardhat.
+description: how to mint an nft on the palm network using hardhat.
 ---
 
-# How to mint an NFT on Palm using Hardhat
+# How to mint an NFT on the Palm network using Hardhat
 
 This guide walks you through minting an NFT on the Palm network using [Hardhat](https://hardhat.org/)
 
@@ -10,7 +10,9 @@ This guide walks you through minting an NFT on the Palm network using [Hardhat](
 
     This article is a follow-up to: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md). You'll probably want to [read this first](./Deploy-using-Hardhat.md) before applying the below.
 
-  The previous article in this series: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md), describes how to deploy an `ERC-721` smart contract on the Palm network. The below goes further and proposes one way to publish an `ERC-721` token on Palm network, or, in simpler terms, minting an NFT.
+
+  The previous article in this series: ["Deploy an NFT contract using Hardhat"](./Deploy-using-Hardhat.md), describes how to deploy an `ERC-721` smart contract on the Palm network. The below goes further and proposes one way to publish an `ERC-721` token on the Palm network, or, in simpler terms, minting an NFT.
+
 
 ## Prerequisite
 
@@ -22,7 +24,9 @@ This guide walks you through minting an NFT on the Palm network using [Hardhat](
 
 !!! note
 
-    The complete source code explained in this article is [available for download.](https://github.com/Palm-Network/training-mint-nft-hardhat)
+
+    The complete source code explained in this article is [available for download.](https://github.com/Palm-Network/training-deploy-mint-nft-hardhat)
+
 
   We are about to write the code logic that triggers a 'minting' transaction. Let's take a quick look at what minting means in the context of the [contract](./Deploy-using-Hardhat.md#5.-Write-your-contract) we deployed:
 
@@ -79,7 +83,8 @@ In short, the above code will send a transaction that will transfer a unique NFT
     Add the following to `mint.js`:
 
     ```js
-    const contract = require("../artifacts/contracts/NftFactory.sol/NftFactory.json");
+    const contract = require("../artifacts/contracts/NFT.sol/NFT.json");
+
     const contractInterface = contract.abi;
     ```
 
@@ -95,7 +100,9 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
 4. Upload a media file to IPFS:
 
-    This step consists of adding a media file of your choice to [IPFS](https://ipfs.io/), the decentralized storage system. In order to store your file in the long run and ensure its persistence on IPFS, we need to "pin" it. There are several pinning services available that will maintain your file on IPFS. Here are a few:
+
+    This step consists of adding a media file of your choice to [IPFS](https://ipfs.io/), the decentralized storage system. In order to help ensure this file's availability, you can "pin" the file in IPFS. There are several pinning services available that will maintain your file on IPFS. Here are a few:
+
 
     * [INFURA](https://infura.io/)
     * [Ethernum](https://www.eternum.io/)
@@ -157,18 +164,10 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     Get the address of the [contract you deployed earlier](./Deploy-using-Hardhat.md)  (it is the address returned by Hardhat upon deployment) and create a `.env` variable pointing to that address:
 
-    === "Palm Testnet"
 
         ```bash
-        `TESTNET_CONTRACT_ADDRESS = "testnet-contract-address"`
+        `CONTRACT_ADDRESS = "deployed-contract-address"`
         ```
-
-    === "Palm Mainnet"
-
-        ```bash
-        `MAINNET_CONTRACT_ADDRESS = "mainnet-contract-address"`
-        ```
-
 
     If you followed the instructions in the previous article, your `.env` file should now contain the following variables:
 
@@ -176,8 +175,8 @@ In short, the above code will send a transaction that will transfer a unique NFT
     API_URL = "your-provider-api-url"
     PRIVATE_KEY = "your-private-account-address"
     PUBLIC_KEY = "your-public-account-address"
-    TESTNET_CONTRACT_ADDRESS = "testnet-contract-address"
-    MAINNET_CONTRACT_ADDRESS = "mainnet-contract-address"
+
+    CONTRACT_ADDRESS = "deployed-contract-address"
     ```
 
 7. Set up `Ethers.js` signer and wallet
@@ -201,8 +200,8 @@ In short, the above code will send a transaction that will transfer a unique NFT
     Add these lines of code to `mint.js`:
 
     ```js
-    const NftFactory = new ethers.Contract(
-      process.env.TESTNET_CONTRACT_ADDRESS,
+    const nft = new ethers.Contract(
+      process.env.CONTRACT_ADDRESS,
       contractInterface,
       signer
     );
@@ -211,6 +210,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
 9. Build the `main` function
 
     Finally, create the `main` function, which will asynchronously call the `MintNFT` function passing as arguments:
+
 
     * Your address (or any other recipient address you chose)
 
@@ -221,7 +221,7 @@ In short, the above code will send a transaction that will transfer a unique NFT
     ```js
     require("dotenv").config();
     require("@nomiclabs/hardhat-ethers");
-    const contract = require("../artifacts/contracts/NftFactory.sol/NftFactory.json");
+    const contract = require("../artifacts/contracts/NFT.sol/NFT.json");
     const contractInterface = contract.abi;
 
     // https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html#provider-object
@@ -235,15 +235,15 @@ In short, the above code will send a transaction that will transfer a unique NFT
     const signer = wallet.connect(provider);
 
     // https://docs.ethers.io/v5/api/contract/contract
-    const NftFactory = new ethers.Contract(
-      process.env.TESTNET_CONTRACT_ADDRESS,
+    const nft = new ethers.Contract(
+      process.env.CONTRACT_ADDRESS,
       contractInterface,
       signer
     );
 
     const main = () => {
       console.log("Waiting 5 blocks for confirmation...");
-      NftFactory
+      nft
         .mintNFT(process.env.PUBLIC_KEY, tokenURI)
         .then((tx) => tx.wait(5))
         .then((receipt) => console.log(`Your transaction is confirmed, its receipt is: ${receipt.transactionHash}`))
@@ -276,7 +276,8 @@ In short, the above code will send a transaction that will transfer a unique NFT
 
     `Your transaction is confirmed, its receipt is: `0x10e5062309de0cd0be7edc92e8dbab191aa2791111c44274483fa766039e0e00``
 
-    You can now look up your minted token on Palm NFT explorer by pasting the receipt hash above in the search bar:
+
+    You can now look up your minted token on the Palm network block explorer by pasting the receipt hash above in the search bar:
 
     === "For NFTs minted on Palm Testnet"
 
