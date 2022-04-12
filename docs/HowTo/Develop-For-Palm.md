@@ -28,7 +28,7 @@ If you're new to smart contract development, you can follow standard Ethereum tu
 
 ### Developers
 
-As a developer, read the following quick guides to quickly connect to [Palm testnet](../Get-Started/Connect/Testnet.md) as well as [Palm mainnet](../Get-Started/Connect/Mainnet.md)
+As a developer, read the following quick guides to quickly connect to [Palm testnet](../Get-Started/Connect/Testnet.md) as well as [Palm mainnet](../Get-Started/Connect/Mainnet.md).
 
 ### End users
 
@@ -46,7 +46,7 @@ Palm provides an app that users can access to complete these onboarding tasks:
 - [Palm Mainnet](https://app.palm.io/)
 - [Palm Testnet](https://app.palm-uat.xyz/)
 
-You can link directly to the Palm app to help your users onboard.
+You can link directly to the [Palm app](https://app.palm.io/) to help your users onboard.
 
 ## Deploying a Dapp to Palm
 
@@ -56,4 +56,4 @@ You can [deploy using Truffle Migrations](Deploy-using-Truffle.md), [deploy usin
 
 ## Mint NFTs on Palm
 
-You can also quickly learn how to mint NFTs on the Palm network using [HardHat](Mint-NFT-using-Hardhat.md).
+You can also quickly learn how to [mint NFTs on the Palm network using HardHat](Mint-NFT-using-Hardhat.md).
