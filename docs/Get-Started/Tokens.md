@@ -23,13 +23,13 @@ Palm provides the following environment-specific bridges:
 * [Palm Testnet bridge](https://app.palm-uat.xyz/bridge).
   See [how to use the Palm Testnet bridge](../HowTo/Bridge.md#using-the-testnet-bridge).
 * [Palm Mainnet bridge](https://app.palm.io/bridge).
+
   See [how to use the Palm Mainnet bridge](../HowTo/Bridge.md#using-the-mainnet-bridge).
 
 ## Use the faucet
 
-Palm partners have access to faucet APIs to top up accounts with PALM.  These faucets are available
-across Palm network environments. For more information on
-getting access to these faucet APIs, please [contact us].
+Palm partners have access to faucet APIs to top up accounts with PALM. These faucets are available across Palm network environments.
+For more information on getting access to these faucet APIs, please [contact us].
 
 <!-- links -->
 [contact us]: https://share.hsforms.com/1_sBreu7XTMWZtH9n1xTP3g2urwb
