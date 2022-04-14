@@ -13,17 +13,24 @@ Develop your dapp and test using standard Ethereum tools such as:
 
 - [Solidity](https://docs.soliditylang.org/en/latest).
 - [Truffle](https://www.trufflesuite.com/truffle).
+- [Hardhat](https://hardhat.org/).
 - [Ganache](https://www.trufflesuite.com/ganache).
 - [web3.js](https://web3js.readthedocs.io/).
 - [ethers.js](https://docs.ethers.io/v5/).
 
-During development, you can connect to your local testing environment with your standard Ethereum tools just as you
-would if developing for Ethereum.
+During development, you can connect to your local testing environment with your standard Ethereum tools just as you would if developing for Ethereum.
 
-If you're new to smart contract development, you can follow standard Ethereum tutorials such as
+If you're new to smart contract development, you can follow standard Ethereum tutorials such as:
 [Truffle's Pet Shop Tutorial](https://www.trufflesuite.com/tutorial).
+[HardHat](https://hardhat.org/getting-started/#quick-start).
 
-## Connecting end users to the Palm network
+## Connecting  to the Palm network
+
+### Developers
+
+As a developer, read the following quick guides to quickly connect to [Palm testnet](../Get-Started/Connect/Testnet.md) as well as [Palm mainnet](../Get-Started/Connect/Mainnet.md).
+
+### End users
 
 When developing for Palm, you may need to get end users set up and connected to the Palm network.
 Because Palm is a relatively new network, it may not be supported out-of-the-box across all wallet providers.
@@ -31,8 +38,7 @@ Because Palm is a relatively new network, it may not be supported out-of-the-box
 To be able to transact on the Palm network, users may need to:
 
 - Configure their wallet to recognize the Palm network.
-- Get assets onto the Palm network by either purchasing assets on the network directly or
-  [moving them onto Palm from Ethereum](../HowTo/Bridge.md).
+- Get assets onto the Palm network by either purchasing assets on the network directly or [moving them onto Palm from Ethereum](Bridge.md).
 - [Get PALM](../Get-Started/Tokens.md) to pay for transactions.
 
 Palm provides an app that users can access to complete these onboarding tasks:
@@ -40,11 +46,14 @@ Palm provides an app that users can access to complete these onboarding tasks:
 - [Palm Mainnet](https://app.palm.io/)
 - [Palm Testnet](https://app.palm-uat.xyz/)
 
-You can link directly to the Palm app to help your users onboard.
+You can link directly to the [Palm app](https://app.palm.io/) to help your users onboard.
 
-## Deploying a dapp to Palm
+## Deploying a Dapp to Palm
 
-Before you can deploy a dapp to Palm, you must get [access to PALM](../Get-Started/Tokens.md) in order to pay the transaction
-fees required for deployment.
+To deploy a Dapp to Palm, you will need [access to PALM](../Get-Started/Tokens.md) in order to pay the transaction fees required for deployment.
 
-You can [deploy using Truffle Migrations](Deploy-using-Truffle.md) or other typical Ethereum deployment processes.
+You can [deploy using Truffle Migrations](Deploy-using-Truffle.md), [deploy using Hardhat](Deploy-using-Hardhat.md) or other typical Ethereum deployment processes.
+
+## Mint NFTs on Palm
+
+You can also quickly learn how to [mint NFTs on the Palm network using HardHat](Mint-NFT-using-Hardhat.md).
