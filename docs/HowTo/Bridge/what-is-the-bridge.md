@@ -87,7 +87,5 @@ We’re currently evaluating and planning the migration steps to integrate updat
 
 In the [***next article***](./make-contracts-bridge-compatible.md) we will explain how to make your smart contracts bridge-compatible.
 
-In the [***next article***](./make-contracts-bridge-compatible.md) we will explain how to make your smart contracts bridge-compatible.
-
 !!! question
     Any question or suggestion about the Palm network bridge? Drop them on our [Discord](https://discord.gg/grcpwNRxVj)
