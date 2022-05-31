@@ -34,7 +34,7 @@ As a developer, read the following quick guides to quickly connect to [Palm test
 
 ### End users
 
-When developing for Palm, you may need to get end users set up and connected to the Palm network.
+You may need to get end users set up and connected to the Palm network when developing for Palm
 Because Palm is a relatively new network, it may not be supported out-of-the-box across all wallet providers.
 
 To be able to transact on the Palm network, users may need to:
@@ -54,7 +54,7 @@ You can link directly to the [Palm app](https://app.palm.io/) to help your users
 
 To deploy a Dapp to Palm, you will need [access to PALM](../Get-Started/Tokens.md) in order to pay the transaction fees required for deployment.
 
-You can [deploy using Truffle Migrations](Deploy-using-Truffle.md), [deploy using Hardhat](Deploy-using-Hardhat.md) or other typical Ethereum deployment processes.
+You can [deploy using Truffle Migrations](Deploy-using-Truffle.md), [deploy using Hardhat](Deploy-using-Hardhat.md), or other typical Ethereum deployment processes.
 
 ## Minting NFTs on Palm
 
