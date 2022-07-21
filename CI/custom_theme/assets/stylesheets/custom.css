@@ -101,6 +101,10 @@
   mask-image: var(--md-admonition-icon--critical);
 }
 
+.md-tabs {
+  color: black;
+}
+
 [data-md-color-scheme="palm"] {
   --md-primary-fg-color:        #EBEDE8;
   --md-primary-fg-color--light: #995C8D;
