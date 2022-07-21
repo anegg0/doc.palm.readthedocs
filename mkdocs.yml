@@ -80,7 +80,8 @@ markdown_extensions:
       permalink: 
       toc_depth: 4
   - codehilite
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences
   - markdown_include.include:
       base_path: docs
