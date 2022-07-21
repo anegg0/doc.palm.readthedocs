@@ -10,14 +10,15 @@
 # specific language governing permissions and limitations under the License.
 
 # Project information
-site_name: Palm Docs
+site_name: Palm network
 site_url: https://docs.palm.io/
-site_description: Palm documentation.
+site_description: Palm network documentation
 site_author: Palm community
-copyright: Palm and its documentation are licensed under Apache 2.0 license
+copyright: Apache 2.0 license
 
 #extra project info and template customisation
 extra:
+  generator: false
   logo_is_text: true
   latest_version_warning:
     url_contains: /latest/
@@ -38,6 +39,9 @@ theme:
   custom_dir: CI/custom_theme
   palette:
     scheme: palm
+  features:
+    - navigation.instant
+    - navigation.expand
   font:
     text: 'ABCWhyte Regular'
     code: 'Atlas Typewriter'
@@ -45,7 +49,8 @@ theme:
   logo: 'Images/logo.svg'
   favicon: 'Images/favicon.svg'
 nav:
-    - Get started:
+    - About: index.md
+    - Get started: 
         - Connect to a network:
             - Overview: Get-Started/Connect/Overview.md
             - Testnet: Get-Started/Connect/Testnet.md
