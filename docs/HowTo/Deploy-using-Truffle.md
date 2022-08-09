@@ -131,8 +131,7 @@ to deploy an NFT smart contract to the Palm network.
             ]
           }),
           network_id: 11297108099, // chain ID
-          gas: 3000000, // gas limit
-          gasPrice: 10000000000 // gas price in gwei
+          gasPrice: 1000 // gas price in gwei
         },
         palm_mainnet: {
           provider: () => new HDWalletProvider({
@@ -142,8 +141,7 @@ to deploy an NFT smart contract to the Palm network.
             ]
           }),
           network_id: 11297108109,
-          gas: 3000000,
-          gasPrice: 10000000000
+          gasPrice: 1000
         }
       }
     }
