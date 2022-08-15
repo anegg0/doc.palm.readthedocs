@@ -63,7 +63,7 @@ nav:
         - Mint NFTs using Hardhat: HowTo/Mint-NFT-using-Hardhat.md
         - Run a transaction node: HowTo/Run-a-Transaction-Node.md
         - Use the bridge: HowTo/Bridge.md
-        - Integrate With The Bridge:
+        - Integrate with the bridge:
             - Overview: HowTo/Bridge/what-is-the-bridge.md
             - Make your contracts bridge compatible: HowTo/Bridge/make-contracts-bridge-compatible.md
             - Bridge components addresses: HowTo/Bridge/bridge-components-addresses.md
