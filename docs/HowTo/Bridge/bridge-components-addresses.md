@@ -88,7 +88,7 @@ If you would like to understand what these addresses are used for, these two art
   <tr>
    <td>Ethereum Mainnet
    </td>
-   <td><code><a href="https://etherscan.io/address/0x4B4473093d98F0daA39e60406333B019c3A29D36">0x4B4473093d98F0daA39e60406333B019c3A29D36</a></code>
+   <td><code><a href="https://etherscan.io/address/0x225b08cf010d1dbae32be055f27d5affdf50c6ef">0x225b08cf010d1dbae32be055f27d5affdf50c6ef</a></code>
    </td>
    <td>ERC-721 Handler - account given permissions to mint/burn ERC-721 tokens on Ethereum.
    </td>
@@ -168,7 +168,7 @@ If you would like to understand what these addresses are used for, these two art
   <tr>
    <td>Rinkeby
    </td>
-   <td><a href="https://rinkeby.etherscan.io/address/0x3bd23d02a76804e839c4b73e978ce05a406e964b">0x3bD23d02a76804E839c4B73E978Ce05a406e964b</a>
+   <td><a href="https://rinkeby.etherscan.io/address/0x5105f2e61a5139589c02e557bd4a61a5a22b2676">0x5105f2e61a5139589c02e557bd4a61a5a22b2676</a>
    </td>
    <td>ERC-721 Handler Address
    </td>
